@@ -11,6 +11,8 @@
 		0A06BB261F913C2C001D53B5 /* GlpiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06BB251F913C2C001D53B5 /* GlpiTests.swift */; };
 		0A06BB281F913C2C001D53B5 /* Glpi.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A06BB1A1F913C2C001D53B5 /* Glpi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A1CF5AC1F97ADF90048E866 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */; };
+		0A1CF5B31F97B3D00048E866 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B21F97B3D00048E866 /* Routers.swift */; };
+		0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		0A06BB271F913C2C001D53B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A06BB361F91401D001D53B5 /* Glpi.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Glpi.podspec; sourceTree = "<group>"; };
 		0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		0A1CF5B21F97B3D00048E866 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
+		0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 		0A87A3151F916A000080622B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A1CF5B21F97B3D00048E866 /* Routers.swift */,
+				0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1CF5B31F97B3D00048E866 /* Routers.swift in Sources */,
+				0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +470,7 @@
 		0A06BB2F1F913C2C001D53B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -476,6 +485,7 @@
 		0A06BB301F913C2C001D53B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
 				INFOPLIST_FILE = Tests/Info.plist;

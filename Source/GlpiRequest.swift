@@ -42,16 +42,39 @@ public class GlpiRequest {
      */
     public func initSession(userToken: String, completion: @escaping (_ result: Any?) -> Void) {
 
-        Alamofire.request(Router.initSession(userToken))
+        Alamofire.request(Routers.initSession(userToken))
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success(let data):
                     completion(data)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    completion(nil)
+                case .failure(_ ):
+                    completion(self.handlerError(response))
                 }
         }
+    }
+    
+    /**
+     handler Error
+     - return: error message
+     */
+    func handlerError(_ response: DataResponse<Any>) -> [String: String] {
+        
+        var errorObj = [String]()
+        var errorDict = [String: String]()
+        
+        if let data = response.data {
+            errorObj = try! JSONSerialization.jsonObject(with: data) as? [String] ?? [String]()
+        }
+        
+        if errorObj.count == 2 {
+            errorDict["error"] = errorObj[0]
+            errorDict["message"] = errorObj[1]
+        } else {
+            errorDict["error"] = ""
+            errorDict["message"] = ""
+        }
+        
+        return errorDict
     }
 }

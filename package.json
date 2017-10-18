@@ -1,0 +1,60 @@
+{
+  "name": "@teclib/ios-library-glpi",
+  "version": "0.0.1",
+  "description": "GLPI APIs Client Library for Swift for REST",
+  "homepage": "https://github.com/flyve-mdm/ios-library-glpi#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "glpi",
+    "flyve",
+    "inventory",
+    "mdm",
+    "mobile",
+    "device",
+    "management"
+  ],
+  "authors": [
+    {
+      "name": "Hector Rondon",
+      "email": "hrondon@teclib.com"
+    },
+    {
+      "name": "Alexander Salas Bastidas",
+      "email": "asalas@teclib.com"
+    }
+  ],
+  "license": "Apache License, Version 2.0",
+  "social_media_url": "https://twitter.com/FlyveMDM",
+  "platforms": {
+    "ios": "9.3"
+  },
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "3"
+  },
+  "pushed_with_swift_version": "3.0",
+  "ignore": [
+    "**/.*"
+  ],
+  "source": {
+    "git": "https://github.com/flyve-mdm/ios-library-glpi.git",
+    "tag": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyve-mdm/ios-library-glpi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flyve-mdm/ios-library-glpi/issues"
+  },
+  "private": true,
+  "devDependencies": {
+    "standard-version": "^4.2.0"
+  },
+  "dependencies": {
+    "conventional-github-releaser": "^1.1.12"
+  }
+}

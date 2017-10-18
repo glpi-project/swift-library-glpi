@@ -1,0 +1,34 @@
+machine:
+  environment:
+    XCODE_SCHEME: Glpi
+    XCODE_PROJECT: Glpi.xcodeproj
+    SCRIPT_PATH: ./ci/scripts
+    GITHUB_REPO_SLUG: flyve-mdm/ios-library-glpi
+  xcode:
+    version: 9.0
+checkout:
+  post:
+    - git tag | xargs git tag -d
+    - git fetch origin --tags
+    - git tag
+dependencies:
+  pre:
+    - source "${SCRIPT_PATH}/bundler_config.sh"
+  override:
+    - source "${SCRIPT_PATH}/install.sh"
+test:
+  pre:
+    - source "${SCRIPT_PATH}/fastlane_config.sh"
+    - source "${SCRIPT_PATH}/git_config.sh"
+  override:
+    - source "${SCRIPT_PATH}/test.sh"
+deployment:
+  deploy_develop:
+    branch: develop
+    commands:
+      - source "${SCRIPT_PATH}/deploy_develop.sh"
+  deploy_master:
+    branch: master
+    commands:
+      - source "${SCRIPT_PATH}/deploy_master.sh"
+      - source "${SCRIPT_PATH}/pod_trunk_push.sh"

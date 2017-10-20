@@ -49,7 +49,19 @@ public class GlpiRequest {
             .responseJSON { response in
                 switch response.result {
                 case .success(let result):
-                   completion(result)
+                    do {
+                        if let data = (result as AnyObject).data(using: String.Encoding.utf8.rawValue) {
+                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
+                                
+                                if let session_token = json["session_token"] {
+                                    SESSION_TOKEN = session_token
+                                }
+                                completion(result)
+                            }
+                        }
+                    } catch {
+                        completion(GlpiRequest.handlerError(response))
+                    }
                 case .failure(_ ):
                     SESSION_TOKEN = ""
                     completion(GlpiRequest.handlerError(response))
@@ -63,14 +75,26 @@ public class GlpiRequest {
      - parameter: password
      - parameter: app token (optional)
      */
-    public func initSession(user: String, password: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
+    class public func initSession(user: String, password: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
         
         Alamofire.request(Routers.initSessionByBasicAuth(user, password, appToken))
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success(let result):
-                    completion(result)
+                    do {
+                        if let data = (result as AnyObject).data(using: String.Encoding.utf8.rawValue) {
+                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
+                                
+                                if let session_token = json["session_token"] {
+                                    SESSION_TOKEN = session_token
+                                }
+                                completion(result)
+                            }
+                        }
+                    } catch {
+                        completion(GlpiRequest.handlerError(response))
+                    }
                 case .failure(_ ):
                     SESSION_TOKEN = ""
                     completion(GlpiRequest.handlerError(response))

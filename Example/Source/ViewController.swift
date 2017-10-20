@@ -34,9 +34,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         
-        let glpi = GlpiRequest()
-        
-        glpi.initSession(userToken: "user_token") { result in
+        GlpiRequest.initSession(userToken: "user_token") { result in
             if let data = result {
                 print(data)
             }

@@ -91,6 +91,10 @@ public enum Routers: URLRequestConvertible {
                 dictHeader["App-Token"] = appToken
             }
             return dictHeader
+        default:
+            
+            dictHeader["Session-Token"] = "user_token \(SESSION_TOKEN)"
+            return dictHeader
         }
     }
     

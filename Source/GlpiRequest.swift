@@ -32,25 +32,27 @@
 import Foundation
 import Alamofire
 
+/// Session Token
+public var SESSION_TOKEN = String()
+
 public class GlpiRequest {
-    
-    public init() {}
-    
+
     /**
      Request a session token to uses other api endpoints.
      - parameter: user token
      - parameter: app token (optional)
      */
-    public func initSession(userToken: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
+    class public func initSession(userToken: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
 
         Alamofire.request(Routers.initSession(userToken, appToken))
             .validate()
             .responseJSON { response in
                 switch response.result {
-                case .success(let data):
-                    completion(data)
+                case .success(let result):
+                   completion(result)
                 case .failure(_ ):
-                    completion(self.handlerError(response))
+                    SESSION_TOKEN = ""
+                    completion(GlpiRequest.handlerError(response))
                 }
         }
     }
@@ -67,10 +69,11 @@ public class GlpiRequest {
             .validate()
             .responseJSON { response in
                 switch response.result {
-                case .success(let data):
-                    completion(data)
+                case .success(let result):
+                    completion(result)
                 case .failure(_ ):
-                    completion(self.handlerError(response))
+                    SESSION_TOKEN = ""
+                    completion(GlpiRequest.handlerError(response))
                 }
         }
     }
@@ -79,7 +82,7 @@ public class GlpiRequest {
      handler Error
      - return: error message
      */
-    func handlerError(_ response: DataResponse<Any>) -> [String: String] {
+    class func handlerError(_ response: DataResponse<Any>) -> [String: String] {
         
         var errorObj = [String]()
         var errorDict = [String: String]()

@@ -39,11 +39,13 @@ public enum Routers: URLRequestConvertible {
     case initSession(String, String)
     /// GET /initSession
     case initSessionByBasicAuth(String, String, String)
+    /// GET /killSession
+    case killSession
     
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .initSession, .initSessionByBasicAuth:
+        case .initSession, .initSessionByBasicAuth, .killSession:
             return .get
         }
     }
@@ -54,6 +56,8 @@ public enum Routers: URLRequestConvertible {
         switch self {
         case .initSession, .initSessionByBasicAuth:
             return "/initSession"
+        case .killSession:
+            return "/killSession"
         }
     }
     
@@ -61,7 +65,7 @@ public enum Routers: URLRequestConvertible {
     var query: String {
         
         switch self {
-        case .initSession, .initSessionByBasicAuth:
+        case .initSession, .initSessionByBasicAuth, .killSession:
            return  ""
         }
     }

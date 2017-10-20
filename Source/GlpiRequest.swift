@@ -103,6 +103,24 @@ public class GlpiRequest {
     }
     
     /**
+     Request kill current session
+     */
+    class public func killSession(completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.killSession)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    SESSION_TOKEN = ""
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response))
+                }
+        }
+    }
+    
+    /**
      handler Error
      - return: error message
      */

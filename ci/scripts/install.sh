@@ -39,6 +39,8 @@ gem install bundler
 brew install node
 # Install jq for json parse
 brew install jq
+# Install carthage
+brew install carthage
 # Install standard-version scope global
 npm i -g standard-version
 # Install conventional-github-releaser scope global

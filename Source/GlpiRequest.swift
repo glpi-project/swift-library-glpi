@@ -138,6 +138,23 @@ public class GlpiRequest {
     }
     
     /**
+     Request get active profile
+     */
+    class public func getActiveProfile(completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.getActiveProfile)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response))
+                }
+        }
+    }
+    
+    /**
      handler Error
      - return: error message
      */

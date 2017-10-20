@@ -172,6 +172,23 @@ public class GlpiRequest {
     }
     
     /**
+     Request get active entities
+     */
+    class public func getActiveEntities(completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.getActiveEntities)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response))
+                }
+        }
+    }
+    
+    /**
      handler Error
      - return: error message
      */

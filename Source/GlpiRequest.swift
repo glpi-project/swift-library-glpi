@@ -56,6 +56,26 @@ public class GlpiRequest {
     }
     
     /**
+     Request a session token to uses other api endpoints.
+     - parameter: user
+     - parameter: password
+     - parameter: app token (optional)
+     */
+    public func initSession(user: String, password: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.initSessionByBasicAuth(user, password, appToken))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let data):
+                    completion(data)
+                case .failure(_ ):
+                    completion(self.handlerError(response))
+                }
+        }
+    }
+    
+    /**
      handler Error
      - return: error message
      */

@@ -35,13 +35,15 @@ import Alamofire
 /// Enumerate endpoints methods
 public enum Routers: URLRequestConvertible {
     
-    ///  GET /initSession
+    /// GET /initSession
     case initSession(String, String)
+    /// GET /initSession
+    case initSessionByBasicAuth(String, String, String)
     
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .initSession:
+        case .initSession, .initSessionByBasicAuth:
             return .get
         }
     }
@@ -50,7 +52,7 @@ public enum Routers: URLRequestConvertible {
     var path: String {
         
         switch self {
-        case .initSession:
+        case .initSession, .initSessionByBasicAuth:
             return "/initSession"
         }
     }
@@ -59,7 +61,7 @@ public enum Routers: URLRequestConvertible {
     var query: String {
         
         switch self {
-        case .initSession:
+        case .initSession, .initSessionByBasicAuth:
            return  ""
         }
     }
@@ -67,17 +69,27 @@ public enum Routers: URLRequestConvertible {
     /// build up and return the header for each endpoint
     var header: [String: String] {
         
+        var dictHeader = [String: String]()
+        dictHeader["Content-Type"] = "application/json"
+        
         switch self {
         case .initSession(let userToken, let appToken) :
-            
-            var dictHeader = [String: String]()
-            dictHeader["Content-Type"] = "application/json"
+
             dictHeader["Authorization"] = "user_token \(userToken)"
             
             if !appToken.isEmpty {
-                dictHeader["App-Token"] = "user_token \(appToken)"
+                dictHeader["App-Token"] = appToken
             }
+            return dictHeader
+        case .initSessionByBasicAuth(let user, let password, let appToken):
+            let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+            let base64Credentials = credentialData.base64EncodedString()
             
+            dictHeader["Authorization"] = "Basic \(base64Credentials)"
+            
+            if !appToken.isEmpty {
+                dictHeader["App-Token"] = appToken
+            }
             return dictHeader
         }
     }

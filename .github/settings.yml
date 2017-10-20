@@ -1,7 +1,7 @@
 repository:
-  name: ios-library-glpi
+  name: swift-library-glpi
   description: GLPI API Client Library for Swift
-  homepage: http://flyve.org/ios-library-glpi/
+  homepage: https://glpi-project.github.io/swift-library-glpi/
   topics: glpi-api, swift, library
   private: false
   has_issues: true

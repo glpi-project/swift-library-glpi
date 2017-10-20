@@ -16,6 +16,7 @@ dependencies:
     - source "${SCRIPT_PATH}/bundler_config.sh"
   override:
     - source "${SCRIPT_PATH}/install.sh"
+    - carthage update
 test:
   pre:
     - source "${SCRIPT_PATH}/fastlane_config.sh"

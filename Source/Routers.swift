@@ -49,12 +49,16 @@ public enum Routers: URLRequestConvertible {
     case getMyEntities
     /// GET /getActiveEntities
     case getActiveEntities
+    /// GET /getFullSession
+    case getFullSession
+    /// GET /getGlpiConfig
+    case getGlpiConfig
     
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
-             .getMyEntities, .getActiveEntities:
+             .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig:
             return .get
         }
     }
@@ -75,6 +79,10 @@ public enum Routers: URLRequestConvertible {
             return "/getMyEntities"
         case .getActiveEntities:
             return "/getActiveEntities"
+        case .getFullSession:
+            return "/getFullSession"
+        case .getGlpiConfig:
+            return "/getGlpiConfig"
         }
     }
     
@@ -83,7 +91,7 @@ public enum Routers: URLRequestConvertible {
         
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
-             .getMyEntities, .getActiveEntities:
+             .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig:
            return  ""
         }
     }

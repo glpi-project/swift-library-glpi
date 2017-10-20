@@ -36,7 +36,7 @@ import Alamofire
 public enum Routers: URLRequestConvertible {
     
     ///  GET /initSession
-    case initSession(String)
+    case initSession(String, String)
     
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
@@ -50,7 +50,7 @@ public enum Routers: URLRequestConvertible {
     var path: String {
         
         switch self {
-        case .initSession(_ ) :
+        case .initSession:
             return "/initSession"
         }
     }
@@ -59,7 +59,7 @@ public enum Routers: URLRequestConvertible {
     var query: String {
         
         switch self {
-        case .initSession(_ ) :
+        case .initSession:
            return  ""
         }
     }
@@ -68,11 +68,15 @@ public enum Routers: URLRequestConvertible {
     var header: [String: String] {
         
         switch self {
-        case .initSession(let userToken) :
+        case .initSession(let userToken, let appToken) :
             
             var dictHeader = [String: String]()
             dictHeader["Content-Type"] = "application/json"
             dictHeader["Authorization"] = "user_token \(userToken)"
+            
+            if !appToken.isEmpty {
+                dictHeader["App-Token"] = "user_token \(appToken)"
+            }
             
             return dictHeader
         }

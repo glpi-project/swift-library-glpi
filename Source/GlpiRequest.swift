@@ -39,10 +39,11 @@ public class GlpiRequest {
     /**
      Request a session token to uses other api endpoints.
      - parameter: user token
+     - parameter: app token (optional)
      */
-    public func initSession(userToken: String, completion: @escaping (_ result: Any?) -> Void) {
+    public func initSession(userToken: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
 
-        Alamofire.request(Routers.initSession(userToken))
+        Alamofire.request(Routers.initSession(userToken, appToken))
             .validate()
             .responseJSON { response in
                 switch response.result {

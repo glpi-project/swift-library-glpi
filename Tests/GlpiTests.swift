@@ -1,10 +1,8 @@
 /*
- *   Copyright © 2017 Teclib. All rights reserved.
+ * LICENSE
  *
- * GlpiTests.swift is part of Glpi
- *
- * Glpi is a subproject of Flyve MDM. Flyve MDM is a mobile
- * device management software.
+ * GlpiTests.swift is part of the GLPI API Client Library for Swift,
+ * a subproject of GLPI. GLPI is a free IT Asset Management.
  *
  * Glpi is Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +16,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ------------------------------------------------------------------------------
- * @author    Hector Rondon
+ * @author    Hector Rondon - <hrondon@teclib.com>
  * @date      13/10/17
- * @copyright Copyright © 2017 Teclib. All rights reserved.
+ * @copyright (C) 2017 Teclib' and contributors
  * @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
  * @link      https://github.com/flyve-mdm/ios-library-glpi
- * @link      https://flyve-mdm.com
+ * @link      http://www.glpi-project.org/
  * ------------------------------------------------------------------------------
  */
 

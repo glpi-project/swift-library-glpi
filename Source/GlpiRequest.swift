@@ -200,6 +200,27 @@ public class GlpiRequest {
     }
     
     /**
+     Request change active entities
+     */
+    class public func changeActiveEntities(entitiesID: String, isRecursive: Bool = false, completion: @escaping (_ result: Any?) -> Void) {
+        
+        var dictionary = [String: AnyObject]()
+        dictionary["is_recursive"] = isRecursive as AnyObject
+        dictionary["entities_id"] = entitiesID as AnyObject
+        
+        Alamofire.request(Routers.changeActiveProfile(dictionary))
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
+    
+    /**
      Request get full session information
      */
     class public func getFullSession(completion: @escaping (_ result: Any?) -> Void) {

@@ -49,6 +49,8 @@ public enum Routers: URLRequestConvertible {
     case getMyEntities
     /// GET /getActiveEntities
     case getActiveEntities
+    /// POST /changeActiveEntities
+    case changeActiveEntities([String: AnyObject])
     /// GET /getFullSession
     case getFullSession
     /// GET /getGlpiConfig
@@ -62,7 +64,7 @@ public enum Routers: URLRequestConvertible {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig, .getMultipleItems:
             return .get
-        case .changeActiveProfile:
+        case .changeActiveProfile, .changeActiveEntities:
             return .post
         }
     }
@@ -85,6 +87,8 @@ public enum Routers: URLRequestConvertible {
             return "/getMyEntities"
         case .getActiveEntities:
             return "/getActiveEntities"
+        case .changeActiveEntities:
+            return "/changeActiveEntities"
         case .getFullSession:
             return "/getFullSession"
         case .getGlpiConfig:
@@ -99,8 +103,8 @@ public enum Routers: URLRequestConvertible {
         
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
-             .changeActiveProfile, .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
-             .getMultipleItems:
+             .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
+             .getFullSession, .getGlpiConfig, .getMultipleItems:
            return  ""
         }
     }
@@ -155,7 +159,7 @@ public enum Routers: URLRequestConvertible {
         }
         
         switch self {
-        case .changeActiveProfile(let parameters):
+        case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters):
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
         default:
             return urlRequest

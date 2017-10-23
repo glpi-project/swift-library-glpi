@@ -1,6 +1,6 @@
 clean: true
-author: Flyve MDM
-author_url: https://flyve-mdm.com
+author: Glpi
+author_url: http://www.glpi-project.org/
 github_url: $CIRCLE_REPOSITORY_URL
 output: docs
 theme: ./jazzy/themeFlyve

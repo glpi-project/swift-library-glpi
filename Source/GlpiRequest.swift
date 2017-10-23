@@ -55,7 +55,7 @@ public class GlpiRequest {
                     }
                 case .failure(_ ):
                     SESSION_TOKEN = ""
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -84,11 +84,11 @@ public class GlpiRequest {
                             }
                         }
                     } catch {
-                        completion(GlpiRequest.handlerError(response))
+                        completion(GlpiRequest.handlerError(response.data))
                     }
                 case .failure(_ ):
                     SESSION_TOKEN = ""
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -106,7 +106,7 @@ public class GlpiRequest {
                     SESSION_TOKEN = ""
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -123,7 +123,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -140,7 +140,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -160,7 +160,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(response.error)
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -177,7 +177,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -194,7 +194,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -211,7 +211,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -228,7 +228,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -245,7 +245,7 @@ public class GlpiRequest {
                 case .success(let result):
                     completion(result)
                 case .failure(_ ):
-                    completion(GlpiRequest.handlerError(response))
+                    completion(GlpiRequest.handlerError(response.data))
                 }
         }
     }
@@ -254,12 +254,12 @@ public class GlpiRequest {
      handler Error
      - return: error message
      */
-    class func handlerError(_ response: DataResponse<Any>) -> [String: String] {
+    class func handlerError(_ error: Data?) -> [String: String] {
         
         var errorObj = [String]()
         var errorDict = [String: String]()
         
-        if let data = response.data {
+        if let data = error {
             errorObj = try! JSONSerialization.jsonObject(with: data) as? [String] ?? [String]()
         }
         

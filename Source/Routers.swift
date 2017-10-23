@@ -43,6 +43,8 @@ public enum Routers: URLRequestConvertible {
     case getMyProfiles
     /// GET /getActiveProfile
     case getActiveProfile
+    /// POST /changeActiveProfile
+    case changeActiveProfile([String: AnyObject])
     /// GET /getMyEntities
     case getMyEntities
     /// GET /getActiveEntities
@@ -60,6 +62,8 @@ public enum Routers: URLRequestConvertible {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig, .getMultipleItems:
             return .get
+        case .changeActiveProfile:
+            return .post
         }
     }
     
@@ -75,6 +79,8 @@ public enum Routers: URLRequestConvertible {
             return "/getMyProfiles"
         case .getActiveProfile:
             return "/getActiveProfile"
+        case .changeActiveProfile:
+            return "/changeActiveProfile"
         case .getMyEntities:
             return "/getMyEntities"
         case .getActiveEntities:
@@ -93,7 +99,8 @@ public enum Routers: URLRequestConvertible {
         
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
-             .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig, .getMultipleItems:
+             .changeActiveProfile, .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
+             .getMultipleItems:
            return  ""
         }
     }
@@ -125,7 +132,7 @@ public enum Routers: URLRequestConvertible {
             return dictHeader
         default:
             
-            dictHeader["Session-Token"] = "user_token \(SESSION_TOKEN)"
+            dictHeader["Session-Token"] = SESSION_TOKEN
             return dictHeader
         }
     }
@@ -147,6 +154,11 @@ public enum Routers: URLRequestConvertible {
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
         
-        return urlRequest
+        switch self {
+        case .changeActiveProfile(let parameters):
+            return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
+        default:
+            return urlRequest
+        }
     }
 }

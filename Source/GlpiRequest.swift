@@ -47,18 +47,11 @@ public class GlpiRequest {
             .responseJSON { response in
                 switch response.result {
                 case .success(let result):
-                    do {
-                        if let data = (result as AnyObject).data(using: String.Encoding.utf8.rawValue) {
-                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
-                                
-                                if let session_token = json["session_token"] {
-                                    SESSION_TOKEN = session_token
-                                }
-                                completion(result)
-                            }
+                    if let data = result as? [String: AnyObject]  {
+                        if let session_token = data["session_token"] {
+                            SESSION_TOKEN = session_token as? String ?? ""
                         }
-                    } catch {
-                        completion(GlpiRequest.handlerError(response))
+                        completion(result)
                     }
                 case .failure(_ ):
                     SESSION_TOKEN = ""
@@ -153,6 +146,26 @@ public class GlpiRequest {
     }
     
     /**
+     Request change active profile
+     */
+    class public func changeActiveProfile(profileID: String, completion: @escaping (_ result: Any?) -> Void) {
+
+        var dictionary = [String: AnyObject]()
+        dictionary["profiles_id"] = profileID as AnyObject
+        
+        Alamofire.request(Routers.changeActiveProfile(dictionary))
+            .validate(statusCode: 200..<300)
+            .responseData { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(response.error)
+                }
+        }
+    }
+    
+    /**
      Request get my entities
      */
     class public func getMyEntities(completion: @escaping (_ result: Any?) -> Void) {
@@ -236,7 +249,6 @@ public class GlpiRequest {
                 }
         }
     }
-    
     
     /**
      handler Error

@@ -159,4 +159,40 @@ public struct QueryString {
             }
         }
     }
+    
+    public struct GetSubItems {
+        public var expandDropdowns: Bool?
+        public var getHateoas: Bool?
+        public var onlyId: Bool?
+        public var range: String?
+        public var sort: Int?
+        public var order: orderType?
+        
+        public init() {}
+        
+        var queryString: [String: AnyObject] {
+            get {
+                var query = [String: AnyObject]()
+                if expandDropdowns != nil {
+                    query["expand_dropdowns"] = expandDropdowns as AnyObject
+                }
+                if getHateoas != nil {
+                    query["get_hateoas"] = getHateoas as AnyObject
+                }
+                if onlyId != nil {
+                    query["only_id"] = onlyId as AnyObject
+                }
+                if range != nil {
+                    query["range"] = range as AnyObject
+                }
+                if sort != nil {
+                    query["sort"] = sort as AnyObject
+                }
+                if order != nil {
+                    query["order"] = order as AnyObject
+                }
+                return query
+            }
+        }
+    }
 }

@@ -257,7 +257,7 @@ public class GlpiRequest {
     /**
      Request get all items
      */
-    class public func getAllItems(itemType: ItemType, queryString: QueryGetAllItems?, completion: @escaping (_ result: Any?) -> Void) {
+    class public func getAllItems(itemType: ItemType, queryString: QueryString.GetAllItems?, completion: @escaping (_ result: Any?) -> Void) {
         
         Alamofire.request(Routers.getAllItems(itemType, queryString))
             .validate()

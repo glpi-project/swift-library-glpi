@@ -55,7 +55,8 @@ public enum Routers: URLRequestConvertible {
     case getFullSession
     /// GET /getGlpiConfig
     case getGlpiConfig
-    case getAllItems(ItemType, QueryGetAllItems?)
+    /// GET /:itemtype
+    case getAllItems(ItemType, QueryString.GetAllItems?)
     /// GET /getMultipleItems
     case getMultipleItems
     

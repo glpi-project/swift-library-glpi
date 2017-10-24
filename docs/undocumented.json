@@ -2,7 +2,7 @@
   "warnings": [
     {
       "file": "/Users/distiller/swift-library-glpi/Source/GlpiRequest.swift",
-      "line": 38,
+      "line": 36,
       "symbol": "GlpiRequest",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"

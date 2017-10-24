@@ -55,6 +55,7 @@ public enum Routers: URLRequestConvertible {
     case getFullSession
     /// GET /getGlpiConfig
     case getGlpiConfig
+    case getAllItems(ItemType, QueryGetAllItems?)
     /// GET /getMultipleItems
     case getMultipleItems
     
@@ -62,7 +63,8 @@ public enum Routers: URLRequestConvertible {
     var method: Alamofire.HTTPMethod {
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
-             .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig, .getMultipleItems:
+             .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
+             .getMultipleItems, .getAllItems:
             return .get
         case .changeActiveProfile, .changeActiveEntities:
             return .post
@@ -93,19 +95,27 @@ public enum Routers: URLRequestConvertible {
             return "/getFullSession"
         case .getGlpiConfig:
             return "/getGlpiConfig"
+        case .getAllItems(let itemType, _):
+            return "/\(itemType)"
         case .getMultipleItems:
             return "/getMultipleItems"
         }
     }
     
     /// build up and return the query for each endpoint
-    var query: String {
+    var query: [String: AnyObject]? {
         
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
              .getFullSession, .getGlpiConfig, .getMultipleItems:
-           return  ""
+           return  nil
+        case .getAllItems(_, let queryString):
+            if queryString != nil {
+                return queryString?.queryString
+            } else {
+                return nil
+            }
         }
     }
     
@@ -161,6 +171,8 @@ public enum Routers: URLRequestConvertible {
         switch self {
         case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters):
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
+        case .getAllItems:
+            return try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
         default:
             return urlRequest
         }

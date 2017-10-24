@@ -57,6 +57,8 @@ public enum Routers: URLRequestConvertible {
     case getGlpiConfig
     /// GET /:itemtype
     case getAllItems(ItemType, QueryString.GetAllItems?)
+    /// GET /:itemtype/:id
+    case getAnItem(ItemType, Int, QueryString.GetAnItem?)
     /// GET /getMultipleItems
     case getMultipleItems
     
@@ -65,7 +67,7 @@ public enum Routers: URLRequestConvertible {
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
-             .getMultipleItems, .getAllItems:
+             .getMultipleItems, .getAllItems, .getAnItem:
             return .get
         case .changeActiveProfile, .changeActiveEntities:
             return .post
@@ -98,6 +100,8 @@ public enum Routers: URLRequestConvertible {
             return "/getGlpiConfig"
         case .getAllItems(let itemType, _):
             return "/\(itemType)"
+        case .getAnItem(let itemType, let itemID, _):
+            return "/\(itemType)/\(itemID)"
         case .getMultipleItems:
             return "/getMultipleItems"
         }
@@ -114,6 +118,12 @@ public enum Routers: URLRequestConvertible {
         case .getAllItems(_, let queryString):
             if queryString != nil {
                 return queryString?.queryString
+            } else {
+                return nil
+            }
+        case .getAnItem(_, _, let queryString):
+            if queryString != nil {
+                return queryString?.queryString as [String: AnyObject]? ?? [String: AnyObject]()
             } else {
                 return nil
             }
@@ -172,7 +182,7 @@ public enum Routers: URLRequestConvertible {
         switch self {
         case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters):
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
-        case .getAllItems:
+        case .getAllItems, .getAnItem:
             return try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
         default:
             return urlRequest

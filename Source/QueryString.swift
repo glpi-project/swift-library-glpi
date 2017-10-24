@@ -83,4 +83,80 @@ public struct QueryString {
             }
         }
     }
+    
+    public struct GetAnItem {
+        public var expandDropdowns: Bool?
+        public var getHateoas: Bool?
+        public var getSha1: Bool?
+        public var withDevices: Bool?
+        public var withDisks: Bool?
+        public var withSoftwares: Bool?
+        public var withConnections: Bool?
+        public var withNetworkports: Bool?
+        public var withInfocoms: Bool?
+        public var withContracts: Bool?
+        public var withDocuments: Bool?
+        public var withTickets: Bool?
+        public var withProblems: Bool?
+        public var withChanges: Bool?
+        public var withNotes: Bool?
+        public var withLogs: Bool?
+        
+        public init() {}
+        
+        var queryString: [String: AnyObject] {
+            get {
+                var query = [String: AnyObject]()
+                if expandDropdowns != nil {
+                    query["expand_dropdowns"] = expandDropdowns as AnyObject
+                }
+                if getHateoas != nil {
+                    query["get_hateoas"] = getHateoas as AnyObject
+                }
+                if getSha1 != nil {
+                    query["get_sha1"] = getSha1 as AnyObject
+                }
+                if withDevices != nil {
+                    query["with_devices"] = withDevices as AnyObject
+                }
+                if withDisks != nil {
+                    query["with_disks"] = withDisks as AnyObject
+                }
+                if withSoftwares != nil {
+                    query["with_softwares"] = withSoftwares as AnyObject
+                }
+                if withConnections != nil {
+                    query["with_connections"] = withConnections as AnyObject
+                }
+                if withNetworkports != nil {
+                    query["with_networkports"] = withNetworkports as AnyObject
+                }
+                if withInfocoms != nil {
+                    query["with_infocoms"] = withInfocoms as AnyObject
+                }
+                if withContracts != nil {
+                    query["with_contracts"] = withContracts as AnyObject
+                }
+                if withDocuments != nil {
+                    query["with_documents"] = withDocuments as AnyObject
+                }
+                if withTickets != nil {
+                    query["with_tickets"] = withTickets as AnyObject
+                }
+                if withProblems != nil {
+                    query["with_problems"] = withProblems as AnyObject
+                }
+                if withChanges != nil {
+                    query["with_changes"] = withChanges as AnyObject
+                }
+                if withNotes != nil {
+                    query["with_notes"] = withNotes as AnyObject
+                }
+                if withLogs != nil {
+                    query["with_logs"] = withLogs as AnyObject
+                }
+                return query
+            }
+        }
+    }
 }

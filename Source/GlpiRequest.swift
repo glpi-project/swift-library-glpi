@@ -255,6 +255,23 @@ public class GlpiRequest {
     }
     
     /**
+     Request get all items
+     */
+    class public func getAllItems(itemType: ItemType, queryString: QueryGetAllItems?, completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.getAllItems(itemType, queryString))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
+    
+    /**
      Request get multiple items
      */
     class public func getMultipleItems(completion: @escaping (_ result: Any?) -> Void) {

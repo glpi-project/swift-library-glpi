@@ -322,6 +322,23 @@ public class GlpiRequest {
         }
     }
     
+    /**
+     Request Update Items
+     */
+    class public func updateItems(itemType: ItemType, itemID: Int?, payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.updateItems(itemType, itemID, payload))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
+    
     
     /**
      Request get multiple items

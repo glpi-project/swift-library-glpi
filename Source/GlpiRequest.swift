@@ -377,6 +377,23 @@ public class GlpiRequest {
     }
     
     /**
+     Request reset password
+     */
+    class public func resetPassword(payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.lostPassword(payload))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
+    
+    /**
      Request get multiple items
      */
     class public func getMultipleItems(completion: @escaping (_ result: Any?) -> Void) {

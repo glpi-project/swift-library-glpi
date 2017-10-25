@@ -339,6 +339,23 @@ public class GlpiRequest {
         }
     }
     
+    /**
+     Request Delete Items
+     */
+    class public func deleteItems(itemType: ItemType, itemID: Int?, queryString: QueryString.DeleteItems?, payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.deleteItems(itemType, itemID, queryString, payload))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
+    
     
     /**
      Request get multiple items

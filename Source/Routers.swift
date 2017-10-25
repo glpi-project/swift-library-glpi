@@ -32,7 +32,7 @@ import Alamofire
 
 /// Enumerate endpoints methods
 public enum Routers: URLRequestConvertible {
-    
+
     /// GET /initSession
     case initSession(String, String)
     /// GET /initSession
@@ -67,6 +67,8 @@ public enum Routers: URLRequestConvertible {
     case addItems(ItemType, [String: AnyObject])
     /// PUT /:itemtype/:id
     case updateItems(ItemType, Int?, [String: AnyObject])
+    /// DELETE /:itemtype/:id
+    case deleteItems(ItemType, Int?, QueryString.DeleteItems?, [String: AnyObject])
     
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
@@ -79,6 +81,8 @@ public enum Routers: URLRequestConvertible {
             return .post
         case .updateItems:
             return .put
+        case .deleteItems:
+            return .delete
         }
     }
     
@@ -122,7 +126,12 @@ public enum Routers: URLRequestConvertible {
             } else {
                 return "/\(itemType)"
             }
-            
+        case .deleteItems(let itemType, let itemID, _, _):
+            if let id = itemID {
+                return "/\(itemType)/\(id)"
+            } else {
+                return "/\(itemType)"
+            }
         }
     }
     
@@ -147,6 +156,12 @@ public enum Routers: URLRequestConvertible {
                 return nil
             }
         case .getSubItems(_, _, _, let queryString):
+            if queryString != nil {
+                return queryString?.queryString
+            } else {
+                return nil
+            }
+        case .deleteItems(_, _, let queryString, _):
             if queryString != nil {
                 return queryString?.queryString
             } else {
@@ -194,7 +209,6 @@ public enum Routers: URLRequestConvertible {
      - returns: A URL request.
      */
     public func asURLRequest() throws -> URLRequest {
-
         let url = URL(string: "https://dev.flyve.org/glpi/apirest.php")!
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
@@ -209,6 +223,9 @@ public enum Routers: URLRequestConvertible {
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
         case .getAllItems, .getAnItem, .getSubItems:
             return try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
+        case .deleteItems(_, _, _, let parameters):
+            let request = try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
+            return try Alamofire.JSONEncoding.default.encode(request, with: parameters)
         default:
             return urlRequest
         }

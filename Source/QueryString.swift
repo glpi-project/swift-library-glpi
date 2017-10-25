@@ -195,4 +195,24 @@ public struct QueryString {
             }
         }
     }
+    
+    public struct DeleteItems {
+        public var forcePurge: Bool?
+        public var history: Bool?
+        
+        public init() {}
+        
+        var queryString: [String: AnyObject] {
+            get {
+                var query = [String: AnyObject]()
+                if forcePurge != nil {
+                    query["force_purge"] = forcePurge as AnyObject
+                }
+                if history != nil {
+                    query["history"] = history as AnyObject
+                }
+                return query
+            }
+        }
+    }
 }

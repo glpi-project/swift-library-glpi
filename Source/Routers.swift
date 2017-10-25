@@ -65,6 +65,8 @@ public enum Routers: URLRequestConvertible {
     case getMultipleItems
     /// POST /:itemtype
     case addItems(ItemType, [String: AnyObject])
+    /// PUT /:itemtype/:id
+    case updateItems(ItemType, Int?, [String: AnyObject])
     
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
@@ -75,6 +77,8 @@ public enum Routers: URLRequestConvertible {
             return .get
         case .changeActiveProfile, .changeActiveEntities, .addItems:
             return .post
+        case .updateItems:
+            return .put
         }
     }
     
@@ -112,6 +116,13 @@ public enum Routers: URLRequestConvertible {
             return "/getMultipleItems"
         case .addItems(let itemType, _):
             return "/\(itemType)"
+        case .updateItems(let itemType, let itemID, _):
+            if let id = itemID {
+                return "/\(itemType)/\(id)"
+            } else {
+                return "/\(itemType)"
+            }
+            
         }
     }
     
@@ -121,7 +132,7 @@ public enum Routers: URLRequestConvertible {
         switch self {
         case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
-             .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems:
+             .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems:
            return  nil
         case .getAllItems(_, let queryString):
             if queryString != nil {
@@ -194,7 +205,7 @@ public enum Routers: URLRequestConvertible {
         }
         
         switch self {
-        case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters):
+        case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters):
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
         case .getAllItems, .getAnItem, .getSubItems:
             return try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())

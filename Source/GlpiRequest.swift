@@ -356,6 +356,25 @@ public class GlpiRequest {
         }
     }
     
+    /**
+     Request Lost password
+     */
+    class public func lostPassword(email: String, completion: @escaping (_ result: Any?) -> Void) {
+        
+        var dictionary = [String: AnyObject]()
+        dictionary["email"] = email as AnyObject
+        
+        Alamofire.request(Routers.lostPassword(dictionary))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
     
     /**
      Request get multiple items

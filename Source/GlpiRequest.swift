@@ -306,6 +306,24 @@ public class GlpiRequest {
     }
     
     /**
+     Request Add Items
+     */
+    class public func addItems(itemType: ItemType, payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+        
+        Alamofire.request(Routers.addItems(itemType, payload))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let result):
+                    completion(result)
+                case .failure(_ ):
+                    completion(GlpiRequest.handlerError(response.data))
+                }
+        }
+    }
+    
+    
+    /**
      Request get multiple items
      */
     class public func getMultipleItems(completion: @escaping (_ result: Any?) -> Void) {

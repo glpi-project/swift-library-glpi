@@ -170,4 +170,17 @@ class GlpiTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    /// Test getFullSession request
+    func testGetFullSession() {
+        
+        let expectationResult = expectation(description: "getFullSession")
+        
+        Alamofire.request(Routers.getFullSession).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
 }

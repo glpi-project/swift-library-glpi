@@ -269,4 +269,28 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test deleteItems
+    func testDeleteItems() {
+        
+        let expectationResult = expectation(description: "getsubItems")
+        
+        var dictionary = [String: AnyObject]()
+        var dictionaryData = [String: Int]()
+        dictionaryData["id"] = 24
+        dictionary["input"] = dictionaryData as AnyObject
+        
+        Alamofire.request(Routers.deleteItems(ItemType.User, nil, nil, dictionary)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "DELETE")
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+            
+            XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
+            
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

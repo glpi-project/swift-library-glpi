@@ -41,5 +41,4 @@ class Constants {
         dictionary["method"] = "GET"
         return dictionary
     }
-    
 }

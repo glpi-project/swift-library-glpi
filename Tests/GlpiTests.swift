@@ -183,4 +183,17 @@ class GlpiTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    /// Test getAllItems request
+    func testGetAllItems() {
+        
+        let expectationResult = expectation(description: "getAllItems")
+        
+        Alamofire.request(Routers.getAllItems(ItemType.Computer, nil)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
 }

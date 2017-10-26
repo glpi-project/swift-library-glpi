@@ -99,4 +99,29 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test changeActiveProfile request
+    func testChangeActiveProfile() {
+        
+        let expectationResult = expectation(description: "changeActiveProfile")
+        
+        var dictionary = [String: AnyObject]()
+        dictionary["profiles_id"] = 4 as AnyObject
+        
+        Alamofire.request(Routers.changeActiveProfile(dictionary)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
+            
+            if let theJSONData = try? JSONSerialization.data(
+                withJSONObject: dictionary,
+                options: []) {
+                let theJSONText = String(data: theJSONData,
+                                         encoding: .ascii)
+                print("JSON string = \(theJSONText!)")
+                XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", theJSONText)
+            }
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

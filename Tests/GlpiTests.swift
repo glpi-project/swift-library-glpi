@@ -86,4 +86,17 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test getActiveProfile request
+    func testGetActiveProfile() {
+        
+        let expectationResult = expectation(description: "getActiveProfile")
+        
+        Alamofire.request(Routers.getActiveProfile).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

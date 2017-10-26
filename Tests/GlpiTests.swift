@@ -137,4 +137,18 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test getActiveEntities request
+    func testGetActiveEntities() {
+        
+        let expectationResult = expectation(description: "getActiveEntities")
+        
+        Alamofire.request(Routers.getActiveEntities).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
 }

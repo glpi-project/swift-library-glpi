@@ -27,6 +27,7 @@
 
 import XCTest
 @testable import Glpi
+import Alamofire
 
 class GlpiTests: XCTestCase {
     
@@ -40,8 +41,22 @@ class GlpiTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitSession() {
+        
+        let expectationResult = expectation(description: "initSession")
+        
+        let expectedUserToken = Constants.initSessionTesting["userToken"] ?? ""
+        let expectedAppToken = Constants.initSessionTesting["appToken"] ?? ""
+        let expectedMethod = Constants.initSessionTesting["method"] ?? ""
+        
+        Alamofire.request(Routers.initSession(expectedUserToken, expectedAppToken)).response { response in
+
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Authorization") ?? "", "user_token \(expectedUserToken)")
+            XCTAssertEqual(response.request?.httpMethod ?? "", expectedMethod)
+            XCTAssertEqual(response.response?.statusCode ?? 0, 200)
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
     }
 }

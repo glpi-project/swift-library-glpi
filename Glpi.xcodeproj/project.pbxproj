@@ -15,6 +15,8 @@
 		0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */; };
 		0A452E0C1F9F703200CD531A /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0B1F9F703200CD531A /* ItemType.swift */; };
 		0A452E101F9FBF7100CD531A /* QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0F1F9FBF7100CD531A /* QueryString.swift */; };
+		0A9387631FA26806000EB823 /* ConstantsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9387611FA26688000EB823 /* ConstantsTest.swift */; };
+		0A9387671FA27114000EB823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 		0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiRequest.swift; sourceTree = "<group>"; };
 		0A452E0B1F9F703200CD531A /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		0A452E0F1F9FBF7100CD531A /* QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryString.swift; sourceTree = "<group>"; };
+		0A9387611FA26688000EB823 /* ConstantsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A06BB211F913C2C001D53B5 /* Glpi.framework in Frameworks */,
+				0A9387671FA27114000EB823 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0A06BB251F913C2C001D53B5 /* GlpiTests.swift */,
+				0A9387611FA26688000EB823 /* ConstantsTest.swift */,
 				0A06BB331F913F7A001D53B5 /* Supporting Files */,
 			);
 			path = Tests;
@@ -192,6 +197,7 @@
 				0A06BB1C1F913C2C001D53B5 /* Sources */,
 				0A06BB1D1F913C2C001D53B5 /* Frameworks */,
 				0A06BB1E1F913C2C001D53B5 /* Resources */,
+				0A9387661FA270C4000EB823 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -274,6 +280,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		0A9387661FA270C4000EB823 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -293,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A06BB261F913C2C001D53B5 /* GlpiTests.swift in Sources */,
+				0A9387631FA26806000EB823 /* ConstantsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +502,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.teclib.GlpiTests;
@@ -496,6 +521,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.teclib.GlpiTests;

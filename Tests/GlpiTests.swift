@@ -59,4 +59,17 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    func testKillSession() {
+        
+        let expectationResult = expectation(description: "KillSession")
+        
+        Alamofire.request(Routers.killSession).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
+            XCTAssertEqual(response.response?.statusCode ?? 0, 400)
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

@@ -221,4 +221,28 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test addItems
+    func testAddItems() {
+        
+        let expectationResult = expectation(description: "getsubItems")
+        
+        var dictionary = [String: AnyObject]()
+        var dictionaryData = [String: String]()
+        dictionaryData["name"] = "Hector Rondon"
+        dictionary["input"] = dictionaryData as AnyObject
+        
+        Alamofire.request(Routers.addItems(ItemType.User, dictionary)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+            
+            XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
+            
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

@@ -112,14 +112,11 @@ class GlpiTests: XCTestCase {
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
             
-            if let theJSONData = try? JSONSerialization.data(
-                withJSONObject: dictionary,
-                options: []) {
-                let theJSONText = String(data: theJSONData,
-                                         encoding: .ascii)
-                print("JSON string = \(theJSONText!)")
-                XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", theJSONText)
-            }
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+
+            XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
+
             expectationResult.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)
@@ -146,6 +143,28 @@ class GlpiTests: XCTestCase {
         Alamofire.request(Routers.getActiveEntities).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    /// Test changeActiveEntities request
+    func testChangeActiveEntities() {
+        
+        let expectationResult = expectation(description: "changeActiveEntities")
+        
+        var dictionary = [String: AnyObject]()
+        dictionary["entities_id"] = 1 as AnyObject
+        
+        Alamofire.request(Routers.changeActiveEntities(dictionary)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+            
+            XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
+            
             expectationResult.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)

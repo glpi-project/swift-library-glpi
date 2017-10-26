@@ -41,6 +41,7 @@ class GlpiTests: XCTestCase {
         super.tearDown()
     }
     
+    /// Test initSession request
     func testInitSession() {
         
         let expectationResult = expectation(description: "initSession")
@@ -60,14 +61,27 @@ class GlpiTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    /// Test KillSession request
     func testKillSession() {
         
-        let expectationResult = expectation(description: "KillSession")
+        let expectationResult = expectation(description: "killSession")
         
         Alamofire.request(Routers.killSession).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
-            XCTAssertEqual(response.response?.statusCode ?? 0, 400)
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    /// Test getMyProfiles request
+    func testGetMyProfiles() {
+        
+        let expectationResult = expectation(description: "getMyProfiles")
+        
+        Alamofire.request(Routers.getMyProfiles).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)

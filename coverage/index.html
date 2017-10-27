@@ -8,7 +8,7 @@ layout: coverage
             <h2>Coverage</h2>
         </div>
         <div class="col-md-4 text-right">
-            <h2 class="text-right">0.0%</h2>
+            <h2 class="text-right">20.03%</h2>
         </div>
     </div>
         
@@ -18,7 +18,7 @@ layout: coverage
                     <h4>Glpi</h4>
                 </div>
                 <div class="col-md-4 text-right">
-                    <h4>0.0%</h4>
+                    <h4>20.03%</h4>
                 </div>
             </div>
             
@@ -33,7 +33,7 @@ layout: coverage
                                             <i class="glyph glyph-remove"></i>
                                         </div>
                                         <div class="col-md-8">
-                                            <a href="#">Routers.swift</a>
+                                            <a href="#">QueryString.swift</a>
                                         </div>
                                         <div class="col-md-6">
                                             swift
@@ -48,7 +48,7 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
-                                            Glpi.Routers.method.getter : Alamofire.HTTPMethod
+                                            Glpi.QueryString.init() -&gt; Glpi.QueryString
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
@@ -57,7 +57,7 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
-                                            Glpi.Routers.path.getter : Swift.String
+                                            Glpi.QueryString.GetAllItems.init() -&gt; Glpi.QueryString.GetAllItems
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
@@ -66,7 +66,7 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
-                                            Glpi.Routers.query.getter : Swift.String
+                                            Glpi.QueryString.GetAllItems.queryString.getter : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
@@ -75,7 +75,7 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
-                                            Glpi.Routers.header.getter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;
+                                            Glpi.QueryString.GetAnItem.init() -&gt; Glpi.QueryString.GetAnItem
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
@@ -84,7 +84,43 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
-                                            Glpi.Routers.asURLRequest() throws -&gt; Foundation.URLRequest
+                                            Glpi.QueryString.GetAnItem.queryString.getter : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.QueryString.GetSubItems.init() -&gt; Glpi.QueryString.GetSubItems
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.QueryString.GetSubItems.queryString.getter : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.QueryString.DeleteItems.init() -&gt; Glpi.QueryString.DeleteItems
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.QueryString.DeleteItems.queryString.getter : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
@@ -165,6 +201,15 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.changeActiveProfile(profileID: Swift.String, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
                                             static Glpi.GlpiRequest.getMyEntities(completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
                                             </div>
                                             <div class="col-md-4 text-right">
@@ -175,6 +220,15 @@ layout: coverage
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
                                             static Glpi.GlpiRequest.getActiveEntities(completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.changeActiveEntities(entitiesID: Swift.String, isRecursive: Swift.Bool, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
@@ -201,6 +255,78 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.getAllItems(itemType: Glpi.ItemType, queryString: Swift.Optional&lt;Glpi.QueryString.GetAllItems&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.getAnItem(itemType: Glpi.ItemType, itemID: Swift.Int, queryString: Swift.Optional&lt;Glpi.QueryString.GetAnItem&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.getSubItems(itemType: Glpi.ItemType, itemID: Swift.Int, subItemType: Glpi.ItemType, queryString: Swift.Optional&lt;Glpi.QueryString.GetSubItems&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.addItems(itemType: Glpi.ItemType, payload: Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.updateItems(itemType: Glpi.ItemType, itemID: Swift.Optional&lt;Swift.Int&gt;, payload: Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.deleteItems(itemType: Glpi.ItemType, itemID: Swift.Optional&lt;Swift.Int&gt;, queryString: Swift.Optional&lt;Glpi.QueryString.DeleteItems&gt;, payload: Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.lostPassword(email: Swift.String, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            static Glpi.GlpiRequest.resetPassword(payload: Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                0.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
                                             static Glpi.GlpiRequest.getMultipleItems(completion: (Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()
                                             </div>
                                             <div class="col-md-4 text-right">
@@ -210,10 +336,82 @@ layout: coverage
                                     
                                         <div class="row functions">
                                             <div class="col-md-18 col-md-offset-2">
-                                            static Glpi.GlpiRequest.handlerError(Alamofire.DataResponse&lt;Any&gt;) -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;
+                                            static Glpi.GlpiRequest.handlerError(Swift.Optional&lt;Foundation.Data&gt;) -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 0.0%
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                            </li>
+                        </ol>
+            
+            
+                        <ol class="list-items">
+                            <li class="list-items-row">
+                                <div data-toggle="collapse" aria-expanded="false" data-target="#list-item-line-3">
+                                    <div class="row">
+                                        <div class="col-md-2 col-md-offset-2">
+                                            <i class="glyph glyph-add"></i>
+                                            <i class="glyph glyph-remove"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <a href="#">Routers.swift</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            swift
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            77.7%
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="collapse" id="list-item-line-3">
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.Routers.method.getter : Alamofire.HTTPMethod
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                100.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.Routers.path.getter : Swift.String
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                81.63%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.Routers.query.getter : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                63.64%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.Routers.header.getter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                60.0%
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row functions">
+                                            <div class="col-md-18 col-md-offset-2">
+                                            Glpi.Routers.asURLRequest() throws -&gt; Foundation.URLRequest
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                100.0%
                                             </div>
                                         </div>
                                     

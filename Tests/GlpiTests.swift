@@ -199,7 +199,7 @@ class GlpiTests: XCTestCase {
     /// Test getAnItems request
     func testGetAnItems() {
         
-        let expectationResult = expectation(description: "getAllItems")
+        let expectationResult = expectation(description: "getAnItems")
         
         Alamofire.request(Routers.getAnItem(ItemType.Computer, 119, nil)).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
@@ -225,7 +225,7 @@ class GlpiTests: XCTestCase {
     /// Test addItems
     func testAddItems() {
         
-        let expectationResult = expectation(description: "getsubItems")
+        let expectationResult = expectation(description: "addItems")
         
         var dictionary = [String: AnyObject]()
         var dictionaryData = [String: String]()
@@ -249,7 +249,7 @@ class GlpiTests: XCTestCase {
     /// Test updateItems
     func testUpdateItems() {
         
-        let expectationResult = expectation(description: "getsubItems")
+        let expectationResult = expectation(description: "updateItems")
         
         var dictionary = [String: AnyObject]()
         var dictionaryData = [String: String]()
@@ -273,7 +273,7 @@ class GlpiTests: XCTestCase {
     /// Test deleteItems
     func testDeleteItems() {
         
-        let expectationResult = expectation(description: "getsubItems")
+        let expectationResult = expectation(description: "deleteItems")
         
         var dictionary = [String: AnyObject]()
         var dictionaryData = [String: Int]()
@@ -283,6 +283,27 @@ class GlpiTests: XCTestCase {
         Alamofire.request(Routers.deleteItems(ItemType.User, nil, nil, dictionary)).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "DELETE")
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+            
+            XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
+            
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    /// Test lostPassword
+    func testLostPassword() {
+        let expectationResult = expectation(description: "lostPassword")
+        
+        var dictionary = [String: AnyObject]()
+        dictionary["email"] = "flyve@hi2.in" as AnyObject
+        
+        Alamofire.request(Routers.lostPassword(dictionary)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "PUT")
             
             let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
             let jsonString = String(data: jsonData!, encoding: .utf8)!

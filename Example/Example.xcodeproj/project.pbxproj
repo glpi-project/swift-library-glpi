@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A142BF41FA3C13100E22BD6 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A142BF31FA3C13100E22BD6 /* ResponseController.swift */; };
 		0A3BB83F1F914BF80016FA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3BB83E1F914BF80016FA9E /* AppDelegate.swift */; };
 		0A3BB8411F914BF80016FA9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3BB8401F914BF80016FA9E /* ViewController.swift */; };
 		0A3BB8461F914BF80016FA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3BB8451F914BF80016FA9E /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A142BF31FA3C13100E22BD6 /* ResponseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		0A3BB83B1F914BF80016FA9E /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3BB83E1F914BF80016FA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A3BB8401F914BF80016FA9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				0A3BB83E1F914BF80016FA9E /* AppDelegate.swift */,
 				0A3BB8401F914BF80016FA9E /* ViewController.swift */,
+				0A142BF31FA3C13100E22BD6 /* ResponseController.swift */,
 				0AAE6D711F91505D003664C1 /* Supporting Files */,
 			);
 			path = Source;
@@ -232,6 +235,7 @@
 			files = (
 				0A3BB8411F914BF80016FA9E /* ViewController.swift in Sources */,
 				0A3BB83F1F914BF80016FA9E /* AppDelegate.swift in Sources */,
+				0A142BF41FA3C13100E22BD6 /* ResponseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
 				INFOPLIST_FILE = Source/Info.plist;
@@ -365,7 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.flyve.glpi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
 				INFOPLIST_FILE = Source/Info.plist;
@@ -381,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.flyve.glpi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

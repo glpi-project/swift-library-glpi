@@ -93,6 +93,20 @@ class ViewController: UIViewController {
             self.exampleTableView.reloadData()
         }
     }
+    
+    func requestKillSession() {
+        GlpiRequest.killSession(completion: { response in
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: response as Any, options: .prettyPrinted)
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+            
+            var responseAPIData = [String: String]()
+            responseAPIData["endpoint"] = "killSession"
+            responseAPIData["result"] = jsonString
+            self.responseAPI.append(responseAPIData as AnyObject)
+            self.exampleTableView.reloadData()
+        })
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -176,6 +190,8 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
             requestInitSession()
+        } else if indexPath.section == 0 && indexPath.row == 2 {
+            requestKillSession()
         } else if indexPath.section == 1 {
             showResponse(index: indexPath)
         }

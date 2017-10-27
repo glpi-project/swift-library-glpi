@@ -6,7 +6,7 @@ layout: jazzy
 <a title="GlpiRequest Class Reference"></a>
 <header>
   <div class="content-wrapper">
-    <p><a href="../index.html">Glpi Docs</a> (96% documented)</p>
+    <p><a href="../index.html">Glpi Docs</a> (11% documented)</p>
     <p class="header-right"><a href="$CIRCLE_REPOSITORY_URL"><img src="../img/gh.png"/>View on GitHub</a></p>
   </div>
 </header>
@@ -40,7 +40,19 @@ layout: jazzy
               <li class="active side-nav-c2">
                   <a href="../Enumerations.html">Enumerations</a>
                   <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="../Enums/ItemType.html">ItemType</a></li>
                         <li><a href="../Enums/Routers.html">Routers</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="../Structures.html">Structures</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="../Structs/QueryString.html">QueryString</a></li>
+                        <li><a href="../Structs/QueryString/orderType.html">– orderType</a></li>
+                        <li><a href="../Structs/QueryString/GetAllItems.html">– GetAllItems</a></li>
+                        <li><a href="../Structs/QueryString/GetAnItem.html">– GetAnItem</a></li>
+                        <li><a href="../Structs/QueryString/GetSubItems.html">– GetSubItems</a></li>
+                        <li><a href="../Structs/QueryString/DeleteItems.html">– DeleteItems</a></li>
                   </ul>
               </li>
   </div>
@@ -193,6 +205,33 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
+                  <a name="/s:4Glpi0A7RequestC19changeActiveProfileySS9profileID_yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/changeActiveProfile(profileID:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC19changeActiveProfileySS9profileID_yypSgc10completiontFZ">changeActiveProfile(profileID:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request change active profile</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">changeActiveProfile</span><span class="p">(</span><span class="nv">profileID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
                   <a name="/s:4Glpi0A7RequestC13getMyEntitiesyyypSgc10completion_tFZ"></a>
                   <a name="//apple_ref/swift/Method/getMyEntities(completion:)" class="dashAnchor"></a>
                   <a class="token" href="#/s:4Glpi0A7RequestC13getMyEntitiesyyypSgc10completion_tFZ">getMyEntities(completion:)</a>
@@ -238,6 +277,33 @@ layout: jazzy
                       <div class="language">
                         <p class="aside-title">Swift</p>
                         <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getActiveEntities</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC20changeActiveEntitiesySS10entitiesID_Sb11isRecursiveyypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/changeActiveEntities(entitiesID:isRecursive:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC20changeActiveEntitiesySS10entitiesID_Sb11isRecursiveyypSgc10completiontFZ">changeActiveEntities(entitiesID:isRecursive:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request change active entities</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">changeActiveEntities</span><span class="p">(</span><span class="nv">entitiesID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isRecursive</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -301,6 +367,222 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
+                  <a name="/s:4Glpi0A7RequestC11getAllItemsyAA8ItemTypeO04itemG0_AA11QueryStringV03GetdE0VSg05queryJ0yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/getAllItems(itemType:queryString:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC11getAllItemsyAA8ItemTypeO04itemG0_AA11QueryStringV03GetdE0VSg05queryJ0yypSgc10completiontFZ">getAllItems(itemType:queryString:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request get all items</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAllItems</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetAllItems</span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC9getAnItemyAA0E4TypeO04itemF0_Si0G2IDAA11QueryStringV03GetdE0VSg05queryJ0yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/getAnItem(itemType:itemID:queryString:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC9getAnItemyAA0E4TypeO04itemF0_Si0G2IDAA11QueryStringV03GetdE0VSg05queryJ0yypSgc10completiontFZ">getAnItem(itemType:itemID:queryString:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request get an item</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAnItem</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetAnItem</span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC11getSubItemsyAA8ItemTypeO04itemG0_Si0H2IDAF03subfG0AA11QueryStringV03GetdE0VSg05queryL0yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/getSubItems(itemType:itemID:subItemType:queryString:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC11getSubItemsyAA8ItemTypeO04itemG0_Si0H2IDAF03subfG0AA11QueryStringV03GetdE0VSg05queryL0yypSgc10completiontFZ">getSubItems(itemType:itemID:subItemType:queryString:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request get an item</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSubItems</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">subItemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetSubItems</span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC8addItemsyAA8ItemTypeO04itemF0_s10DictionaryVySSyXlG7payloadyypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/addItems(itemType:payload:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC8addItemsyAA8ItemTypeO04itemF0_s10DictionaryVySSyXlG7payloadyypSgc10completiontFZ">addItems(itemType:payload:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request Add Items</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">addItems</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC11updateItemsyAA8ItemTypeO04itemF0_SiSg0G2IDs10DictionaryVySSyXlG7payloadyypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/updateItems(itemType:itemID:payload:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC11updateItemsyAA8ItemTypeO04itemF0_SiSg0G2IDs10DictionaryVySSyXlG7payloadyypSgc10completiontFZ">updateItems(itemType:itemID:payload:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request Update Items</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateItems</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC11deleteItemsyAA8ItemTypeO04itemF0_SiSg0G2IDAA11QueryStringV06DeleteD0VSg05queryJ0s10DictionaryVySSyXlG7payloadyypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/deleteItems(itemType:itemID:queryString:payload:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC11deleteItemsyAA8ItemTypeO04itemF0_SiSg0G2IDAA11QueryStringV06DeleteD0VSg05queryJ0s10DictionaryVySSyXlG7payloadyypSgc10completiontFZ">deleteItems(itemType:itemID:queryString:payload:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request Delete Items</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteItems</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">DeleteItems</span><span class="p">?,</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC12lostPasswordySS5email_yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/lostPassword(email:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC12lostPasswordySS5email_yypSgc10completiontFZ">lostPassword(email:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request Lost password</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">lostPassword</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi0A7RequestC13resetPasswordys10DictionaryVySSyXlG7payload_yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/resetPassword(payload:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC13resetPasswordys10DictionaryVySSyXlG7payload_yypSgc10completiontFZ">resetPassword(payload:completion:)</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>Request reset password</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">resetPassword</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+              <li class="item">
+                <div>
+                  <code>
                   <a name="/s:4Glpi0A7RequestC16getMultipleItemsyyypSgc10completion_tFZ"></a>
                   <a name="//apple_ref/swift/Method/getMultipleItems(completion:)" class="dashAnchor"></a>
                   <a class="token" href="#/s:4Glpi0A7RequestC16getMultipleItemsyyypSgc10completion_tFZ">getMultipleItems(completion:)</a>
@@ -328,9 +610,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC12handlerErrors10DictionaryVyS2SG9Alamofire12DataResponseVyypGFZ"></a>
+                  <a name="/s:4Glpi0A7RequestC12handlerErrors10DictionaryVyS2SG10Foundation4DataVSgFZ"></a>
                   <a name="//apple_ref/swift/Method/handlerError(_:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC12handlerErrors10DictionaryVyS2SG9Alamofire12DataResponseVyypGFZ">handlerError(_:)</a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC12handlerErrors10DictionaryVyS2SG10Foundation4DataVSgFZ">handlerError(_:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -349,7 +631,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">handlerError</span><span class="p">(</span><span class="n">_</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">DataResponse</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">handlerError</span><span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
 
                       </div>
                     </div>

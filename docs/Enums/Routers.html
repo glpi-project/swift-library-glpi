@@ -6,7 +6,7 @@ layout: jazzy
 <a title="Routers Enumeration Reference"></a>
 <header>
   <div class="content-wrapper">
-    <p><a href="../index.html">Glpi Docs</a> (96% documented)</p>
+    <p><a href="../index.html">Glpi Docs</a> (11% documented)</p>
     <p class="header-right"><a href="$CIRCLE_REPOSITORY_URL"><img src="../img/gh.png"/>View on GitHub</a></p>
   </div>
 </header>
@@ -40,7 +40,19 @@ layout: jazzy
               <li class="active side-nav-c2">
                   <a href="../Enumerations.html">Enumerations</a>
                   <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="../Enums/ItemType.html">ItemType</a></li>
                         <li><a href="../Enums/Routers.html">Routers</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="../Structures.html">Structures</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="../Structs/QueryString.html">QueryString</a></li>
+                        <li><a href="../Structs/QueryString/orderType.html">– orderType</a></li>
+                        <li><a href="../Structs/QueryString/GetAllItems.html">– GetAllItems</a></li>
+                        <li><a href="../Structs/QueryString/GetAnItem.html">– GetAnItem</a></li>
+                        <li><a href="../Structs/QueryString/GetSubItems.html">– GetSubItems</a></li>
+                        <li><a href="../Structs/QueryString/DeleteItems.html">– DeleteItems</a></li>
                   </ul>
               </li>
   </div>
@@ -219,6 +231,37 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
+                  <a name="/s:4Glpi7RoutersO19changeActiveProfileACs10DictionaryVySSyXlGcACmF"></a>
+                  <a name="//apple_ref/swift/Element/changeActiveProfile" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO19changeActiveProfileACs10DictionaryVySSyXlGcACmF">changeActiveProfile</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>POST /changeActiveProfile</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">changeActiveProfile</span><span class="p">([</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
                   <a name="/s:4Glpi7RoutersO13getMyEntitiesA2CmF"></a>
                   <a name="//apple_ref/swift/Element/getMyEntities" class="dashAnchor"></a>
                   <a class="token" href="#/s:4Glpi7RoutersO13getMyEntitiesA2CmF">getMyEntities</a>
@@ -268,6 +311,37 @@ layout: jazzy
                       <div class="language">
                         <p class="aside-title">Swift</p>
                         <pre class="highlight"><code><span class="k">case</span> <span class="n">getActiveEntities</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO20changeActiveEntitiesACs10DictionaryVySSyXlGcACmF"></a>
+                  <a name="//apple_ref/swift/Element/changeActiveEntities" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO20changeActiveEntitiesACs10DictionaryVySSyXlGcACmF">changeActiveEntities</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>POST /changeActiveEntities</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">changeActiveEntities</span><span class="p">([</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span></code></pre>
 
                       </div>
                     </div>
@@ -343,6 +417,99 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
+                  <a name="/s:4Glpi7RoutersO11getAllItemsAcA8ItemTypeO_AA11QueryStringV03GetdE0VSgtcACmF"></a>
+                  <a name="//apple_ref/swift/Element/getAllItems" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO11getAllItemsAcA8ItemTypeO_AA11QueryStringV03GetdE0VSgtcACmF">getAllItems</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>GET /:itemtype</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">getAllItems</span><span class="p">(</span><span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetAllItems</span><span class="p">?)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO9getAnItemAcA0E4TypeO_SiAA11QueryStringV03GetdE0VSgtcACmF"></a>
+                  <a name="//apple_ref/swift/Element/getAnItem" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO9getAnItemAcA0E4TypeO_SiAA11QueryStringV03GetdE0VSgtcACmF">getAnItem</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>GET /:itemtype/:id</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">getAnItem</span><span class="p">(</span><span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetAnItem</span><span class="p">?)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO11getSubItemsAcA8ItemTypeO_SiAfA11QueryStringV03GetdE0VSgtcACmF"></a>
+                  <a name="//apple_ref/swift/Element/getSubItems" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO11getSubItemsAcA8ItemTypeO_SiAfA11QueryStringV03GetdE0VSgtcACmF">getSubItems</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>GET /:itemtype/:id/:sub_itemtype</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">getSubItems</span><span class="p">(</span><span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetSubItems</span><span class="p">?)</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
                   <a name="/s:4Glpi7RoutersO16getMultipleItemsA2CmF"></a>
                   <a name="//apple_ref/swift/Element/getMultipleItems" class="dashAnchor"></a>
                   <a class="token" href="#/s:4Glpi7RoutersO16getMultipleItemsA2CmF">getMultipleItems</a>
@@ -361,6 +528,130 @@ layout: jazzy
                       <div class="language">
                         <p class="aside-title">Swift</p>
                         <pre class="highlight"><code><span class="k">case</span> <span class="n">getMultipleItems</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO8addItemsAcA8ItemTypeO_s10DictionaryVySSyXlGtcACmF"></a>
+                  <a name="//apple_ref/swift/Element/addItems" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO8addItemsAcA8ItemTypeO_s10DictionaryVySSyXlGtcACmF">addItems</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>POST /:itemtype</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">addItems</span><span class="p">(</span><span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO11updateItemsAcA8ItemTypeO_SiSgs10DictionaryVySSyXlGtcACmF"></a>
+                  <a name="//apple_ref/swift/Element/updateItems" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO11updateItemsAcA8ItemTypeO_SiSgs10DictionaryVySSyXlGtcACmF">updateItems</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>PUT /:itemtype/:id</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">updateItems</span><span class="p">(</span><span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">?,</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO11deleteItemsAcA8ItemTypeO_SiSgAA11QueryStringV06DeleteD0VSgs10DictionaryVySSyXlGtcACmF"></a>
+                  <a name="//apple_ref/swift/Element/deleteItems" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO11deleteItemsAcA8ItemTypeO_SiSgAA11QueryStringV06DeleteD0VSgs10DictionaryVySSyXlGtcACmF">deleteItems</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>DELETE /:itemtype/:id</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">deleteItems</span><span class="p">(</span><span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">?,</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">DeleteItems</span><span class="p">?,</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span></code></pre>
+
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="task-group">
+            <ul>
+              <li class="item">
+                <div>
+                  <code>
+                  <a name="/s:4Glpi7RoutersO12lostPasswordACs10DictionaryVySSyXlGcACmF"></a>
+                  <a name="//apple_ref/swift/Element/lostPassword" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi7RoutersO12lostPasswordACs10DictionaryVySSyXlGcACmF">lostPassword</a>
+                  </code>
+                </div>
+                <div class="height-container">
+                  <div class="pointer-container"></div>
+                  <section class="section">
+                    <div class="pointer"></div>
+                    <div class="abstract">
+                      <p>PUT /lostPassword</p>
+
+                    </div>
+                    <div class="declaration">
+                      <h4>Declaration</h4>
+                      <div class="language">
+                        <p class="aside-title">Swift</p>
+                        <pre class="highlight"><code><span class="k">case</span> <span class="nf">lostPassword</span><span class="p">([</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span></code></pre>
 
                       </div>
                     </div>
@@ -428,9 +719,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi7RoutersO5querySSv"></a>
+                  <a name="/s:4Glpi7RoutersO5querys10DictionaryVySSyXlGSgv"></a>
                   <a name="//apple_ref/swift/Property/query" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi7RoutersO5querySSv">query</a>
+                  <a class="token" href="#/s:4Glpi7RoutersO5querys10DictionaryVySSyXlGSgv">query</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -445,7 +736,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="k">var</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                        <pre class="highlight"><code><span class="k">var</span> <span class="nv">query</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?</span></code></pre>
 
                       </div>
                     </div>

@@ -314,4 +314,27 @@ class GlpiTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test resetPassword
+    func testResetPassword() {
+        let expectationResult = expectation(description: "resetPassword")
+        
+        var dictionary = [String: AnyObject]()
+        dictionary["email"] = "flyve@hi2.in" as AnyObject
+        dictionary["password_forget_token"] = "941891fcf47581084d43d2dec49b1c43a58380f4" as AnyObject
+        dictionary["password"] = "12345678" as AnyObject
+        
+        Alamofire.request(Routers.lostPassword(dictionary)).response { response in
+            XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
+            XCTAssertEqual(response.request?.httpMethod ?? "", "PUT")
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)!
+            
+            XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
+            
+            expectationResult.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

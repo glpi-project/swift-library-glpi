@@ -420,7 +420,11 @@ public class GlpiRequest {
         var errorDict = [String: String]()
         
         if let data = error {
-            errorObj = try! JSONSerialization.jsonObject(with: data) as? [String] ?? [String]()
+            do {
+                errorObj = try JSONSerialization.jsonObject(with: data) as? [String] ?? [String]()
+            } catch {
+                errorObj = [String]()
+            }
         }
         
         if errorObj.count == 2 {

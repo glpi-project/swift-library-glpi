@@ -81,10 +81,18 @@ class ViewController: UIViewController {
     }
     
     func objectToString(_ object: Any) -> String {
-        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
-        let jsonString = String(data: jsonData!, encoding: .utf8)!
-        
-        return jsonString
+        if let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) {
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                return jsonString
+            } else {
+                print(object)
+                return ""
+            }
+            
+        } else {
+            print(object)
+            return ""
+        }
     }
     
     func loadResponse(endpoint: String, result: String) {
@@ -97,12 +105,57 @@ class ViewController: UIViewController {
     
     func requestInitSession() {
         GlpiRequest.initSession(userToken: "L8B3f4iiNIjg8W2Kla1AXFjJsYrWxVqDozMzq2G7") { response in
+            self.responseAPI = [AnyObject]()
             self.loadResponse(endpoint: "initSession", result: self.objectToString(response as Any))
         }
     }
     
+    func requestAllAPIs() {
+        GlpiRequest.getMyProfiles { response in
+            self.loadResponse(endpoint: "getMyProfiles", result: self.objectToString(response as Any))
+        }
+        
+        GlpiRequest.getActiveProfile { response in
+            self.loadResponse(endpoint: "getActiveProfile", result: self.objectToString(response as Any))
+            
+            GlpiRequest.changeActiveProfile(profileID: "4", completion: { _ in
+                self.loadResponse(endpoint: "changeActiveProfile", result: "")
+            })
+        }
+        
+        GlpiRequest.getMyEntities { response in
+            self.loadResponse(endpoint: "getMyEntities", result: self.objectToString(response as Any))
+        }
+        
+        GlpiRequest.getActiveEntities { response in
+            self.loadResponse(endpoint: "getActiveEntities", result: self.objectToString(response as Any))
+            
+            GlpiRequest.changeActiveEntities(entitiesID: "0", completion: { response in
+                self.loadResponse(endpoint: "changeActiveEntities", result: self.objectToString(response as Any))
+            })
+        }
+        
+        GlpiRequest.getFullSession { response in
+            self.loadResponse(endpoint: "getFullSession", result: self.objectToString(response as Any))
+        }
+        
+        GlpiRequest.getAllItems(itemType: .Computer, queryString: nil) { response in
+            self.loadResponse(endpoint: "getAllItems", result: self.objectToString(response as Any))
+        }
+        
+        GlpiRequest.getAnItem(itemType: .Computer, itemID: 3, queryString: nil) { response in
+            self.loadResponse(endpoint: "getAnItem", result: self.objectToString(response as Any))
+        }
+        
+        GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel, queryString: nil) { response in
+            self.loadResponse(endpoint: "getSubItems", result: self.objectToString(response as Any))
+        }
+        
+    }
+    
     func requestKillSession() {
         GlpiRequest.killSession(completion: { response in
+            self.responseAPI = [AnyObject]()
             self.loadResponse(endpoint: "killSession", result: self.objectToString(response as Any))
         })
     }
@@ -189,6 +242,8 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
             requestInitSession()
+        } else if indexPath.section == 0 && indexPath.row == 1 {
+            requestAllAPIs()
         } else if indexPath.section == 0 && indexPath.row == 2 {
             requestKillSession()
         } else if indexPath.section == 1 {

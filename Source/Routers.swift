@@ -34,9 +34,9 @@ import Alamofire
 public enum Routers: URLRequestConvertible {
 
     /// GET /initSession
-    case initSession(String, String)
+    case initSessionByUserToken(String, String)
     /// GET /initSession
-    case initSessionByBasicAuth(String, String, String)
+    case initSessionByCredentials(String, String, String)
     /// GET /killSession
     case killSession
     /// GET /getMyProfiles
@@ -58,7 +58,7 @@ public enum Routers: URLRequestConvertible {
     /// GET /:itemtype
     case getAllItems(ItemType, QueryString.GetAllItems?)
     /// GET /:itemtype/:id
-    case getAnItem(ItemType, Int, QueryString.GetAnItem?)
+    case getItem(ItemType, Int, QueryString.GetAnItem?)
     /// GET /:itemtype/:id/:sub_itemtype
     case getSubItems(ItemType, Int, ItemType, QueryString.GetSubItems?)
     /// GET /getMultipleItems
@@ -75,9 +75,9 @@ public enum Routers: URLRequestConvertible {
     /// get HTTP Method
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
+        case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
-             .getMultipleItems, .getAllItems, .getAnItem, .getSubItems:
+             .getMultipleItems, .getAllItems, .getItem, .getSubItems:
             return .get
         case .changeActiveProfile, .changeActiveEntities, .addItems:
             return .post
@@ -92,7 +92,7 @@ public enum Routers: URLRequestConvertible {
     var path: String {
         
         switch self {
-        case .initSession, .initSessionByBasicAuth:
+        case .initSessionByUserToken, .initSessionByCredentials:
             return "/initSession"
         case .killSession:
             return "/killSession"
@@ -114,7 +114,7 @@ public enum Routers: URLRequestConvertible {
             return "/getGlpiConfig"
         case .getAllItems(let itemType, _):
             return "/\(itemType)"
-        case .getAnItem(let itemType, let itemID, _):
+        case .getItem(let itemType, let itemID, _):
             return "/\(itemType)/\(itemID)"
         case .getSubItems(let itemType, let itemID, let subItemType, _):
             return "/\(itemType)/\(itemID)/\(subItemType)"
@@ -143,7 +143,7 @@ public enum Routers: URLRequestConvertible {
     var query: [String: AnyObject]? {
         
         switch self {
-        case .initSession, .initSessionByBasicAuth, .killSession, .getMyProfiles, .getActiveProfile,
+        case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
              .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword:
            return  nil
@@ -153,7 +153,7 @@ public enum Routers: URLRequestConvertible {
             } else {
                 return nil
             }
-        case .getAnItem(_, _, let queryString):
+        case .getItem(_, _, let queryString):
             if queryString != nil {
                 return queryString?.queryString
             } else {
@@ -181,7 +181,7 @@ public enum Routers: URLRequestConvertible {
         dictHeader["Content-Type"] = "application/json"
         
         switch self {
-        case .initSession(let userToken, let appToken) :
+        case .initSessionByUserToken(let userToken, let appToken) :
 
             dictHeader["Authorization"] = "user_token \(userToken)"
             
@@ -189,7 +189,7 @@ public enum Routers: URLRequestConvertible {
                 dictHeader["App-Token"] = appToken
             }
             return dictHeader
-        case .initSessionByBasicAuth(let user, let password, let appToken):
+        case .initSessionByCredentials(let user, let password, let appToken):
             let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
             let base64Credentials = credentialData.base64EncodedString()
             
@@ -225,7 +225,7 @@ public enum Routers: URLRequestConvertible {
         switch self {
         case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters):
             return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
-        case .getAllItems, .getAnItem, .getSubItems:
+        case .getAllItems, .getItem, .getSubItems:
             return try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
         case .deleteItems(_, _, _, let parameters):
             let request = try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())

@@ -80,31 +80,30 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(responseController, animated: true)
     }
     
+    func objectToString(_ object: Any) -> String {
+        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
+        let jsonString = String(data: jsonData!, encoding: .utf8)!
+        
+        return jsonString
+    }
+    
+    func loadResponse(endpoint: String, result: String) {
+        var responseAPIData = [String: String]()
+        responseAPIData["endpoint"] = endpoint
+        responseAPIData["result"] = result
+        self.responseAPI.append(responseAPIData as AnyObject)
+        self.exampleTableView.reloadData()
+    }
+    
     func requestInitSession() {
         GlpiRequest.initSession(userToken: "L8B3f4iiNIjg8W2Kla1AXFjJsYrWxVqDozMzq2G7") { response in
-            
-            let jsonData = try? JSONSerialization.data(withJSONObject: response as Any, options: .prettyPrinted)
-            let jsonString = String(data: jsonData!, encoding: .utf8)!
-            
-            var responseAPIData = [String: String]()
-            responseAPIData["endpoint"] = "initSession"
-            responseAPIData["result"] = jsonString
-            self.responseAPI.append(responseAPIData as AnyObject)
-            self.exampleTableView.reloadData()
+            self.loadResponse(endpoint: "initSession", result: self.objectToString(response as Any))
         }
     }
     
     func requestKillSession() {
         GlpiRequest.killSession(completion: { response in
-            
-            let jsonData = try? JSONSerialization.data(withJSONObject: response as Any, options: .prettyPrinted)
-            let jsonString = String(data: jsonData!, encoding: .utf8)!
-            
-            var responseAPIData = [String: String]()
-            responseAPIData["endpoint"] = "killSession"
-            responseAPIData["result"] = jsonString
-            self.responseAPI.append(responseAPIData as AnyObject)
-            self.exampleTableView.reloadData()
+            self.loadResponse(endpoint: "killSession", result: self.objectToString(response as Any))
         })
     }
 }

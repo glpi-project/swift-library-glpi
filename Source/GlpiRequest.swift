@@ -40,9 +40,9 @@ public class GlpiRequest {
      - parameter: user token
      - parameter: app token (optional)
      */
-    class public func initSession(userToken: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
+    class public func initSessionByUserToken(userToken: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
 
-        Alamofire.request(Routers.initSession(userToken, appToken))
+        Alamofire.request(Routers.initSessionByUserToken(userToken, appToken))
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -66,9 +66,9 @@ public class GlpiRequest {
      - parameter: password
      - parameter: app token (optional)
      */
-    class public func initSession(user: String, password: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
+    class public func initSessionByCredentials(user: String, password: String, appToken: String = "", completion: @escaping (_ result: Any?) -> Void) {
         
-        Alamofire.request(Routers.initSessionByBasicAuth(user, password, appToken))
+        Alamofire.request(Routers.initSessionByCredentials(user, password, appToken))
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -274,9 +274,9 @@ public class GlpiRequest {
     /**
      Request get an item
      */
-    class public func getAnItem(itemType: ItemType, itemID: Int, queryString: QueryString.GetAnItem?, completion: @escaping (_ result: Any?) -> Void) {
+    class public func getItem(itemType: ItemType, itemID: Int, queryString: QueryString.GetAnItem?, completion: @escaping (_ result: Any?) -> Void) {
         
-        Alamofire.request(Routers.getAnItem(itemType, itemID, queryString))
+        Alamofire.request(Routers.getItem(itemType, itemID, queryString))
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -359,7 +359,7 @@ public class GlpiRequest {
     /**
      Request Lost password
      */
-    class public func lostPassword(email: String, completion: @escaping (_ result: Any?) -> Void) {
+    class public func recoveryPassword(email: String, completion: @escaping (_ result: Any?) -> Void) {
         
         var dictionary = [String: AnyObject]()
         dictionary["email"] = email as AnyObject

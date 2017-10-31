@@ -113,7 +113,7 @@ public class GlpiRequest {
     /**
      Request kill current session
      */
-    class public func killSession(completion: @escaping (_ result: AnyObject?) -> AnyObject) {
+    class public func killSession(completion: @escaping (_ result: AnyObject?) -> Void) {
         
         let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.killSession.request()) { (data, response, error) in
             

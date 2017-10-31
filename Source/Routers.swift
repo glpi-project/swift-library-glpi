@@ -228,18 +228,9 @@ public enum Routers: URLRequestDelegate {
         }
         
         switch self {
-        case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters):
+        case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters), .deleteItems(_, _, _, let parameters):
 
-            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) {
-                if let jsonString = String(data: jsonData, encoding: .utf8) {
-                    print(jsonString)
-                    urlRequest.httpBody = jsonString.data(using: .utf8)
-                }
-            }
-            return urlRequest
-
-        case .deleteItems(_, _, _, let parameters):
-            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) {
+            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
                 if let jsonString = String(data: jsonData, encoding: .utf8) {
                     print(jsonString)
                     urlRequest.httpBody = jsonString.data(using: .utf8)

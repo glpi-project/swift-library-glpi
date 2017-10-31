@@ -46,6 +46,36 @@ platform :ios do
     xcov_report    
   end
 
+  desc "Submit a new demo Build to Apple TestFlight"
+  lane :demo do
+    $lane_active = "Demo"
+    # Fetch provisioning profile
+    # sigh
+    sigh(
+      adhoc: false
+    )
+  
+    # Build
+    gym(
+      # app_identifier: "org.glpi-project.api-client-demo",
+      workspace: "Glpi.xcworkspace",#ENV["XCODE_WORKSPACE_DEMO"]
+      scheme: "Example",#ENV["XCODE_SCHEME_DEMO"],
+      configuration: "Release",
+      sdk: "iphoneos11.0",
+      clean: true,
+      include_bitcode: true,
+      include_symbols: true,
+      export_method: "app-store",
+      buildlog_path: 'fastlane/logs'
+    )
+
+    # TestFlight upload
+    pilot(
+      app_identifier: "org.glpi-project.api-client-demo",#ENV["APP_IDENTIFIER"],
+      skip_waiting_for_build_processing: true
+    )
+  end
+
   after_all do |lane|
     telegram(
         url_horn: ENV["TELEGRAM_WEBHOOKS"],

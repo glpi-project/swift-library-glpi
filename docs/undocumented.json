@@ -2638,6 +2638,83 @@
       "symbol": "QueryString.DeleteItems.queryString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 32,
+      "symbol": "Routers",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 255,
+      "symbol": "HTTPMethod",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 257,
+      "symbol": "HTTPMethod.options",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 259,
+      "symbol": "HTTPMethod.get",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 261,
+      "symbol": "HTTPMethod.head",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 263,
+      "symbol": "HTTPMethod.post",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 265,
+      "symbol": "HTTPMethod.put",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 267,
+      "symbol": "HTTPMethod.patch",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 269,
+      "symbol": "HTTPMethod.delete",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 271,
+      "symbol": "HTTPMethod.trace",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/swift-library-glpi/Source/Routers.swift",
+      "line": 273,
+      "symbol": "HTTPMethod.connect",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/distiller/swift-library-glpi"

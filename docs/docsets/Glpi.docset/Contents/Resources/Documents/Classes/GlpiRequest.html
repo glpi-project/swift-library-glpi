@@ -40,8 +40,15 @@ layout: jazzy
               <li class="active side-nav-c2">
                   <a href="../Enumerations.html">Enumerations</a>
                   <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="../Enums/HTTPMethod.html">HTTPMethod</a></li>
                         <li><a href="../Enums/ItemType.html">ItemType</a></li>
                         <li><a href="../Enums/Routers.html">Routers</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="../Protocols.html">Protocols</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="../Protocols/URLRequestDelegate.html">URLRequestDelegate</a></li>
                   </ul>
               </li>
               <li class="active side-nav-c2">
@@ -61,6 +68,12 @@ layout: jazzy
       <section>
         <section class="">
           <h2>GlpiRequest</h2>
+            <div class="declaration">
+              <div class="language">
+                <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">GlpiRequest</span></code></pre>
+
+              </div>
+            </div>
           <p>Undocumented</p>
 
         </section>
@@ -70,9 +83,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC11initSessionySS9userToken_SS03appF0yypSgc10completiontFZ"></a>
-                  <a name="//apple_ref/swift/Method/initSession(userToken:appToken:completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC11initSessionySS9userToken_SS03appF0yypSgc10completiontFZ">initSession(userToken:appToken:completion:)</a>
+                  <a name="/s:4Glpi0A7RequestC22initSessionByUserTokenySS04userG0_SS03appG0yyXlSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/initSessionByUserToken(userToken:appToken:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC22initSessionByUserTokenySS04userG0_SS03appG0yyXlSgc10completiontFZ">initSessionByUserToken(userToken:appToken:completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -87,7 +100,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">initSession</span><span class="p">(</span><span class="nv">userToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appToken</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">initSessionByUserToken</span><span class="p">(</span><span class="nv">userToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appToken</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -97,9 +110,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC11initSessionySS4user_SS8passwordSS8appTokenyypSgc10completiontFZ"></a>
-                  <a name="//apple_ref/swift/Method/initSession(user:password:appToken:completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC11initSessionySS4user_SS8passwordSS8appTokenyypSgc10completiontFZ">initSession(user:password:appToken:completion:)</a>
+                  <a name="/s:4Glpi0A7RequestC24initSessionByCredentialsySS4user_SS8passwordSS8appTokenyyXlSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/initSessionByCredentials(user:password:appToken:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC24initSessionByCredentialsySS4user_SS8passwordSS8appTokenyyXlSgc10completiontFZ">initSessionByCredentials(user:password:appToken:completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -114,7 +127,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">initSession</span><span class="p">(</span><span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appToken</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">initSessionByCredentials</span><span class="p">(</span><span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appToken</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -124,9 +137,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC11killSessionyyypSgc10completion_tFZ"></a>
+                  <a name="/s:4Glpi0A7RequestC11killSessionyyyXlSgc10completion_tFZ"></a>
                   <a name="//apple_ref/swift/Method/killSession(completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC11killSessionyyypSgc10completion_tFZ">killSession(completion:)</a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC11killSessionyyyXlSgc10completion_tFZ">killSession(completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -141,7 +154,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">killSession</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">killSession</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -151,9 +164,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC13getMyProfilesyyypSgc10completion_tFZ"></a>
+                  <a name="/s:4Glpi0A7RequestC13getMyProfilesyyyXlSgc10completion_tFZ"></a>
                   <a name="//apple_ref/swift/Method/getMyProfiles(completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC13getMyProfilesyyypSgc10completion_tFZ">getMyProfiles(completion:)</a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC13getMyProfilesyyyXlSgc10completion_tFZ">getMyProfiles(completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -168,7 +181,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMyProfiles</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMyProfiles</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -286,9 +299,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC20changeActiveEntitiesySS10entitiesID_Sb11isRecursiveyypSgc10completiontFZ"></a>
+                  <a name="/s:4Glpi0A7RequestC20changeActiveEntitiesySS10entitiesID_Sb11isRecursiveyyXlSgc10completiontFZ"></a>
                   <a name="//apple_ref/swift/Method/changeActiveEntities(entitiesID:isRecursive:completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC20changeActiveEntitiesySS10entitiesID_Sb11isRecursiveyypSgc10completiontFZ">changeActiveEntities(entitiesID:isRecursive:completion:)</a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC20changeActiveEntitiesySS10entitiesID_Sb11isRecursiveyyXlSgc10completiontFZ">changeActiveEntities(entitiesID:isRecursive:completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -303,7 +316,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">changeActiveEntities</span><span class="p">(</span><span class="nv">entitiesID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isRecursive</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">changeActiveEntities</span><span class="p">(</span><span class="nv">entitiesID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isRecursive</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -394,9 +407,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC9getAnItemyAA0E4TypeO04itemF0_Si0G2IDAA11QueryStringV03GetdE0VSg05queryJ0yypSgc10completiontFZ"></a>
-                  <a name="//apple_ref/swift/Method/getAnItem(itemType:itemID:queryString:completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC9getAnItemyAA0E4TypeO04itemF0_Si0G2IDAA11QueryStringV03GetdE0VSg05queryJ0yypSgc10completiontFZ">getAnItem(itemType:itemID:queryString:completion:)</a>
+                  <a name="/s:4Glpi0A7RequestC7getItemyAA0D4TypeO04itemE0_Si0F2IDAA11QueryStringV05GetAnD0VSg05queryI0yyXlSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/getItem(itemType:itemID:queryString:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC7getItemyAA0D4TypeO04itemE0_Si0F2IDAA11QueryStringV05GetAnD0VSg05queryI0yyXlSgc10completiontFZ">getItem(itemType:itemID:queryString:completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -411,7 +424,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAnItem</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetAnItem</span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getItem</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ItemType.html">ItemType</a></span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="kt"><a href="../Structs/QueryString.html">QueryString</a></span><span class="o">.</span><span class="kt">GetAnItem</span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>
@@ -529,9 +542,9 @@ layout: jazzy
               <li class="item">
                 <div>
                   <code>
-                  <a name="/s:4Glpi0A7RequestC12lostPasswordySS5email_yypSgc10completiontFZ"></a>
-                  <a name="//apple_ref/swift/Method/lostPassword(email:completion:)" class="dashAnchor"></a>
-                  <a class="token" href="#/s:4Glpi0A7RequestC12lostPasswordySS5email_yypSgc10completiontFZ">lostPassword(email:completion:)</a>
+                  <a name="/s:4Glpi0A7RequestC16recoveryPasswordySS5email_yypSgc10completiontFZ"></a>
+                  <a name="//apple_ref/swift/Method/recoveryPassword(email:completion:)" class="dashAnchor"></a>
+                  <a class="token" href="#/s:4Glpi0A7RequestC16recoveryPasswordySS5email_yypSgc10completiontFZ">recoveryPassword(email:completion:)</a>
                   </code>
                 </div>
                 <div class="height-container">
@@ -546,7 +559,7 @@ layout: jazzy
                       <h4>Declaration</h4>
                       <div class="language">
                         <p class="aside-title">Swift</p>
-                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">lostPassword</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                        <pre class="highlight"><code><span class="kd">class</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">recoveryPassword</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                       </div>
                     </div>

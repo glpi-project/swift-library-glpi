@@ -2,6 +2,8 @@ machine:
   environment:
     XCODE_SCHEME: Glpi
     XCODE_PROJECT: Glpi.xcodeproj
+    XCODE_SCHEME_DEMO: Example
+    XCODE_PROJECT_DEMO: Example.xcodeproj
     SCRIPT_PATH: ./ci/scripts
     GITHUB_REPO_SLUG: flyve-mdm/ios-library-glpi
   xcode:

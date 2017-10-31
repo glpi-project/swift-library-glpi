@@ -1,6 +1,6 @@
 //
 /*
- * Copyright © 2017 Teclib. All rights reserved.
+ * LICENSE
  *
  * Routers.swift is part of the GLPI API Client Library for Swift,
  * a subproject of GLPI. GLPI is a free IT Asset Management.
@@ -17,22 +17,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ------------------------------------------------------------------------------
- * @author    Hector Rondon - <hrondon@teclib.com>
- * @date      18/10/17
- * @copyright (C) 2017 Teclib' and contributors
+ * @author    Hector Rondon
+ * @date      31/10/17
+ * @copyright Copyright © 2017 Teclib. All rights reserved.
  * @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
- * @link      https://github.com/flyve-mdm/[name]
+ * @link      https://github.com/glpi-project/[name]
  * @link      http://www.glpi-project.org/
  * ------------------------------------------------------------------------------
  */
  
 
 import Foundation
-import Alamofire
 
-/// Enumerate endpoints methods
-public enum Routers: URLRequestConvertible {
-
+public enum Routers: URLRequestDelegate {
+    
     /// GET /initSession
     case initSessionByUserToken(String, String)
     /// GET /initSession
@@ -73,7 +71,7 @@ public enum Routers: URLRequestConvertible {
     case lostPassword([String: AnyObject])
     
     /// get HTTP Method
-    var method: Alamofire.HTTPMethod {
+    var method: HTTPMethod {
         switch self {
         case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
@@ -140,34 +138,35 @@ public enum Routers: URLRequestConvertible {
     }
     
     /// build up and return the query for each endpoint
-    var query: [String: AnyObject]? {
-        
+    var query: [URLQueryItem]? {
+
         switch self {
         case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
              .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword:
-           return  nil
+            return  nil
         case .getAllItems(_, let queryString):
             if queryString != nil {
-                return queryString?.queryString
+                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
         case .getItem(_, _, let queryString):
+            
             if queryString != nil {
-                return queryString?.queryString
+                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
         case .getSubItems(_, _, _, let queryString):
             if queryString != nil {
-                return queryString?.queryString
+                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
         case .deleteItems(_, _, let queryString, _):
             if queryString != nil {
-                return queryString?.queryString
+                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
@@ -182,7 +181,7 @@ public enum Routers: URLRequestConvertible {
         
         switch self {
         case .initSessionByUserToken(let userToken, let appToken) :
-
+            
             dictHeader["Authorization"] = "user_token \(userToken)"
             
             if !appToken.isEmpty {
@@ -212,9 +211,15 @@ public enum Routers: URLRequestConvertible {
      - throws: An `Error` if the underlying `URLRequest` is `nil`.
      - returns: A URL request.
      */
-    public func asURLRequest() throws -> URLRequest {
-        let url = URL(string: "https://dev.flyve.org/glpi/apirest.php")!
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+    public func request() -> URLRequest {
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "dev.flyve.org"
+        urlComponents.path = "/glpi/apirest.php" + path
+        urlComponents.queryItems = query
+
+        var urlRequest = URLRequest(url: urlComponents.url!)
         
         urlRequest.httpMethod = method.rawValue
         
@@ -224,14 +229,55 @@ public enum Routers: URLRequestConvertible {
         
         switch self {
         case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters):
-            return try Alamofire.JSONEncoding.default.encode(urlRequest, with: parameters)
-        case .getAllItems, .getItem, .getSubItems:
-            return try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
+
+            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) {
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+                    print(jsonString)
+                    urlRequest.httpBody = jsonString.data(using: .utf8)
+                }
+            }
+            return urlRequest
+
         case .deleteItems(_, _, _, let parameters):
-            let request = try URLEncoding.init(destination: .queryString).encode(urlRequest, with: query ?? [String: AnyObject]())
-            return try Alamofire.JSONEncoding.default.encode(request, with: parameters)
+            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) {
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+                    print(jsonString)
+                    urlRequest.httpBody = jsonString.data(using: .utf8)
+                }
+            }
+            return urlRequest
         default:
             return urlRequest
         }
     }
+}
+
+/// Types adopting the `URLRequestDelegate` protocol can be used to construct URL requests.
+public protocol URLRequestDelegate {
+    
+    /// Returns a URL request
+    ///
+    /// - returns: A URL request.
+    func request() -> URLRequest
+}
+
+public enum HTTPMethod : String {
+    
+    case options
+    
+    case get
+    
+    case head
+    
+    case post
+    
+    case put
+    
+    case patch
+    
+    case delete
+    
+    case trace
+    
+    case connect
 }

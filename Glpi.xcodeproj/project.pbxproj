@@ -11,12 +11,12 @@
 		0A06BB261F913C2C001D53B5 /* GlpiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06BB251F913C2C001D53B5 /* GlpiTests.swift */; };
 		0A06BB281F913C2C001D53B5 /* Glpi.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A06BB1A1F913C2C001D53B5 /* Glpi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A1CF5AC1F97ADF90048E866 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */; };
-		0A1CF5B31F97B3D00048E866 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B21F97B3D00048E866 /* Routers.swift */; };
 		0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */; };
 		0A452E0C1F9F703200CD531A /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0B1F9F703200CD531A /* ItemType.swift */; };
 		0A452E101F9FBF7100CD531A /* QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0F1F9FBF7100CD531A /* QueryString.swift */; };
 		0A9387631FA26806000EB823 /* ConstantsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9387611FA26688000EB823 /* ConstantsTest.swift */; };
 		0A9387671FA27114000EB823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */; };
+		0AA116921FA8A96E0012A9F8 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA116911FA8A96E0012A9F8 /* Routers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +38,11 @@
 		0A06BB271F913C2C001D53B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A06BB361F91401D001D53B5 /* Glpi.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Glpi.podspec; sourceTree = "<group>"; };
 		0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		0A1CF5B21F97B3D00048E866 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
 		0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiRequest.swift; sourceTree = "<group>"; };
 		0A452E0B1F9F703200CD531A /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		0A452E0F1F9FBF7100CD531A /* QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryString.swift; sourceTree = "<group>"; };
 		0A9387611FA26688000EB823 /* ConstantsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTest.swift; sourceTree = "<group>"; };
+		0AA116911FA8A96E0012A9F8 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +149,10 @@
 		0A87A3151F916A000080622B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0A1CF5B21F97B3D00048E866 /* Routers.swift */,
 				0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */,
 				0A452E0B1F9F703200CD531A /* ItemType.swift */,
 				0A452E0F1F9FBF7100CD531A /* QueryString.swift */,
+				0AA116911FA8A96E0012A9F8 /* Routers.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -301,8 +301,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1CF5B31F97B3D00048E866 /* Routers.swift in Sources */,
 				0A452E101F9FBF7100CD531A /* QueryString.swift in Sources */,
+				0AA116921FA8A96E0012A9F8 /* Routers.swift in Sources */,
 				0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */,
 				0A452E0C1F9F703200CD531A /* ItemType.swift in Sources */,
 			);
@@ -444,6 +444,7 @@
 		0A06BB2C1F913C2C001D53B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +473,7 @@
 		0A06BB2D1F913C2C001D53B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

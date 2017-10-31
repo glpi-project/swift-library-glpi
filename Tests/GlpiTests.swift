@@ -50,7 +50,7 @@ class GlpiTests: XCTestCase {
         let expectedAppToken = Constants.initSessionTesting["appToken"] ?? ""
         let expectedMethod = Constants.initSessionTesting["method"] ?? ""
         
-        Alamofire.request(Routers.initSession(expectedUserToken, expectedAppToken)).response { response in
+        Alamofire.request(Routers.initSessionByUserToken(expectedUserToken, expectedAppToken).request()).response { response in
 
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Authorization") ?? "", "user_token \(expectedUserToken)")
@@ -66,7 +66,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "killSession")
         
-        Alamofire.request(Routers.killSession).response { response in
+        Alamofire.request(Routers.killSession.request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -79,7 +79,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getMyProfiles")
         
-        Alamofire.request(Routers.getMyProfiles).response { response in
+        Alamofire.request(Routers.getMyProfiles.request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -92,7 +92,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getActiveProfile")
         
-        Alamofire.request(Routers.getActiveProfile).response { response in
+        Alamofire.request(Routers.getActiveProfile.request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -108,7 +108,7 @@ class GlpiTests: XCTestCase {
         var dictionary = [String: AnyObject]()
         dictionary["profiles_id"] = 4 as AnyObject
         
-        Alamofire.request(Routers.changeActiveProfile(dictionary)).response { response in
+        Alamofire.request(Routers.changeActiveProfile(dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
             
@@ -127,7 +127,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getMyEntities")
         
-        Alamofire.request(Routers.getMyEntities).response { response in
+        Alamofire.request(Routers.getMyEntities.request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -140,7 +140,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getActiveEntities")
         
-        Alamofire.request(Routers.getActiveEntities).response { response in
+        Alamofire.request(Routers.getActiveEntities.request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -156,13 +156,13 @@ class GlpiTests: XCTestCase {
         var dictionary = [String: AnyObject]()
         dictionary["entities_id"] = 1 as AnyObject
         
-        Alamofire.request(Routers.changeActiveEntities(dictionary)).response { response in
+        Alamofire.request(Routers.changeActiveEntities(dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
             
             let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
             let jsonString = String(data: jsonData!, encoding: .utf8)!
-            
+
             XCTAssertEqual(String(data: (response.request?.httpBody)!, encoding: .utf8) ?? "", jsonString)
             
             expectationResult.fulfill()
@@ -175,7 +175,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getFullSession")
         
-        Alamofire.request(Routers.getFullSession).response { response in
+        Alamofire.request(Routers.getFullSession.request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -188,7 +188,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getAllItems")
         
-        Alamofire.request(Routers.getAllItems(ItemType.Computer, nil)).response { response in
+        Alamofire.request(Routers.getAllItems(ItemType.Computer, nil).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -201,7 +201,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getAnItems")
         
-        Alamofire.request(Routers.getAnItem(ItemType.Computer, 119, nil)).response { response in
+        Alamofire.request(Routers.getItem(ItemType.Computer, 119, nil).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -214,7 +214,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "getsubItems")
         
-        Alamofire.request(Routers.getSubItems(ItemType.User, 24, ItemType.UserEmail, nil)).response { response in
+        Alamofire.request(Routers.getSubItems(ItemType.User, 24, ItemType.UserEmail, nil).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "GET")
             expectationResult.fulfill()
@@ -232,7 +232,7 @@ class GlpiTests: XCTestCase {
         dictionaryData["name"] = "Hector Rondon"
         dictionary["input"] = dictionaryData as AnyObject
         
-        Alamofire.request(Routers.addItems(ItemType.User, dictionary)).response { response in
+        Alamofire.request(Routers.addItems(ItemType.User, dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "POST")
             
@@ -256,7 +256,7 @@ class GlpiTests: XCTestCase {
         dictionaryData["name"] = "Hector Rondon Update"
         dictionary["input"] = dictionaryData as AnyObject
         
-        Alamofire.request(Routers.updateItems(ItemType.User, 24, dictionary)).response { response in
+        Alamofire.request(Routers.updateItems(ItemType.User, 24, dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "PUT")
             
@@ -280,7 +280,7 @@ class GlpiTests: XCTestCase {
         dictionaryData["id"] = 24
         dictionary["input"] = dictionaryData as AnyObject
         
-        Alamofire.request(Routers.deleteItems(ItemType.User, nil, nil, dictionary)).response { response in
+        Alamofire.request(Routers.deleteItems(ItemType.User, nil, nil, dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "DELETE")
             
@@ -301,7 +301,7 @@ class GlpiTests: XCTestCase {
         var dictionary = [String: AnyObject]()
         dictionary["email"] = "flyve@hi2.in" as AnyObject
         
-        Alamofire.request(Routers.lostPassword(dictionary)).response { response in
+        Alamofire.request(Routers.lostPassword(dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "PUT")
             
@@ -324,7 +324,7 @@ class GlpiTests: XCTestCase {
         dictionary["password_forget_token"] = "941891fcf47581084d43d2dec49b1c43a58380f4" as AnyObject
         dictionary["password"] = "12345678" as AnyObject
         
-        Alamofire.request(Routers.lostPassword(dictionary)).response { response in
+        Alamofire.request(Routers.lostPassword(dictionary).request()).response { response in
             XCTAssertEqual(response.request?.value(forHTTPHeaderField: "Content-Type") ?? "", "application/json")
             XCTAssertEqual(response.request?.httpMethod ?? "", "PUT")
             

@@ -28,7 +28,6 @@
  
 
 import Foundation
-import Alamofire
 
 /// Session Token
 public var SESSION_TOKEN = String()
@@ -40,36 +39,11 @@ public class GlpiRequest {
      - parameter: user token
      - parameter: app token (optional)
      */
-    class public func initSessionByUserToken(userToken: String, appToken: String = "", completion: @escaping (_ result: AnyObject?) -> Void) {
-
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.initSessionByUserToken(userToken, appToken).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                SESSION_TOKEN = ""
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    
-                    if let session_token = dataJSON["session_token"] {
-                        SESSION_TOKEN = session_token as? String ?? ""
-                    }
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+    class public func initSessionByUserToken(userToken: String, appToken: String = "", completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+        
+        GlpiRequest.httpRequest(Routers.initSessionByUserToken(userToken, appToken)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
@@ -78,583 +52,244 @@ public class GlpiRequest {
      - parameter: password
      - parameter: app token (optional)
      */
-    class public func initSessionByCredentials(user: String, password: String, appToken: String = "", completion: @escaping (_ result: AnyObject?) -> Void) {
+    class public func initSessionByCredentials(user: String, password: String, appToken: String = "", completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.initSessionByCredentials(user, password, appToken).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                SESSION_TOKEN = ""
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    
-                    if let session_token = dataJSON["session_token"] {
-                        SESSION_TOKEN = session_token as? String ?? ""
-                    }
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.initSessionByCredentials(user, password, appToken)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request kill current session
      */
-    class public func killSession(completion: @escaping (_ result: AnyObject?) -> Void) {
+    class public func killSession(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.killSession.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.killSession) { data, response, error in
+            completion(data, response , error)
         }
-        task.resume()
     }
     
     /**
      Request get my profiles
      */
-    class public func getMyProfiles(completion: @escaping (_ result: AnyObject?) -> Void) {
+    class public func getMyProfiles(completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getMyProfiles.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getMyProfiles) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get active profile
      */
-    class public func getActiveProfile(completion: @escaping (_ result: Any?) -> Void) {
+    class public func getActiveProfile(completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getActiveProfile.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getActiveProfile) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request change active profile
      */
-    class public func changeActiveProfile(profileID: String, completion: @escaping (_ result: Any?) -> Void) {
+    class public func changeActiveProfile(profileID: String, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
 
         var dictionary = [String: AnyObject]()
         dictionary["profiles_id"] = profileID as AnyObject
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.changeActiveProfile(dictionary).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.changeActiveProfile(dictionary)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get my entities
      */
-    class public func getMyEntities(completion: @escaping (_ result: Any?) -> Void) {
+    class public func getMyEntities(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getMyEntities.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getMyEntities) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get active entities
      */
-    class public func getActiveEntities(completion: @escaping (_ result: Any?) -> Void) {
+    class public func getActiveEntities(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getMyEntities.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getMyEntities) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request change active entities
      */
-    class public func changeActiveEntities(entitiesID: String, isRecursive: Bool = false, completion: @escaping (_ result: AnyObject?) -> Void) {
+    class public func changeActiveEntities(entitiesID: String, isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         var dictionary = [String: AnyObject]()
         dictionary["is_recursive"] = isRecursive as AnyObject
         dictionary["entities_id"] = entitiesID as AnyObject
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.changeActiveProfile(dictionary).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.changeActiveProfile(dictionary)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get full session information
      */
-    class public func getFullSession(completion: @escaping (_ result: Any?) -> Void) {
+    class public func getFullSession(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getFullSession.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getFullSession) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get Glpi Configuration
      */
-    class public func getGlpiConfig(completion: @escaping (_ result: Any?) -> Void) {
+    class public func getGlpiConfig(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getGlpiConfig.request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getGlpiConfig) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get all items
      */
-    class public func getAllItems(itemType: ItemType, queryString: QueryString.GetAllItems?, completion: @escaping (_ result: Any?) -> Void) {
+    class public func getAllItems(itemType: ItemType, queryString: QueryString.GetAllItems?, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getAllItems(itemType, queryString).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getAllItems(itemType, queryString)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get an item
      */
-    class public func getItem(itemType: ItemType, itemID: Int, queryString: QueryString.GetAnItem?, completion: @escaping (_ result: AnyObject?) -> Void) {
+    class public func getItem(itemType: ItemType, itemID: Int, queryString: QueryString.GetAnItem?, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getItem(itemType, itemID, queryString).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getItem(itemType, itemID, queryString)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get an item
      */
-    class public func getSubItems(itemType: ItemType, itemID: Int, subItemType: ItemType, queryString: QueryString.GetSubItems?, completion: @escaping (_ result: Any?) -> Void) {
+    class public func getSubItems(itemType: ItemType, itemID: Int, subItemType: ItemType, queryString: QueryString.GetSubItems?, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getSubItems(itemType, itemID, subItemType, queryString).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.getSubItems(itemType, itemID, subItemType, queryString)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request Add Items
      */
-    class public func addItems(itemType: ItemType, payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+    class public func addItems(itemType: ItemType, payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.addItems(itemType, payload).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.addItems(itemType, payload)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request Update Items
      */
-    class public func updateItems(itemType: ItemType, itemID: Int?, payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+    class public func updateItems(itemType: ItemType, itemID: Int?, payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.updateItems(itemType, itemID, payload).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.updateItems(itemType, itemID, payload)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request Delete Items
      */
-    class public func deleteItems(itemType: ItemType, itemID: Int?, queryString: QueryString.DeleteItems?, payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+    class public func deleteItems(itemType: ItemType, itemID: Int?, queryString: QueryString.DeleteItems?, payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.deleteItems(itemType, itemID, queryString, payload).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.deleteItems(itemType, itemID, queryString, payload)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request Lost password
      */
-    class public func recoveryPassword(email: String, completion: @escaping (_ result: Any?) -> Void) {
+    class public func recoveryPassword(email: String, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         var dictionary = [String: AnyObject]()
         dictionary["email"] = email as AnyObject
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.lostPassword(dictionary).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.lostPassword(dictionary)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request reset password
      */
-    class public func resetPassword(payload: [String: AnyObject], completion: @escaping (_ result: Any?) -> Void) {
+    class public func resetPassword(payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.lostPassword(payload).request()) { (data, response, error) in
-            
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
-                }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
+        GlpiRequest.httpRequest(Routers.lostPassword(payload)) { data, response, error in
+            completion(data, response, error)
         }
-        task.resume()
     }
     
     /**
      Request get multiple items
      */
-    class public func getMultipleItems(completion: @escaping (_ result: Any?) -> Void) {
+    class public func getMultipleItems(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        let task:URLSessionDataTask = URLSession.shared.dataTask(with: Routers.getMultipleItems.request()) { (data, response, error) in
+        GlpiRequest.httpRequest(Routers.getMultipleItems) { data, response, error in
+            completion(data, response, error)
+        }
+    }
+    
+    class func httpRequest(_ router: Routers, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+        
+        let task:URLSessionDataTask = URLSession.shared.dataTask(with: router.request()) { (data, response, error) in
             
-            guard error == nil, let responseData = data else {
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
-            }
-            
-            // parse the result as JSON
-            // then create a Todo from the JSON
-            do {
-                if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
-                    completion(dataJSON as AnyObject)
-                } else {
-                    // couldn't create a todo object from the JSON
-                    completion(GlpiRequest.handlerError(data) as AnyObject)
+            DispatchQueue.main.async {
+                if let httpResponse = response as? HTTPURLResponse{
+                    if httpResponse.statusCode >= 400 {
+                        completion(GlpiRequest.handlerErrorData(data, error, httpResponse.statusCode) as AnyObject, response as? HTTPURLResponse, error)
+                    } else {
+                        
+                        guard error == nil, let responseData = data else {
+                            completion(GlpiRequest.handlerErrorData(data, error, httpResponse.statusCode) as AnyObject, response as? HTTPURLResponse, error)
+                            return
+                        }
+                        
+                        // parse the result as JSON
+                        // then create a Todo from the JSON
+                        do {
+                            if let dataJSON = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] {
+                                
+                                switch router {
+                                case .initSessionByUserToken, .initSessionByCredentials:
+                                    if let session_token = dataJSON["session_token"] {
+                                        SESSION_TOKEN = session_token as? String ?? ""
+                                    }
+                                default:
+                                    break
+                                }
+                                completion(dataJSON as AnyObject, response as? HTTPURLResponse, nil)
+                                
+                            } else {
+                                // couldn't create a todo object from the JSON
+                                completion(GlpiRequest.handlerErrorData(data, error, httpResponse.statusCode) as AnyObject, response as? HTTPURLResponse, error)
+                            }
+                        } catch {
+                            // error trying to convert the data to JSON using JSONSerialization.jsonObject
+                            completion(GlpiRequest.handlerErrorData(data, error, httpResponse.statusCode) as AnyObject, response as? HTTPURLResponse, error)
+                            return
+                        }
+                    }
                 }
-            } catch {
-                // error trying to convert the data to JSON using JSONSerialization.jsonObject
-                completion(GlpiRequest.handlerError(data) as AnyObject)
-                return
             }
         }
         task.resume()
@@ -664,14 +299,14 @@ public class GlpiRequest {
      handler Error
      - return: error message
      */
-    class func handlerError(_ error: Data?) -> [String: String] {
+    class func handlerErrorData(_ data: Data?, _ error: Error?, _ errorCode: Int) -> [String: String]  {
         
         var errorObj = [String]()
         var errorDict = [String: String]()
         
-        if let data = error {
+        if let result = data {
             do {
-                errorObj = try JSONSerialization.jsonObject(with: data) as? [String] ?? [String]()
+                errorObj = try JSONSerialization.jsonObject(with: result) as? [String] ?? [String]()
             } catch {
                 errorObj = [String]()
             }
@@ -681,8 +316,8 @@ public class GlpiRequest {
             errorDict["error"] = errorObj[0]
             errorDict["message"] = errorObj[1]
         } else {
-            errorDict["error"] = ""
-            errorDict["message"] = ""
+            errorDict["error"] = "\(errorCode)"
+            errorDict["message"] = "\(error?.localizedDescription ?? "unknown error")"
         }
         
         return errorDict

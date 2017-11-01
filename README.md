@@ -8,7 +8,7 @@
 [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/glpien)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-GLPI (_Gestionnaire Libre de Parc Informatique_) is a free IT Asset Management, issue tracking system and service desk solution. This open source software is written in PHP.
+GLPI (_Gestionnaire Libre de Parc Informatique_) is a free IT Asset Management, issue tracking system and service desk solution.
 
 It helps companies to manage their information system, since it's able to build an inventory of all the organization's assets and to manage administrative and financial tasks.
 
@@ -34,6 +34,7 @@ This library created in Swift features several functionalities common to all GLP
 * Custom Item Types
 * Media download/upload
 * Batching
+* Zero dependencies
 
 You will be able to call all the methods that belong to the [GLPI REST API](https://dev.flyve.org/glpi/apirest.php), for more information visit the [projects website](https://glpi-project.github.io/swift-library-glpi/).
 

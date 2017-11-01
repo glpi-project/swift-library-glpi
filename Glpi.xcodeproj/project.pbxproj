@@ -10,12 +10,10 @@
 		0A06BB211F913C2C001D53B5 /* Glpi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06BB171F913C2C001D53B5 /* Glpi.framework */; };
 		0A06BB261F913C2C001D53B5 /* GlpiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06BB251F913C2C001D53B5 /* GlpiTests.swift */; };
 		0A06BB281F913C2C001D53B5 /* Glpi.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A06BB1A1F913C2C001D53B5 /* Glpi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A1CF5AC1F97ADF90048E866 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */; };
 		0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */; };
 		0A452E0C1F9F703200CD531A /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0B1F9F703200CD531A /* ItemType.swift */; };
 		0A452E101F9FBF7100CD531A /* QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0F1F9FBF7100CD531A /* QueryString.swift */; };
 		0A9387631FA26806000EB823 /* ConstantsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9387611FA26688000EB823 /* ConstantsTest.swift */; };
-		0A9387671FA27114000EB823 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */; };
 		0AA116921FA8A96E0012A9F8 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA116911FA8A96E0012A9F8 /* Routers.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1CF5AC1F97ADF90048E866 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +56,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A06BB211F913C2C001D53B5 /* Glpi.framework in Frameworks */,
-				0A9387671FA27114000EB823 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +175,6 @@
 				0A06BB131F913C2C001D53B5 /* Frameworks */,
 				0A06BB141F913C2C001D53B5 /* Headers */,
 				0A06BB151F913C2C001D53B5 /* Resources */,
-				0A1CF5AE1F97AE440048E866 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -197,7 +192,6 @@
 				0A06BB1C1F913C2C001D53B5 /* Sources */,
 				0A06BB1D1F913C2C001D53B5 /* Frameworks */,
 				0A06BB1E1F913C2C001D53B5 /* Resources */,
-				0A9387661FA270C4000EB823 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -264,37 +258,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0A1CF5AE1F97AE440048E866 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		0A9387661FA270C4000EB823 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A06BB121F913C2C001D53B5 /* Sources */ = {
@@ -453,10 +416,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -482,10 +442,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -504,10 +461,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.teclib.GlpiTests;
@@ -523,10 +477,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7XJV96LX2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.teclib.GlpiTests;

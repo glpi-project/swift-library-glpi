@@ -14,6 +14,7 @@ This library created in Swift is designed to make interacting with GLPI seamless
 * Custom ItemTypes, you will be able to customize more than 200 itemtypes available in the GLPI API, which could be an asset, an itil or a configuration object, etc.
 * Media download/upload, the library contains convenience methods for media upload and download
 * Batching, you can batch multiple API calls together into a single request
+* Follow a Zero-Dependency Policy
 
 ## Methods Available
 

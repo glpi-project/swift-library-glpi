@@ -96,67 +96,69 @@ class ViewController: UIViewController {
     }
     
     func loadResponse(endpoint: String, result: String) {
-        var responseAPIData = [String: String]()
-        responseAPIData["endpoint"] = endpoint
-        responseAPIData["result"] = result
-        self.responseAPI.append(responseAPIData as AnyObject)
-        self.exampleTableView.reloadData()
+        DispatchQueue.main.async {
+            var responseAPIData = [String: String]()
+            responseAPIData["endpoint"] = endpoint
+            responseAPIData["result"] = result
+            self.responseAPI.append(responseAPIData as AnyObject)
+            self.exampleTableView.reloadData()
+        }
     }
     
     func requestInitSession() {
-        GlpiRequest.initSessionByUserToken(userToken: "L8B3f4iiNIjg8W2Kla1AXFjJsYrWxVqDozMzq2G7") { response in
+        GlpiRequest.initSessionByUserToken(userToken: "L8B3f4iiNIjg8W2Kla1AXFjJsYrWxVqDozMzq2G7") { data, _, _ in
             self.responseAPI = [AnyObject]()
-            self.loadResponse(endpoint: "initSession", result: self.objectToString(response as Any))
+            self.loadResponse(endpoint: "initSession", result: self.objectToString(data as Any))
         }
     }
     
     func requestAllAPIs() {
-        GlpiRequest.getMyProfiles { response in
-            self.loadResponse(endpoint: "getMyProfiles", result: self.objectToString(response as Any))
+        GlpiRequest.getMyProfiles { data, _, _ in
+            self.loadResponse(endpoint: "getMyProfiles", result: self.objectToString(data as Any))
         }
         
-        GlpiRequest.getActiveProfile { response in
-            self.loadResponse(endpoint: "getActiveProfile", result: self.objectToString(response as Any))
+        GlpiRequest.getActiveProfile { data, _, _ in
+            self.loadResponse(endpoint: "getActiveProfile", result: self.objectToString(data as Any))
             
-            GlpiRequest.changeActiveProfile(profileID: "4", completion: { _ in
+            GlpiRequest.changeActiveProfile(profileID: "4", completion: { _, _, _ in
                 self.loadResponse(endpoint: "changeActiveProfile", result: "")
             })
         }
         
-        GlpiRequest.getMyEntities { response in
-            self.loadResponse(endpoint: "getMyEntities", result: self.objectToString(response as Any))
+        GlpiRequest.getMyEntities { data, _, _ in
+            self.loadResponse(endpoint: "getMyEntities", result: self.objectToString(data as Any))
         }
         
-        GlpiRequest.getActiveEntities { response in
-            self.loadResponse(endpoint: "getActiveEntities", result: self.objectToString(response as Any))
+        GlpiRequest.getActiveEntities { data, _, _ in
+            self.loadResponse(endpoint: "getActiveEntities", result: self.objectToString(data as Any))
             
-            GlpiRequest.changeActiveEntities(entitiesID: "0", completion: { response in
-                self.loadResponse(endpoint: "changeActiveEntities", result: self.objectToString(response as Any))
+            GlpiRequest.changeActiveEntities(entitiesID: "0", completion: { data, _, _ in
+                self.loadResponse(endpoint: "changeActiveEntities", result: self.objectToString(data as Any))
             })
         }
         
-        GlpiRequest.getFullSession { response in
-            self.loadResponse(endpoint: "getFullSession", result: self.objectToString(response as Any))
+        GlpiRequest.getFullSession { data, _, _ in
+            self.loadResponse(endpoint: "getFullSession", result: self.objectToString(data as Any))
         }
         
-        GlpiRequest.getAllItems(itemType: .Computer, queryString: nil) { response in
-            self.loadResponse(endpoint: "getAllItems", result: self.objectToString(response as Any))
+        GlpiRequest.getAllItems(itemType: .Computer, queryString: nil) { data, _, _ in
+            self.loadResponse(endpoint: "getAllItems", result: self.objectToString(data as Any))
         }
         
-        GlpiRequest.getItem(itemType: .Computer, itemID: 3, queryString: nil) { response in
-            self.loadResponse(endpoint: "getAnItem", result: self.objectToString(response as Any))
+        GlpiRequest.getItem(itemType: .Computer, itemID: 3, queryString: nil) { data, _, _ in
+            self.loadResponse(endpoint: "getAnItem", result: self.objectToString(data as Any))
         }
         
-        GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel, queryString: nil) { response in
-            self.loadResponse(endpoint: "getSubItems", result: self.objectToString(response as Any))
+        GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel, queryString: nil) { data, _, _ in
+            self.loadResponse(endpoint: "getSubItems", result: self.objectToString(data as Any))
         }
         
     }
     
     func requestKillSession() {
-        GlpiRequest.killSession(completion: { response in
+        GlpiRequest.killSession(completion: { data, _, _ in
             self.responseAPI = [AnyObject]()
-            self.loadResponse(endpoint: "killSession", result: self.objectToString(response as Any))
+            self.loadResponse(endpoint: "killSession", result: self.objectToString(data as Any))
         })
     }
 }

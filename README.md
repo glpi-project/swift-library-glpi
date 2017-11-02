@@ -18,6 +18,7 @@ It helps companies to manage their information system, since it's able to build 
 * [Build Status](#build-status)
 * [Compatibility Matrix](#matrix)
 * [Documentation](#documentation)
+* [Code Example](#example)
 * [Versioning](#versioning)
 * [Contact](#contact)
 * [Contribute](#contribute)
@@ -53,6 +54,31 @@ You will be able to call all the methods that belong to the [GLPI REST API](http
 ## Documentation
 
 We maintain a detailed documentation of the project in the [project's website](https://glpi-project.github.io/swift-library-glpi/).
+
+## Code Example
+
+It's easy to implement in your code
+
+```swift
+import Glpi
+
+/// Init Session
+GlpiRequest.initSessionByUserToken(userToken: "token") { data, response, error in
+    print(data)
+}
+
+//
+var queryString = QueryString.GetAnItem()
+queryString.expandDropdowns = true
+queryString.getHateoas = true
+
+GlpiRequest.getItem(itemType: .Computer, itemID: 3, queryString: queryString) { data, response, error in
+    if error == nil {
+        print(data)
+    }
+}
+
+```
 
 ## Versioning
 

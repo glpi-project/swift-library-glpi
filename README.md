@@ -37,7 +37,7 @@ This library created in Swift features several functionalities common to all GLP
 * Batching
 * Zero dependencies
 
-You will be able to call all the methods that belong to the [GLPI REST API](https://dev.flyve.org/glpi/apirest.php), for more information visit the [projects website](https://glpi-project.github.io/swift-library-glpi/).
+You will be able to call all the methods that belong to the [GLPI REST API](https://github.com/glpi-project/glpi/blob/master/apirest.md), for more information visit the [project's website](https://glpi-project.github.io/swift-library-glpi/).
 
 ## Build Status
 
@@ -53,7 +53,7 @@ You will be able to call all the methods that belong to the [GLPI REST API](http
 
 ## Documentation
 
-We maintain a detailed documentation of the project in the [project's website](https://glpi-project.github.io/swift-library-glpi/).
+We maintain a detailed documentation of the project on the [website](https://glpi-project.github.io/swift-library-glpi/).
 
 ## Code Example
 

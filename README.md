@@ -18,7 +18,7 @@ It helps companies to manage their information system, since it's able to build 
 * [Build Status](#build-status)
 * [Compatibility Matrix](#matrix)
 * [Documentation](#documentation)
-* [Code Example](#example)
+* [Code Example](#code-example)
 * [Versioning](#versioning)
 * [Contact](#contact)
 * [Contribute](#contribute)

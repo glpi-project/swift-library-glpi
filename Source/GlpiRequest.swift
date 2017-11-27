@@ -21,7 +21,7 @@
  * @date      18/10/17
  * @copyright (C) 2017 Teclib' and contributors
  * @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
- * @link      https://github.com/flyve-mdm/[name]
+ * @link      https://github.com/glpi-project/swift-library-glpi
  * @link      http://www.glpi-project.org/
  * ------------------------------------------------------------------------------
  */

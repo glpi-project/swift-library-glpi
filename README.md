@@ -1,7 +1,5 @@
 # GLPI API Library for Swift
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/glpi-project/swift-library-glpi.svg)](https://greenkeeper.io/)
-
 ![GLPI banner](https://user-images.githubusercontent.com/29282308/31666160-8ad74b1a-b34b-11e7-839b-043255af4f58.png)
 
 [![License](https://img.shields.io/badge/license-Apache_v2.0-blue.svg)](https://github.com/glpi-project/swift-library-glpi/blob/develop/LICENSE.md)
@@ -9,6 +7,7 @@
 [![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/)
 [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/glpien)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Greenkeeper badge](https://badges.greenkeeper.io/glpi-project/swift-library-glpi.svg)](https://greenkeeper.io/)
 
 GLPI (_Gestionnaire Libre de Parc Informatique_) is a free IT Asset Management, issue tracking system and service desk solution.
 

@@ -29,13 +29,13 @@
 GITHUB_COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
 if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version"* && $GITHUB_COMMIT_MESSAGE != *"ci(build): release version"* ]]; then
-
+    echo "Generate CHANGELOG.md and increment version"
+    # Get gh=pages branch
+    git fetch origin gh-pages
     # Generate CHANGELOG.md and increment version
-    npm run release -- -t ''
+    yarn standard-version -- -t ''
     # Get version number from package.json
     export GIT_TAG=$(jq -r ".version" package.json)
-    # Revert last commit
-    git reset --hard HEAD~1
     # Update CFBundleShortVersionString
     /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${GIT_TAG}" ${PWD}/Source/Info.plist
     # Update CFBundleVersion
@@ -45,14 +45,18 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
     # Create commit
     git commit -m "ci(beta): generate **beta** for version ${GIT_TAG}"
 
+    echo "Generate documentation with jazzy"
     # Generate documentation with jazzy
     jazzy
-
+    mv docs/ code-documentation/  
     # Add docs folder
-    git add docs -f
+    git add code-documentation -f
     # Create commit, NOTICE: this commit is not sent
     git commit -m "ci(docs): generate **docs** for version ${GIT_TAG}"
+    # Update documentation on gh-pages branch
+    yarn gh-pages --dist code-documentation --dest development/code-documentation -m "ci(docs): generate documentation with jazzy for version ${GIT_TAG}"
 
+    echo "Generate code coverage reporting with xcov"
     # Generate code coverage reporting with xcov
     bundle exec fastlane coverage
 
@@ -60,30 +64,32 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
     git add coverage -f
     # Create commit, NOTICE: this commit is not sent
     git commit -m "ci(docs): generate **coverage** for version ${GIT_TAG}"
+    # Update coverage on gh-pages branch
+    yarn gh-pages --dist coverage --dest development/coverage -m "ci(docs): generate coverage with xcov for version ${GIT_TAG}"
 
-    # Update documentation on gh-pages
-    git branch -D gh-pages
-    git fetch origin gh-pages
+    echo "Generate test report"
+    # Create header content to test report
+    echo "---" > header.html
+    echo "layout: modal" >> header.html
+    echo "---" >> header.html
+
+    # Add header to test report
+    (cat header.html ; cat fastlane/test_output/report.html) > fastlane/test_output/index.html
+    # Remove test report copy
+    rm fastlane/test_output/report.html
+    rm header.html
+
+    # Generate test report
+    yarn gh-pages --dist fastlane/test_output --src index.html --dest development/test-reports -m "ci(docs): generate test report for version ${GIT_TAG}" 
+
+    # Send untracked files to stash
+    git add .
+    git stash
+    # Checkout to gh-pages branch
     git checkout gh-pages
+    git pull origin gh-pages
 
-    # Remove old documetation
-    rm -rf docs
-    rm -rf coverage
-
-    git checkout $CIRCLE_BRANCH docs
-
-    # Add docs folder
-    git add docs
-    # Create commit
-    git commit -m "ci(docs): generate documentation with jazzy for version ${GIT_TAG}"
-
-    # Get code coverage from develop branch
-    git checkout $CIRCLE_BRANCH coverage
-    # Add coverage folder
-    git add coverage
-    # Create commit
-    git commit -m "ci(docs): generate coverage with xcov for version ${GIT_TAG}"
-
+    echo "Update cache"
     # Create header content to cache
     echo "---" > header_cache
     echo "cache_version: $CIRCLE_SHA1" >> header_cache

@@ -1,6 +1,6 @@
 //
 /*
- * Copyright © 2017 Teclib. All rights reserved.
+ * LICENSE
  *
  * ConstantsTest.swift is part of Glpi
  *
@@ -19,7 +19,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ------------------------------------------------------------------------------
- * @author    Hector Rondon
+ * @author    Hector Rondon <hrondon@teclib.com>
  * @date      26/10/17
  * @copyright Copyright © 2017 Teclib. All rights reserved.
  * @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0

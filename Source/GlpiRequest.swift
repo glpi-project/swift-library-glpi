@@ -1,6 +1,6 @@
 //
 /*
- * Copyright © 2017 Teclib. All rights reserved.
+ * LICENSE
  *
  * Request.swift is part of the GLPI API Client Library for Swift,
  * a subproject of GLPI. GLPI is a free IT Asset Management.
@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ------------------------------------------------------------------------------
- * @author    Hector Rondon - <hrondon@teclib.com>
+ * @author    Hector Rondon <hrondon@teclib.com>
  * @date      18/10/17
  * @copyright (C) 2017 Teclib' and contributors
  * @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0

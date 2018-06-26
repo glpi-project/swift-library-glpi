@@ -35,4 +35,8 @@ workflows:
   build-and-test:
     jobs:
       - build
-      - test
+      - test:
+          filters:
+            branches:
+              ignore: 
+                - develop

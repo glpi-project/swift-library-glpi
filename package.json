@@ -54,6 +54,7 @@
     "conventional-github-releaser": "^3.1.2",
     "gh-pages": "^1.2.0",
     "node-github-release": "^0.2.1",
+    "podspec-bump": "^0.4.1",
     "standard-version": "^4.4.0"
   }
 }

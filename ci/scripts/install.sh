@@ -26,30 +26,18 @@
 # @link      http://www.glpi-project.org/
 # ------------------------------------------------------------------------------
 
+# update ruby
+brew install ruby
 # Update gem
 gem update --system
 # Clean Gem
 gem cleanup
 # Install jazzy for generate documentation
 gem install jazzy
-# Install bundler last version
-gem install bundler
-# Install node
-brew install node
 # Install jq for json parse
 brew install jq
-# Install carthage
-brew install carthage
-# Install standard-version scope global
-npm i -g standard-version
-# Install conventional-github-releaser scope global
-npm install -g conventional-github-releaser
-# Install podspec-bump for increment podspec version
-npm install -g podspec-bump
-# Install node-github-release to create and edit releases on Github
-npm install -g node-github-release
 # Install libs from package.json
-npm install
+yarn install
 # Install gems from Gemfile
 bundle install --path vendor/bundle
 # Update fastlane plugin

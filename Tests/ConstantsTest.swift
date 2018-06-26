@@ -21,7 +21,7 @@
  * ------------------------------------------------------------------------------
  * @author    Hector Rondon <hrondon@teclib.com>
  * @date      26/10/17
- * @copyright Copyright © 2017 Teclib. All rights reserved.
+ * @copyright Copyright © 2017-2018 Teclib. All rights reserved.
  * @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
  * @link      https://github.com/glpi-project/swift-library-glpi
  * @link      http://www.glpi-project.org/

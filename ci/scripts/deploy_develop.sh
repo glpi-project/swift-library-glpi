@@ -19,7 +19,7 @@
 # ------------------------------------------------------------------------------
 # @author    Hector Rondon <hrondon@teclib.com>
 # @date      08/09/17
-# @copyright (C) 2017 Teclib' and contributors
+# @copyright Copyright © 2017-2018 Teclib. All rights reserved.
 # @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
 # @link      https://github.com/flyve-mdm/ios-library-glpi
 # @link      http://www.glpi-project.org/

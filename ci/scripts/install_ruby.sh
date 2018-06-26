@@ -2,7 +2,7 @@
 
 # LICENSE
 #
-# test.sh is part of the GLPI API Client Library for Swift,
+# install_ruby.sh is part of the GLPI API Client Library for Swift,
 # a subproject of GLPI. GLPI is a free IT Asset Management.
 #
 # Glpi is Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@
 # limitations under the License.
 # ------------------------------------------------------------------------------
 # @author    Hector Rondon <hrondon@teclib.com>
-# @date      25/08/17
+# @date      26/06/18
 # @copyright Copyright © 2017-2018 Teclib. All rights reserved.
 # @license   Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
 # @link      https://github.com/glpi-project/swift-library-glpi
@@ -26,4 +26,13 @@
 # @link      http://www.glpi-project.org/
 # ------------------------------------------------------------------------------
 
-bundle exec fastlane test
+# update ruby
+brew install ruby
+# Update gem
+gem update --system
+# Clean Gem
+gem cleanup
+# Install gems from Gemfile
+bundle install --path vendor/bundle
+# Update fastlane plugin
+bundle exec fastlane update_plugins

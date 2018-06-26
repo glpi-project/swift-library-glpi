@@ -57,11 +57,10 @@ platform :ios do
   
     # Build
     gym(
-      # app_identifier: "org.glpi-project.api-client-demo",
-      workspace: "Glpi.xcworkspace",#ENV["XCODE_WORKSPACE_DEMO"]
-      scheme: "Example",#ENV["XCODE_SCHEME_DEMO"],
+      workspace: ENV["XCODE_WORKSPACE"],
+      scheme: ENV["XCODE_SCHEME_DEMO"],
       configuration: "Release",
-      sdk: "iphoneos11.0",
+      sdk: "iphoneos11.2",
       clean: true,
       include_bitcode: true,
       include_symbols: true,
@@ -71,7 +70,7 @@ platform :ios do
 
     # TestFlight upload
     pilot(
-      app_identifier: "org.glpi-project.api-client-demo",#ENV["APP_IDENTIFIER"],
+      app_identifier: ENV["APP_IDENTIFIER_DEMO"],
       skip_waiting_for_build_processing: true
     )
   end

@@ -46,6 +46,27 @@ platform :ios do
     xcov_report    
   end
 
+  desc "builds and packages iOS apps"
+  lane :archive do
+    $lane_active = "Archive"
+    # Fetch provisioning profile
+    # sigh
+    sigh(
+      adhoc: false
+    )
+    # Build
+    gym(
+      scheme: ENV["XCODE_SCHEME_DEMO"],
+      configuration: "Release",
+      sdk: "iphoneos11.2",
+      clean: true,
+      include_bitcode: true,
+      include_symbols: true,
+      export_method: "app-store",
+      buildlog_path: 'fastlane/logs'
+    )
+  end
+
   desc "Submit a new demo Build to Apple TestFlight"
   lane :demo do
     $lane_active = "Demo"

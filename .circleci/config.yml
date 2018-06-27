@@ -95,6 +95,9 @@ jobs:
           command: source ./ci/scripts/keychain_remove.sh
           environment:
             KEYCHAIN_NAME: ios-app.keychain
+      - run:
+          name: Update cocoapods repo
+          command: source ./ci/scripts/pod_trunk_push.sh
 
 workflows:
   version: 2

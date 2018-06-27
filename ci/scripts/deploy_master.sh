@@ -29,47 +29,15 @@
 GITHUB_COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
 if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version"* && $GITHUB_COMMIT_MESSAGE != *"ci(build): release version"* ]]; then
-
+    # Get gh=pages branch
+    git fetch origin gh-pages
+    echo "Generate CHANGELOG.md and increment version"
     # Generate CHANGELOG.md and increment version
-    npm run release -- -t '' -m "ci(release): generate CHANGELOG.md for version %s"
+    yarn standard-version -t '' -m "ci(release): generate CHANGELOG.md for version %s"
     # Get version number from package.json
     export GIT_TAG=$(jq -r ".version" package.json)
-    # Update CFBundleShortVersionString
-    /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${GIT_TAG}" ${PWD}/Source/Info.plist
-    # Update CFBundleVersion
-    /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Source/Info.plist
-    # Increment podspec version
-    podspec-bump -i ${GIT_TAG} -w
-    # Add modified and delete files
-    git add -u
-    # Create commit
-    git commit -m "ci(build): release version ${GIT_TAG}"
-    # Push commits and tags to origin branch
-    git push --follow-tags origin $CIRCLE_BRANCH
-    # Create release with conventional-github-releaser
-    conventional-github-releaser -p angular -t $GITHUB_TOKEN
-    # Create zip example code
-    zip -r $CIRCLE_ARTIFACTS/app_example_code.zip Example/*
-    # Update release name
-    github-release edit \
-    --user $CIRCLE_PROJECT_USERNAME \
-    --repo $CIRCLE_PROJECT_REPONAME \
-    --tag ${GIT_TAG} \
-    --name "Inventory Engine v${GIT_TAG}" \
-    # Upload example code release
-    github-release upload \
-    --user $CIRCLE_PROJECT_USERNAME \
-    --repo $CIRCLE_PROJECT_REPONAME \
-    --tag ${GIT_TAG} \
-    --name "example.zip" \
-    --file $CIRCLE_ARTIFACTS/app_example_code.zip
-
-    # Update CHANGELOG.md on gh-pages
-    git branch -D gh-pages
-    git fetch origin gh-pages
-    git checkout gh-pages
-    git checkout $CIRCLE_BRANCH CHANGELOG.md
-
+    
+    echo "Update CHANGELOG.md on gh-pages"
     # Create header content to CHANGELOG.md
     echo "---" > header.md
     echo "layout: modal" >> header.md
@@ -83,12 +51,64 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
     # Remove CHANGELOG_COPY.md
     rm CHANGELOG_COPY.md
     rm header.md
+    # Update CHANGELOG.md on gh-pages
+    yarn gh-pages --dist ./ --src CHANGELOG.md --dest ./ --add -m "ci(docs): generate CHANGELOG.md for version ${GIT_TAG}"
+    # Reset CHANGELOG.md
+    git checkout CHANGELOG.md -f
 
-    # Add CHANGELOG.md
-    git add CHANGELOG.md
+    # Update CFBundleShortVersionString
+    /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${GIT_TAG}" ${PWD}/Source/Info.plist
+    # Update CFBundleVersion
+    /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Source/Info.plist
+    # Increment podspec version
+    yarn podspec-bump -i ${GIT_TAG} -w
+    # Add modified and delete files
+    git add -u
     # Create commit
-    git commit -m "ci(docs): generate CHANGELOG.md for version ${GIT_TAG}"
+    git commit -m "ci(build): release version ${GIT_TAG}"
 
+    # Push commits and tags to origin branch
+    git push --follow-tags origin $CIRCLE_BRANCH
+    echo "Create release with conventional-github-releaser"
+    # Create release with conventional-github-releaser
+    yarn conventional-github-releaser -p angular -t $GITHUB_TOKEN
+
+    echo "Create Archive and ipa file"
+    # Archive App and create ipa file
+    bundle exec fastlane archive
+
+    echo "Upload and create zip example code"
+    # Create zip example code
+    zip -r app_example_code.zip Example/*
+    # Update release name
+    yarn github-release edit \
+    --user $CIRCLE_PROJECT_USERNAME \
+    --repo $CIRCLE_PROJECT_REPONAME \
+    --tag ${GIT_TAG} \
+    --name "Inventory Engine v${GIT_TAG}" \
+    # Upload example code release
+    yarn github-release upload \
+    --user $CIRCLE_PROJECT_USERNAME \
+    --repo $CIRCLE_PROJECT_REPONAME \
+    --tag ${GIT_TAG} \
+    --name "example.zip" \
+    --file app_example_code.zip
+    # Upload ipa file to release
+    yarn github-release upload \
+    --user $CIRCLE_PROJECT_USERNAME \
+    --repo $CIRCLE_PROJECT_REPONAME \
+    --tag ${GIT_TAG} \
+    --name "${XCODE_SCHEME_DEMO}.ipa" \
+    --file "${XCODE_SCHEME_DEMO}.ipa"
+
+    # Send untracked files to stash
+    git add .
+    git stash
+    # Checkout to gh-pages branch
+    git checkout gh-pages
+    git pull origin gh-pages
+
+    echo "Update cache"
     # Create header content to cache
     echo "---" > header_cache
     echo "cache_version: $CIRCLE_SHA1" >> header_cache
@@ -113,10 +133,13 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
     git branch -D develop
     git fetch origin develop
     git checkout develop
-    # Merge master on develop
-    git rebase master
+    # # Merge master on develop
+    git fetch origin master
+    git rebase origin/master
     git push origin develop
 
     # Checkout to release branch
     git checkout $CIRCLE_BRANCH -f
+    # Send app to App Store with fastlane 
+    bundle exec fastlane demo
 fi

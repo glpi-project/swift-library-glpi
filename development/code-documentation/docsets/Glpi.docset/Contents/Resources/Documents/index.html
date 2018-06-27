@@ -1,0 +1,199 @@
+---
+layout: jazzy
+---
+
+<a title="Glpi  Reference"></a>
+<header>
+  <div class="content-wrapper">
+    <p><a href="index.html">Glpi Docs</a> (10% documented)</p>
+    <p class="header-right"><a href="$CIRCLE_REPOSITORY_URL"><img src="img/gh.png"/>View on GitHub</a></p>
+  </div>
+</header>
+<div class="content-wrapper">
+  <p id="breadcrumbs">
+    <a href="index.html">Glpi Reference</a>
+    <img id="carat" src="img/carat.png" />
+    Glpi  Reference
+  </p>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <a class="btn btn-lightweight no-outline navigation-btn">Index</a>
+        <ul role="navigation" id="sidenav-small" class="nav side-navigation side-navigation-small theme-default">
+            <button type="button" class="close" data-dismiss="side-navigation" aria-label="close">
+                <i class="glyph glyph-cancel"></i>
+            </button>
+            
+              <li class="active side-nav-c2">
+                  <a href="Classes.html">Classes</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="Classes/GlpiRequest.html">GlpiRequest</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="Global Variables.html">Global Variables</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="Global Variables.html#/s:4Glpi13SESSION_TOKENSSv">SESSION_TOKEN</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="Enumerations.html">Enumerations</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="Enums/HTTPMethod.html">HTTPMethod</a></li>
+                        <li><a href="Enums/ItemType.html">ItemType</a></li>
+                        <li><a href="Enums/Routers.html">Routers</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="Protocols.html">Protocols</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="Protocols/URLRequestDelegate.html">URLRequestDelegate</a></li>
+                  </ul>
+              </li>
+              <li class="active side-nav-c2">
+                  <a href="Structures.html">Structures</a>
+                  <ul class="nav collapse in" id="father-john-misty">
+                        <li><a href="Structs/QueryString.html">QueryString</a></li>
+                        <li><a href="Structs/QueryString/orderType.html">– orderType</a></li>
+                        <li><a href="Structs/QueryString/GetAllItems.html">– GetAllItems</a></li>
+                        <li><a href="Structs/QueryString/GetAnItem.html">– GetAnItem</a></li>
+                        <li><a href="Structs/QueryString/GetSubItems.html">– GetSubItems</a></li>
+                        <li><a href="Structs/QueryString/DeleteItems.html">– DeleteItems</a></li>
+                  </ul>
+              </li>
+  </div>
+  <div class="col-md-18 navigation-section">
+    <article class="main-content">
+      <section>
+        <section class="">
+          
+          <h1 id='glpi-api-library-for-swift' class='heading'>GLPI API Library for Swift</h1>
+
+<p><img src="https://user-images.githubusercontent.com/29282308/31666160-8ad74b1a-b34b-11e7-839b-043255af4f58.png" alt="GLPI banner"></p>
+
+<p><a href="https://github.com/glpi-project/swift-library-glpi/blob/develop/LICENSE.md"><img src="https://img.shields.io/badge/license-Apache_v2.0-blue.svg" alt="License"></a>
+<a href="https://twitter.com/GLPI_PROJECT"><img src="https://img.shields.io/twitter/follow/GLPI_PROJECT.svg?style=social&label=Twitter&style=flat-square" alt="Follow twitter"></a>
+<a href="http://www.repostatus.org/"><img src="http://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP"></a>
+<a href="https://t.me/glpien"><img src="https://img.shields.io/badge/Telegram-Group-blue.svg" alt="Telegram Group"></a>
+<a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits"></a>
+<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/glpi-project/swift-library-glpi.svg" alt="Greenkeeper badge"></a></p>
+
+<p>GLPI (<em>Gestionnaire Libre de Parc Informatique</em>) is a free IT Asset Management, issue tracking system and service desk solution.</p>
+
+<p>It helps companies to manage their information system, since it&rsquo;s able to build an inventory of all the organization&rsquo;s assets and to manage administrative and financial tasks.</p>
+<h2 id='table-of-contents' class='heading'>Table of Contents</h2>
+
+<ul>
+<li><a href="#synopsis">Synopsis</a></li>
+<li><a href="#build-status">Build Status</a></li>
+<li><a href="#matrix">Compatibility Matrix</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#code-example">Code Example</a></li>
+<li><a href="#versioning">Versioning</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#contribute">Contribute</a></li>
+<li><a href="#copying">Copying</a></li>
+</ul>
+<h2 id='synopsis' class='heading'>Synopsis</h2>
+
+<p>This library created in Swift features several functionalities common to all GLPI APIs, for example:</p>
+
+<ul>
+<li>HTTP transport to APIs.</li>
+<li>Error handling</li>
+<li>Authentication</li>
+<li>JSON parsing</li>
+<li>Custom Item Types</li>
+<li>Media download/upload</li>
+<li>Batching</li>
+<li>Zero dependencies</li>
+</ul>
+
+<p>You will be able to call all the methods that belong to the <a href="https://github.com/glpi-project/glpi/blob/master/apirest.md">GLPI REST API</a>, for more information visit the <a href="https://glpi-project.github.io/swift-library-glpi/">project&rsquo;s website</a>.</p>
+<h2 id='build-status' class='heading'>Build Status</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center"><strong>Release channel</strong></th>
+<th style="text-align: center">Beta Channel</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><a href="https://circleci.com/gh/glpi-project/swift-library-glpi/tree/master"><img src="https://circleci.com/gh/glpi-project/swift-library-glpi/tree/master.svg?style=svg" alt="Circle CI build"></a></td>
+<td style="text-align: center"><a href="https://circleci.com/gh/glpi-project/swift-library-glpi/tree/develop"><img src="https://circleci.com/gh/glpi-project/swift-library-glpi/tree/develop.svg?style=svg" alt="Circle CI build"></a></td>
+</tr>
+</tbody></table>
+<h2 id='matrix' class='heading'>Matrix</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>GLPI Version</strong></th>
+<th>9.1.1</th>
+<th>9.1.2</th>
+<th>9.1.3</th>
+<th>9.1.5</th>
+<th>9.1.6</th>
+<th>9.2.0</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left"><strong>GLPI API Client</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>We maintain a detailed documentation of the project on the <a href="https://glpi-project.github.io/swift-library-glpi/">website</a>.</p>
+<h2 id='code-example' class='heading'>Code Example</h2>
+
+<p>It&rsquo;s easy to implement in your code</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Glpi</span>
+
+<span class="c1">/// Init Session</span>
+<span class="kt">GlpiRequest</span><span class="o">.</span><span class="nf">initSessionByUserToken</span><span class="p">(</span><span class="nv">userToken</span><span class="p">:</span> <span class="s">"token"</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">//</span>
+<span class="k">var</span> <span class="nv">queryString</span> <span class="o">=</span> <span class="kt">QueryString</span><span class="o">.</span><span class="kt">GetAnItem</span><span class="p">()</span>
+<span class="n">queryString</span><span class="o">.</span><span class="n">expandDropdowns</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">queryString</span><span class="o">.</span><span class="n">getHateoas</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="kt">GlpiRequest</span><span class="o">.</span><span class="nf">getItem</span><span class="p">(</span><span class="nv">itemType</span><span class="p">:</span> <span class="o">.</span><span class="kt">Computer</span><span class="p">,</span> <span class="nv">itemID</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">queryString</span><span class="p">:</span> <span class="n">queryString</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+<h2 id='versioning' class='heading'>Versioning</h2>
+
+<p>In order to provide transparency on our release cycle and to maintain backward compatibility, GLPI is maintained under <a href="http://semver.org/">the Semantic Versioning guidelines</a>. We are committed to following and complying with the rules, the best we can.</p>
+
+<p>See <a href="https://github.com/glpi-project/swift-library-glpi/tags">the tags section of our GitHub project</a> for changelogs for each release version of GLPI. Release announcement posts on <a href="http://www.teclib-edition.com/en/communities/blog-posts/">the official Teclib&rsquo; blog</a> contain summaries of the most noteworthy changes made in each release.</p>
+<h2 id='contact' class='heading'>Contact</h2>
+
+<p>For notices about major changes and general discussion of GLPI development, subscribe to the <a href="http://www.reddit.com/r/glpi">/r/glpi</a> subreddit.
+You can also chat with us via IRC in <a href="http://webchat.freenode.net/?channels=GLPI">#GLPI on freenode</a> or <a href="https://t.me/glpien">@glpien on Telegram</a>.</p>
+<h2 id='contribute' class='heading'>Contribute</h2>
+
+<p>Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our
+guidelines for <a href="./CONTRIBUTING.md">contributing</a> and then check out one of our issues in the <a href="https://github.com/glpi-project/swift-library-glpi/issues">Issues Dashboard</a>.</p>
+<h2 id='copying' class='heading'>Copying</h2>
+
+<ul>
+<li><strong>Code</strong>: you can redistribute it and/or modify
+it under the terms of the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License</a>.</li>
+<li><strong>Documentation</strong>: released under Attribution 4.0 International (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).</li>
+</ul>
+
+        </section>
+      </section>
+    </article>
+  </div>
+</div>

@@ -57,13 +57,26 @@ references:
     run:
       name: Configure github
       command: source ./ci/scripts/git_config.sh
-  
-  deploy_develop: &deploy_develop
+
+  create_documentation: &create_documentation
     run:
-      name: Generate changelog, docs, coverage and snapshots
-      command: source ./ci/scripts/deploy_develop.sh
+      name: Generate documentation
+      command: source ci/scripts/documentation.sh
       environment:
-        SCRIPT_PATH: ./ci/scripts
+        DOCUMENTATION_DESTINATION: development/code-documentation/
+  
+  create_coverage: &create_coverage
+    run:
+      name: Generate coverage
+      command: source ci/scripts/coverage.sh
+      environment:
+        COVERAGE_DESTINATION: development/coverage/
+        TEST_REPORT_DESTINATION: development/test-report/
+
+  update_cache: &update_cache
+    run:
+      name: Update cache gh-pages
+      command: source ci/scripts/update_cache.sh
   
   deploy_master: &deploy_master
     run:
@@ -106,10 +119,19 @@ jobs:
       - checkout
       - *bundler_config
       - *install
+      - *git_config
+      - *create_documentation
+
+  coverage:
+    <<: *container_config
+    steps:
+      - checkout
+      - *bundler_config
+      - *install
       - *fastlane_config
       - *git_config
       - *test_app
-      - *deploy_develop
+      - *create_coverage
 
   release:
     <<: *container_config
@@ -125,6 +147,15 @@ jobs:
       - *keychain_remove
       - *pod_trunk
 
+  update_cache:
+    <<: *container_config
+    steps:
+      - checkout
+      - *bundler_config
+      - *install
+      - *git_config
+      - *update_cache
+
 workflows:
   version: 2
   build-test-deploy:
@@ -138,7 +169,16 @@ workflows:
             - test
           filters:
             branches:
-              only: 
+              only:
+                - master
+                - develop
+      - coverage:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
                 - develop
       - release:
           requires:

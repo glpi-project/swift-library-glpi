@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.authors               = { "Flyve MDM" => "apple@teclib.com", "Hector Rondon" => "hrondon@teclib.com" }
   s.source                = { :git => "https://github.com/glpi-project/swift-library-glpi.git", :tag => s.version }
   s.source_files          = 'Source/*.{swift,h,m}'
-  s.platforms             = { :ios => "9.3" }
-  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '4.0' }
+  s.platforms             = { :ios => "10.3" }
+  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '4.2' }
 end

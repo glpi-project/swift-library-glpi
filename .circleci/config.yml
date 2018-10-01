@@ -78,12 +78,10 @@ references:
       name: Update cache gh-pages
       command: source ci/scripts/update_cache.sh
   
-  deploy_master: &deploy_master
+  release_app: &release_app
     run:
-      name: Master deploy
-      command: source ./ci/scripts/deploy_master.sh
-      environment:
-        SCRIPT_PATH: ./ci/scripts
+      name: Release app
+      command: source ci/scripts/release.sh
 
   store_ipa: &store_ipa
     store_artifacts:
@@ -142,7 +140,7 @@ jobs:
       - *fastlane_config
       - *keychain_add
       - *git_config
-      - *deploy_master
+      - *release_app
       - *store_ipa
       - *keychain_remove
       - *pod_trunk
@@ -182,8 +180,18 @@ workflows:
                 - develop
       - release:
           requires:
-            - test
+            - coverage
+            - documentation
           filters:
             branches:
-              only: 
+              only:
                 - master
+      - update_cache:
+          requires:
+            - coverage
+            - documentation
+          filters:
+            branches:
+              only:
+                - master
+                - develop

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         table.tableFooterView = UIView()
         table.backgroundColor = UIColor.init(red: 239.0/255.0, green: 239.0/255.0, blue: 244.0/255.0, alpha: 1.0)
         table.isScrollEnabled = true
-        table.rowHeight = UITableViewAutomaticDimension
+        table.rowHeight = UITableView.automaticDimension
         table.estimatedRowHeight = 100
         table.register(UITableViewCell.self, forCellReuseIdentifier: self.cellId)
         return table
@@ -196,8 +196,8 @@ extension ViewController: UITableViewDataSource {
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellId)
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellId)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         if indexPath.section == 0 && indexPath.row == 0 {
             cell.textLabel?.text = "Init Session"

@@ -55,7 +55,7 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
   # Update CFBundleVersion
   /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Source/Info.plist
   # Add modified and delete files
-  git add ${APPNAME}/Info.plist
+  git add ${PWD}/Source/Info.plist
   git commit --amend --no-edit
 
   echo "Generate code coverage reporting with xcov"

@@ -1,0 +1,2728 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/distiller/project/Source/GlpiRequest.swift",
+      "line": 33,
+      "symbol": "GlpiRequest",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/GlpiRequest.swift",
+      "line": 250,
+      "symbol": "GlpiRequest.httpRequest(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 30,
+      "symbol": "ItemType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 31,
+      "symbol": "ItemType.Alert",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 32,
+      "symbol": "ItemType.AuthLDAP",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 33,
+      "symbol": "ItemType.Computer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 34,
+      "symbol": "ItemType.Config",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 35,
+      "symbol": "ItemType.ConsumableItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 36,
+      "symbol": "ItemType.Contact",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 37,
+      "symbol": "ItemType.Contract",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 38,
+      "symbol": "ItemType.CronTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 39,
+      "symbol": "ItemType.CronTaskLog",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 40,
+      "symbol": "ItemType.DBConnection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 41,
+      "symbol": "ItemType.DisplayPreference",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 42,
+      "symbol": "ItemType.Document",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 43,
+      "symbol": "ItemType.AuthLdapReplicate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 44,
+      "symbol": "ItemType.Event",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 45,
+      "symbol": "ItemType.KnowbaseItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 46,
+      "symbol": "ItemType.Link",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 47,
+      "symbol": "ItemType.Log",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 48,
+      "symbol": "ItemType.MailCollector",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 49,
+      "symbol": "ItemType.Monitor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 50,
+      "symbol": "ItemType.NetworkEquipment",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 51,
+      "symbol": "ItemType.Notification",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 52,
+      "symbol": "ItemType.NotificationEvent",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 53,
+      "symbol": "ItemType.NotificationMailSetting",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 54,
+      "symbol": "ItemType.AuthMail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 55,
+      "symbol": "ItemType.NotificationTemplate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 56,
+      "symbol": "ItemType.NotImportedEmail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 57,
+      "symbol": "ItemType.Peripheral",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 58,
+      "symbol": "ItemType.Phone",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 59,
+      "symbol": "ItemType.Plugin",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 60,
+      "symbol": "ItemType.Printer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 61,
+      "symbol": "ItemType.Profile",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 62,
+      "symbol": "ItemType.Project",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 63,
+      "symbol": "ItemType.QueuedMail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 64,
+      "symbol": "ItemType.Reminder",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 65,
+      "symbol": "ItemType.Bookmark",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 66,
+      "symbol": "ItemType.RSSFeed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 67,
+      "symbol": "ItemType.Rule",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 68,
+      "symbol": "ItemType.RuleCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 69,
+      "symbol": "ItemType.SLA",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 70,
+      "symbol": "ItemType.SlaLevel_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 71,
+      "symbol": "ItemType.Software",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 72,
+      "symbol": "ItemType.SoftwareLicense",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 73,
+      "symbol": "ItemType.Supplier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 74,
+      "symbol": "ItemType.TicketFollowup",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 75,
+      "symbol": "ItemType.TicketSatisfaction",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 76,
+      "symbol": "ItemType.CartridgeItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 77,
+      "symbol": "ItemType.Transfer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 78,
+      "symbol": "ItemType.User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 79,
+      "symbol": "ItemType.CommonDBConnexity",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 80,
+      "symbol": "ItemType.CommonDropdown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 81,
+      "symbol": "ItemType.CommonITILObject",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 82,
+      "symbol": "ItemType.CommonITILTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 83,
+      "symbol": "ItemType.AutoUpdateSystem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 84,
+      "symbol": "ItemType.Blacklist",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 85,
+      "symbol": "ItemType.CartridgeItemType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 86,
+      "symbol": "ItemType.Item_DeviceSoundCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 87,
+      "symbol": "ItemType.Item_Problem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 88,
+      "symbol": "ItemType.Item_Project",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 89,
+      "symbol": "ItemType.Item_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 90,
+      "symbol": "ItemType.ITILCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 91,
+      "symbol": "ItemType.KnowbaseItem_Profile",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 92,
+      "symbol": "ItemType.KnowbaseItem_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 93,
+      "symbol": "ItemType.KnowbaseItemCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 94,
+      "symbol": "ItemType.KnowbaseItemTranslation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 95,
+      "symbol": "ItemType.Link_Itemtype",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 96,
+      "symbol": "ItemType.Change",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 97,
+      "symbol": "ItemType.Location",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 98,
+      "symbol": "ItemType.Manufacturer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 99,
+      "symbol": "ItemType.MonitorModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 100,
+      "symbol": "ItemType.MonitorType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 101,
+      "symbol": "ItemType.Netpoint",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 102,
+      "symbol": "ItemType.Network",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 103,
+      "symbol": "ItemType.NetworkAlias",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 104,
+      "symbol": "ItemType.NetworkEquipmentFirmware",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 105,
+      "symbol": "ItemType.NetworkEquipmentModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 106,
+      "symbol": "ItemType.NetworkEquipmentType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 107,
+      "symbol": "ItemType.Change_Group",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 108,
+      "symbol": "ItemType.NetworkInterface",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 109,
+      "symbol": "ItemType.NetworkName",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 110,
+      "symbol": "ItemType.NetworkPort",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 111,
+      "symbol": "ItemType.NetworkPort_NetworkPort",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 112,
+      "symbol": "ItemType.NetworkPort_Vlan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 113,
+      "symbol": "ItemType.NetworkPortAggregate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 114,
+      "symbol": "ItemType.NetworkPortAlias",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 115,
+      "symbol": "ItemType.NetworkPortDialup",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 116,
+      "symbol": "ItemType.NetworkPortEthernet",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 117,
+      "symbol": "ItemType.NetworkPortInstantiation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 118,
+      "symbol": "ItemType.Change_Item",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 119,
+      "symbol": "ItemType.NetworkPortLocal",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 120,
+      "symbol": "ItemType.NetworkPortMigration",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 121,
+      "symbol": "ItemType.NetworkPortWifi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 122,
+      "symbol": "ItemType.Notepad",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 123,
+      "symbol": "ItemType.NotificationTarget",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 124,
+      "symbol": "ItemType.NotificationTargetCartridgeItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 125,
+      "symbol": "ItemType.NotificationTargetChange",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 126,
+      "symbol": "ItemType.NotificationTargetCommonITILObject",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 127,
+      "symbol": "ItemType.NotificationTargetConsumableItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 128,
+      "symbol": "ItemType.NotificationTargetContract",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 129,
+      "symbol": "ItemType.Change_Problem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 130,
+      "symbol": "ItemType.NotificationTargetCrontask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 131,
+      "symbol": "ItemType.NotificationTargetDBConnection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 132,
+      "symbol": "ItemType.NotificationTargetFieldUnicity",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 133,
+      "symbol": "ItemType.NotificationTargetInfocom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 134,
+      "symbol": "ItemType.NotificationTargetMailCollector",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 135,
+      "symbol": "ItemType.NotificationTargetPlanningRecall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 136,
+      "symbol": "ItemType.NotificationTargetProblem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 137,
+      "symbol": "ItemType.NotificationTargetProject",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 138,
+      "symbol": "ItemType.NotificationTargetProjectTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 139,
+      "symbol": "ItemType.NotificationTargetReservation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 140,
+      "symbol": "ItemType.Change_Project",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 141,
+      "symbol": "ItemType.NotificationTargetSoftwareLicense",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 142,
+      "symbol": "ItemType.NotificationTargetTicket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 143,
+      "symbol": "ItemType.NotificationTargetUser",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 144,
+      "symbol": "ItemType.NotificationTemplateTranslation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 145,
+      "symbol": "ItemType.OperatingSystem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 146,
+      "symbol": "ItemType.OperatingSystemServicePack",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 147,
+      "symbol": "ItemType.OperatingSystemVersion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 148,
+      "symbol": "ItemType.PeripheralModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 149,
+      "symbol": "ItemType.PeripheralType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 150,
+      "symbol": "ItemType.PhoneModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 151,
+      "symbol": "ItemType.Change_Supplier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 152,
+      "symbol": "ItemType.PhonePowerSupply",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 153,
+      "symbol": "ItemType.PhoneType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 154,
+      "symbol": "ItemType.PlanningRecall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 155,
+      "symbol": "ItemType.PrinterModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 156,
+      "symbol": "ItemType.PrinterType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 157,
+      "symbol": "ItemType.Problem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 158,
+      "symbol": "ItemType.Problem_Supplier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 159,
+      "symbol": "ItemType.Problem_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 160,
+      "symbol": "ItemType.Problem_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 161,
+      "symbol": "ItemType.ProblemCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 162,
+      "symbol": "ItemType.Change_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 163,
+      "symbol": "ItemType.ProblemTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 164,
+      "symbol": "ItemType.Profile_Reminder",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 165,
+      "symbol": "ItemType.Profile_RSSFeed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 166,
+      "symbol": "ItemType.Profile_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 167,
+      "symbol": "ItemType.ProfileRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 168,
+      "symbol": "ItemType.ProjectCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 169,
+      "symbol": "ItemType.ProjectState",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 170,
+      "symbol": "ItemType.ProjectTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 171,
+      "symbol": "ItemType.ProjectTask_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 172,
+      "symbol": "ItemType.ProjectTaskTeam",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 173,
+      "symbol": "ItemType.Change_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 174,
+      "symbol": "ItemType.ProjectTaskType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 175,
+      "symbol": "ItemType.ProjectTeam",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 176,
+      "symbol": "ItemType.ProjectType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 177,
+      "symbol": "ItemType.RegisteredID",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 178,
+      "symbol": "ItemType.Reminder_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 179,
+      "symbol": "ItemType.RequestType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 180,
+      "symbol": "ItemType.Reservation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 181,
+      "symbol": "ItemType.ReservationItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 182,
+      "symbol": "ItemType.RSSFeed_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 183,
+      "symbol": "ItemType.RuleAction",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 184,
+      "symbol": "ItemType.ChangeCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 185,
+      "symbol": "ItemType.RuleCriteria",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 186,
+      "symbol": "ItemType.RuleDictionnaryComputerModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 187,
+      "symbol": "ItemType.RuleDictionnaryComputerModelCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 188,
+      "symbol": "ItemType.RuleDictionnaryComputerType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 189,
+      "symbol": "ItemType.RuleDictionnaryComputerTypeCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 190,
+      "symbol": "ItemType.RuleDictionnaryDropdown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 191,
+      "symbol": "ItemType.RuleDictionnaryDropdownCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 192,
+      "symbol": "ItemType.RuleDictionnaryManufacturer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 193,
+      "symbol": "ItemType.RuleDictionnaryManufacturerCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 194,
+      "symbol": "ItemType.RuleDictionnaryMonitorModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 195,
+      "symbol": "ItemType.BlacklistedMailContent",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 196,
+      "symbol": "ItemType.ChangeTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 197,
+      "symbol": "ItemType.RuleDictionnaryMonitorModelCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 198,
+      "symbol": "ItemType.RuleDictionnaryMonitorType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 199,
+      "symbol": "ItemType.RuleDictionnaryMonitorTypeCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 200,
+      "symbol": "ItemType.RuleDictionnaryNetworkEquipmentModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 201,
+      "symbol": "ItemType.RuleDictionnaryNetworkEquipmentModelCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 202,
+      "symbol": "ItemType.RuleDictionnaryNetworkEquipmentType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 203,
+      "symbol": "ItemType.RuleDictionnaryNetworkEquipmentTypeCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 204,
+      "symbol": "ItemType.RuleDictionnaryOperatingSystem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 205,
+      "symbol": "ItemType.RuleDictionnaryOperatingSystemCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 206,
+      "symbol": "ItemType.RuleDictionnaryOperatingSystemServicePack",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 207,
+      "symbol": "ItemType.ChangeValidation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 208,
+      "symbol": "ItemType.RuleDictionnaryOperatingSystemServicePackCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 209,
+      "symbol": "ItemType.RuleDictionnaryOperatingSystemVersion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 210,
+      "symbol": "ItemType.RuleDictionnaryOperatingSystemVersionCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 211,
+      "symbol": "ItemType.RuleDictionnaryPeripheralModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 212,
+      "symbol": "ItemType.RuleDictionnaryPeripheralModelCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 213,
+      "symbol": "ItemType.RuleDictionnaryPeripheralType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 214,
+      "symbol": "ItemType.RuleDictionnaryPeripheralTypeCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 215,
+      "symbol": "ItemType.RuleDictionnaryPhoneModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 216,
+      "symbol": "ItemType.RuleDictionnaryPhoneModelCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 217,
+      "symbol": "ItemType.RuleDictionnaryPhoneType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 218,
+      "symbol": "ItemType.CommonDBChild",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 219,
+      "symbol": "ItemType.RuleDictionnaryPhoneTypeCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 220,
+      "symbol": "ItemType.RuleDictionnaryPrinter",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 221,
+      "symbol": "ItemType.RuleDictionnaryPrinterCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 222,
+      "symbol": "ItemType.RuleDictionnaryPrinterModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 223,
+      "symbol": "ItemType.RuleDictionnaryPrinterModelCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 224,
+      "symbol": "ItemType.RuleDictionnaryPrinterType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 225,
+      "symbol": "ItemType.RuleDictionnaryPrinterTypeCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 226,
+      "symbol": "ItemType.RuleDictionnarySoftware",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 227,
+      "symbol": "ItemType.RuleDictionnarySoftwareCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 228,
+      "symbol": "ItemType.RuleImportComputer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 229,
+      "symbol": "ItemType.CommonDBRelation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 230,
+      "symbol": "ItemType.RuleImportComputerCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 231,
+      "symbol": "ItemType.RuleImportEntity",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 232,
+      "symbol": "ItemType.RuleImportEntityCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 233,
+      "symbol": "ItemType.RuleMailCollector",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 234,
+      "symbol": "ItemType.RuleMailCollectorCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 235,
+      "symbol": "ItemType.RuleRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 236,
+      "symbol": "ItemType.RuleRightCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 237,
+      "symbol": "ItemType.RuleRightParameter",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 238,
+      "symbol": "ItemType.RuleSoftwareCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 239,
+      "symbol": "ItemType.RuleSoftwareCategoryCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 240,
+      "symbol": "ItemType.CommonDevice",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 241,
+      "symbol": "ItemType.RuleTicket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 242,
+      "symbol": "ItemType.RuleTicketCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 243,
+      "symbol": "ItemType.SlaLevel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 244,
+      "symbol": "ItemType.SlaLevelAction",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 245,
+      "symbol": "ItemType.SlaLevelCriteria",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 246,
+      "symbol": "ItemType.SoftwareCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 247,
+      "symbol": "ItemType.SoftwareLicenseType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 248,
+      "symbol": "ItemType.SoftwareVersion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 249,
+      "symbol": "ItemType.SolutionTemplate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 250,
+      "symbol": "ItemType.SolutionType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 251,
+      "symbol": "ItemType.CommonImplicitTreeDropdown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 252,
+      "symbol": "ItemType.SsoVariable",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 253,
+      "symbol": "ItemType.State",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 254,
+      "symbol": "ItemType.Supplier_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 255,
+      "symbol": "ItemType.SupplierType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 256,
+      "symbol": "ItemType.TaskCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 257,
+      "symbol": "ItemType.Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 258,
+      "symbol": "ItemType.Ticket_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 259,
+      "symbol": "ItemType.Ticket_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 260,
+      "symbol": "ItemType.TicketCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 261,
+      "symbol": "ItemType.TicketRecurrent",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 262,
+      "symbol": "ItemType.CommonITILActor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 263,
+      "symbol": "ItemType.TicketTask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 264,
+      "symbol": "ItemType.TicketTemplate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 265,
+      "symbol": "ItemType.TicketTemplateHiddenField",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 266,
+      "symbol": "ItemType.TicketTemplateMandatoryField",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 267,
+      "symbol": "ItemType.TicketTemplatePredefinedField",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 268,
+      "symbol": "ItemType.TicketValidation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 269,
+      "symbol": "ItemType.UserCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 270,
+      "symbol": "ItemType.UserEmail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 271,
+      "symbol": "ItemType.UserTitle",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 272,
+      "symbol": "ItemType.VirtualMachineState",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 273,
+      "symbol": "ItemType.CommonITILCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 274,
+      "symbol": "ItemType.VirtualMachineSystem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 275,
+      "symbol": "ItemType.VirtualMachineType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 276,
+      "symbol": "ItemType.Vlan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 277,
+      "symbol": "ItemType.WifiNetwork",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 278,
+      "symbol": "ItemType.CommonITILValidation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 279,
+      "symbol": "ItemType.CommonTreeDropdown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 280,
+      "symbol": "ItemType.Bookmark_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 281,
+      "symbol": "ItemType.Computer_Item",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 282,
+      "symbol": "ItemType.Computer_SoftwareLicense",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 283,
+      "symbol": "ItemType.Computer_SoftwareVersion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 284,
+      "symbol": "ItemType.ComputerDisk",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 285,
+      "symbol": "ItemType.ComputerModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 286,
+      "symbol": "ItemType.ComputerType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 287,
+      "symbol": "ItemType.ComputerVirtualMachine",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 288,
+      "symbol": "ItemType.Consumable",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 289,
+      "symbol": "ItemType.ConsumableItemType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 290,
+      "symbol": "ItemType.Contact_Supplier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 291,
+      "symbol": "ItemType.Budget",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 292,
+      "symbol": "ItemType.ContactType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 293,
+      "symbol": "ItemType.Contract_Item",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 294,
+      "symbol": "ItemType.Contract_Supplier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 295,
+      "symbol": "ItemType.ContractCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 296,
+      "symbol": "ItemType.ContractType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 297,
+      "symbol": "ItemType.DeviceCase",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 298,
+      "symbol": "ItemType.DeviceCaseType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 299,
+      "symbol": "ItemType.DeviceControl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 300,
+      "symbol": "ItemType.DeviceDrive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 301,
+      "symbol": "ItemType.DeviceGraphicCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 302,
+      "symbol": "ItemType.Calendar",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 303,
+      "symbol": "ItemType.DeviceHardDrive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 304,
+      "symbol": "ItemType.DeviceMemory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 305,
+      "symbol": "ItemType.DeviceMemoryType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 306,
+      "symbol": "ItemType.DeviceMotherboard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 307,
+      "symbol": "ItemType.DeviceNetworkCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 308,
+      "symbol": "ItemType.DevicePci",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 309,
+      "symbol": "ItemType.DevicePowerSupply",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 310,
+      "symbol": "ItemType.DeviceProcessor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 311,
+      "symbol": "ItemType.DeviceSoundCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 312,
+      "symbol": "ItemType.Document_Item",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 313,
+      "symbol": "ItemType.Calendar_Holiday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 314,
+      "symbol": "ItemType.DocumentCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 315,
+      "symbol": "ItemType.DocumentType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 316,
+      "symbol": "ItemType.Domain",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 317,
+      "symbol": "ItemType.DropdownTranslation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 318,
+      "symbol": "ItemType.Entity",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 319,
+      "symbol": "ItemType.Entity_KnowbaseItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 320,
+      "symbol": "ItemType.Entity_Reminder",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 321,
+      "symbol": "ItemType.Entity_RSSFeed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 322,
+      "symbol": "ItemType.Fieldblacklist",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 323,
+      "symbol": "ItemType.FieldUnicity",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 324,
+      "symbol": "ItemType.CalendarSegment",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 325,
+      "symbol": "ItemType.Filesystem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 326,
+      "symbol": "ItemType.FQDN",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 327,
+      "symbol": "ItemType.FQDNLabel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 328,
+      "symbol": "ItemType.Group",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 329,
+      "symbol": "ItemType.Group_KnowbaseItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 330,
+      "symbol": "ItemType.Group_Problem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 331,
+      "symbol": "ItemType.Group_Reminder",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 332,
+      "symbol": "ItemType.Group_RSSFeed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 333,
+      "symbol": "ItemType.Group_Ticket",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 334,
+      "symbol": "ItemType.Group_User",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 335,
+      "symbol": "ItemType.Cartridge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 336,
+      "symbol": "ItemType.Holiday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 337,
+      "symbol": "ItemType.Infocom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 338,
+      "symbol": "ItemType.InterfaceType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 339,
+      "symbol": "ItemType.IPAddress",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 340,
+      "symbol": "ItemType.IPAddress_IPNetwork",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 341,
+      "symbol": "ItemType.IPNetmask",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 342,
+      "symbol": "ItemType.IPNetwork",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 343,
+      "symbol": "ItemType.IPNetwork_Vlan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 344,
+      "symbol": "ItemType.Item_DeviceCase",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 345,
+      "symbol": "ItemType.Item_DeviceControl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 346,
+      "symbol": "ItemType.CartridgeItem_PrinterModel",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 347,
+      "symbol": "ItemType.Item_DeviceDrive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 348,
+      "symbol": "ItemType.Item_DeviceGraphicCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 349,
+      "symbol": "ItemType.Item_DeviceHardDrive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 350,
+      "symbol": "ItemType.Item_DeviceMemory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 351,
+      "symbol": "ItemType.Item_DeviceMotherboard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 352,
+      "symbol": "ItemType.Item_DeviceNetworkCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 353,
+      "symbol": "ItemType.Item_DevicePci",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 354,
+      "symbol": "ItemType.Item_DevicePowerSupply",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 355,
+      "symbol": "ItemType.Item_DeviceProcessor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/ItemType.swift",
+      "line": 356,
+      "symbol": "ItemType.Item_Devices",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 30,
+      "symbol": "QueryString",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 32,
+      "symbol": "QueryString.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 34,
+      "symbol": "QueryString.orderType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 35,
+      "symbol": "QueryString.orderType.ASC",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 36,
+      "symbol": "QueryString.orderType.DESC",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 39,
+      "symbol": "QueryString.GetAllItems",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 40,
+      "symbol": "QueryString.GetAllItems.expandDropdowns",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 41,
+      "symbol": "QueryString.GetAllItems.getHateoas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 42,
+      "symbol": "QueryString.GetAllItems.onlyId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 43,
+      "symbol": "QueryString.GetAllItems.range",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 44,
+      "symbol": "QueryString.GetAllItems.sort",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 45,
+      "symbol": "QueryString.GetAllItems.order",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 46,
+      "symbol": "QueryString.GetAllItems.searchText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 47,
+      "symbol": "QueryString.GetAllItems.isDeleted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 49,
+      "symbol": "QueryString.GetAllItems.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 51,
+      "symbol": "QueryString.GetAllItems.queryString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 83,
+      "symbol": "QueryString.GetAnItem",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 84,
+      "symbol": "QueryString.GetAnItem.expandDropdowns",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 85,
+      "symbol": "QueryString.GetAnItem.getHateoas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 86,
+      "symbol": "QueryString.GetAnItem.getSha1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 87,
+      "symbol": "QueryString.GetAnItem.withDevices",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 88,
+      "symbol": "QueryString.GetAnItem.withDisks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 89,
+      "symbol": "QueryString.GetAnItem.withSoftwares",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 90,
+      "symbol": "QueryString.GetAnItem.withConnections",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 91,
+      "symbol": "QueryString.GetAnItem.withNetworkports",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 92,
+      "symbol": "QueryString.GetAnItem.withInfocoms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 93,
+      "symbol": "QueryString.GetAnItem.withContracts",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 94,
+      "symbol": "QueryString.GetAnItem.withDocuments",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 95,
+      "symbol": "QueryString.GetAnItem.withTickets",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 96,
+      "symbol": "QueryString.GetAnItem.withProblems",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 97,
+      "symbol": "QueryString.GetAnItem.withChanges",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 98,
+      "symbol": "QueryString.GetAnItem.withNotes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 99,
+      "symbol": "QueryString.GetAnItem.withLogs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 101,
+      "symbol": "QueryString.GetAnItem.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 103,
+      "symbol": "QueryString.GetAnItem.queryString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 159,
+      "symbol": "QueryString.GetSubItems",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 160,
+      "symbol": "QueryString.GetSubItems.expandDropdowns",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 161,
+      "symbol": "QueryString.GetSubItems.getHateoas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 162,
+      "symbol": "QueryString.GetSubItems.onlyId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 163,
+      "symbol": "QueryString.GetSubItems.range",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 164,
+      "symbol": "QueryString.GetSubItems.sort",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 165,
+      "symbol": "QueryString.GetSubItems.order",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 167,
+      "symbol": "QueryString.GetSubItems.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 169,
+      "symbol": "QueryString.GetSubItems.queryString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 195,
+      "symbol": "QueryString.DeleteItems",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 196,
+      "symbol": "QueryString.DeleteItems.forcePurge",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 197,
+      "symbol": "QueryString.DeleteItems.history",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 199,
+      "symbol": "QueryString.DeleteItems.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/QueryString.swift",
+      "line": 201,
+      "symbol": "QueryString.DeleteItems.queryString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 30,
+      "symbol": "Routers",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 253,
+      "symbol": "HTTPMethod",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 255,
+      "symbol": "HTTPMethod.options",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 257,
+      "symbol": "HTTPMethod.get",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 259,
+      "symbol": "HTTPMethod.head",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 261,
+      "symbol": "HTTPMethod.post",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 263,
+      "symbol": "HTTPMethod.put",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 265,
+      "symbol": "HTTPMethod.patch",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 267,
+      "symbol": "HTTPMethod.delete",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 269,
+      "symbol": "HTTPMethod.trace",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/Source/Routers.swift",
+      "line": 271,
+      "symbol": "HTTPMethod.connect",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/distiller/project"
+}

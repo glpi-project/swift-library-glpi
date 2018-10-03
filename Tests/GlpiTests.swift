@@ -335,4 +335,19 @@ class GlpiTests: XCTestCase {
         })
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+    /// Test search request
+    func testSearch() {
+        
+        let expectationResult = expectation(description: "listSearchOptions")
+        
+        GlpiRequest.search(itemType: ItemType.Computer, completion: { _, response, _ in
+            
+            if let urlResponse: HTTPURLResponse = response {
+                XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
+                expectationResult.fulfill()
+            }
+        })
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }

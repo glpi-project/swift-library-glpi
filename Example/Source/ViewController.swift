@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     }
     
     func requestInitSession() {
-        GlpiRequest.initSessionByUserToken(userToken: "L8B3f4iiNIjg8W2Kla1AXFjJsYrWxVqDozMzq2G7") { data, _, _ in
+        GlpiRequest.initSessionByUserToken(userToken: "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC") { data, _, _ in
             self.responseAPI = [AnyObject]()
             self.loadResponse(endpoint: "initSession", result: self.objectToString(data as Any))
         }
@@ -116,41 +116,45 @@ class ViewController: UIViewController {
         GlpiRequest.getMyProfiles { data, _, _ in
             self.loadResponse(endpoint: "getMyProfiles", result: self.objectToString(data as Any))
         }
-        
+
         GlpiRequest.getActiveProfile { data, _, _ in
             self.loadResponse(endpoint: "getActiveProfile", result: self.objectToString(data as Any))
-            
+
             GlpiRequest.changeActiveProfile(profileID: "4", completion: { _, _, _ in
                 self.loadResponse(endpoint: "changeActiveProfile", result: "")
             })
         }
-        
+
         GlpiRequest.getMyEntities { data, _, _ in
             self.loadResponse(endpoint: "getMyEntities", result: self.objectToString(data as Any))
         }
-        
+
         GlpiRequest.getActiveEntities { data, _, _ in
             self.loadResponse(endpoint: "getActiveEntities", result: self.objectToString(data as Any))
-            
+
             GlpiRequest.changeActiveEntities(entitiesID: "0", completion: { data, _, _ in
                 self.loadResponse(endpoint: "changeActiveEntities", result: self.objectToString(data as Any))
             })
         }
-        
+
         GlpiRequest.getFullSession { data, _, _ in
             self.loadResponse(endpoint: "getFullSession", result: self.objectToString(data as Any))
         }
-        
+
         GlpiRequest.getAllItems(itemType: .Computer, queryString: nil) { data, _, _ in
             self.loadResponse(endpoint: "getAllItems", result: self.objectToString(data as Any))
         }
-        
+
         GlpiRequest.getItem(itemType: .Computer, itemID: 3, queryString: nil) { data, _, _ in
             self.loadResponse(endpoint: "getAnItem", result: self.objectToString(data as Any))
         }
-        
+
         GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel, queryString: nil) { data, _, _ in
             self.loadResponse(endpoint: "getSubItems", result: self.objectToString(data as Any))
+        }
+        
+        GlpiRequest.listSearchOptions(itemType: .Computer) { data, _, _ in
+            self.loadResponse(endpoint: "listSearchOptions", result: self.objectToString(data as Any))
         }
         
     }

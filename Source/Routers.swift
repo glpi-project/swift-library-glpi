@@ -67,17 +67,19 @@ public enum Routers: URLRequestDelegate {
     case deleteItems(ItemType, Int?, QueryString.DeleteItems?, [String: AnyObject])
     /// PUT /lostPassword
     case lostPassword([String: AnyObject])
-    /// GET /listSearchOptions
+    /// GET /listSearchOptions/:itemtype
     case listSearchOptions(ItemType)
+    /// GET /search/:itemtype
+    case search(ItemType)
     
     /// get HTTP Method
     var method: HTTPMethod {
         switch self {
         case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
-             .getMultipleItems, .getAllItems, .getItem, .getSubItems:
+             .getMultipleItems, .getAllItems, .getItem, .getSubItems, .listSearchOptions, .search:
             return .get
-        case .changeActiveProfile, .changeActiveEntities, .addItems, .listSearchOptions:
+        case .changeActiveProfile, .changeActiveEntities, .addItems:
             return .post
         case .updateItems, .lostPassword:
             return .put
@@ -136,6 +138,8 @@ public enum Routers: URLRequestDelegate {
             return "/lostPassword"
         case .listSearchOptions(let itemType):
             return "/listSearchOptions/\(itemType)"
+        case .search(let itemType):
+            return "/search/\(itemType)"
         }
     }
     
@@ -145,7 +149,7 @@ public enum Routers: URLRequestDelegate {
         switch self {
         case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
-             .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword, .listSearchOptions:
+             .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword, .listSearchOptions, .search:
             return  nil
         case .getAllItems(_, let queryString):
             if queryString != nil {

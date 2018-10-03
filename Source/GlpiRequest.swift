@@ -257,6 +257,16 @@ public class GlpiRequest {
         }
     }
     
+    /**
+     Request list search option
+     */
+    class public func search(itemType: ItemType, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+        
+        GlpiRequest.httpRequest(Routers.search(itemType)) { data, response, error in
+            completion(data, response, error)
+        }
+    }
+    
     class func httpRequest(_ router: Routers, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         let task:URLSessionDataTask = URLSession.shared.dataTask(with: router.request()) { (data, response, error) in

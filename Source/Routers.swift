@@ -70,14 +70,14 @@ public enum Routers: URLRequestDelegate {
     /// GET /listSearchOptions/:itemtype
     case listSearchOptions(ItemType)
     /// GET /search/:itemtype
-    case search(ItemType)
+    case searchItems(ItemType)
     
     /// get HTTP Method
     var method: HTTPMethod {
         switch self {
         case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .getMyEntities, .getActiveEntities, .getFullSession, .getGlpiConfig,
-             .getMultipleItems, .getAllItems, .getItem, .getSubItems, .listSearchOptions, .search:
+             .getMultipleItems, .getAllItems, .getItem, .getSubItems, .listSearchOptions, .searchItems:
             return .get
         case .changeActiveProfile, .changeActiveEntities, .addItems:
             return .post
@@ -138,7 +138,7 @@ public enum Routers: URLRequestDelegate {
             return "/lostPassword"
         case .listSearchOptions(let itemType):
             return "/listSearchOptions/\(itemType)"
-        case .search(let itemType):
+        case .searchItems(let itemType):
             return "/search/\(itemType)"
         }
     }
@@ -149,7 +149,7 @@ public enum Routers: URLRequestDelegate {
         switch self {
         case .initSessionByUserToken, .initSessionByCredentials, .killSession, .getMyProfiles, .getActiveProfile,
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
-             .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword, .listSearchOptions, .search:
+             .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword, .listSearchOptions, .searchItems:
             return  nil
         case .getAllItems(_, let queryString):
             if queryString != nil {

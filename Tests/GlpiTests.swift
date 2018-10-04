@@ -341,7 +341,7 @@ class GlpiTests: XCTestCase {
         
         let expectationResult = expectation(description: "listSearchOptions")
         
-        GlpiRequest.search(itemType: ItemType.Computer, completion: { _, response, _ in
+        GlpiRequest.searchItems(itemType: ItemType.Computer, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")

@@ -157,7 +157,7 @@ class ViewController: UIViewController {
             self.loadResponse(endpoint: "listSearchOptions", result: self.objectToString(data as Any))
         }
         
-        GlpiRequest.search(itemType: .Computer) { data, _, _ in
+        GlpiRequest.searchItems(itemType: .Computer) { data, _, _ in
             self.loadResponse(endpoint: "search", result: self.objectToString(data as Any))
         }
         

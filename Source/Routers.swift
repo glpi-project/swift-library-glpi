@@ -30,9 +30,9 @@ import Foundation
 public enum Routers: URLRequestDelegate {
     
     /// GET /initSession
-    case initSessionByUserToken([String: AnyObject])
+    case initSessionByUserToken(String, String)
     /// GET /initSession
-    case initSessionByCredentials([String: AnyObject])
+    case initSessionByCredentials(String, String, String)
     /// GET /killSession
     case killSession
     /// GET /getMyProfiles
@@ -42,7 +42,7 @@ public enum Routers: URLRequestDelegate {
     /// POST /changeActiveProfile
     case changeActiveProfile([String: AnyObject])
     /// GET /getMyEntities
-    case getMyEntities
+    case getMyEntities([String: AnyObject])
     /// GET /getActiveEntities
     case getActiveEntities
     /// POST /changeActiveEntities
@@ -52,11 +52,11 @@ public enum Routers: URLRequestDelegate {
     /// GET /getGlpiConfig
     case getGlpiConfig
     /// GET /:itemtype
-    case getAllItems(ItemType, [String: AnyObject])
+    case getAllItems(ItemType, [String: String]?)
     /// GET /:itemtype/:id
-    case getItem(ItemType, Int, QueryString.GetAnItem?)
+    case getItem(ItemType, Int, [String: String]?)
     /// GET /:itemtype/:id/:sub_itemtype
-    case getSubItems(ItemType, Int, ItemType, QueryString.GetSubItems?)
+    case getSubItems(ItemType, Int, ItemType, [String: String]?)
     /// GET /getMultipleItems
     case getMultipleItems
     /// POST /:itemtype
@@ -64,7 +64,7 @@ public enum Routers: URLRequestDelegate {
     /// PUT /:itemtype/:id
     case updateItems(ItemType, Int?, [String: AnyObject])
     /// DELETE /:itemtype/:id
-    case deleteItems(ItemType, Int?, QueryString.DeleteItems?, [String: AnyObject])
+    case deleteItems(ItemType, Int?, [String: String]?, [String: AnyObject])
     /// PUT /lostPassword
     case lostPassword([String: AnyObject])
     /// GET /listSearchOptions/:itemtype
@@ -152,27 +152,26 @@ public enum Routers: URLRequestDelegate {
              .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword, .listSearchOptions, .searchItems:
             return  nil
         case .getAllItems(_, let params):
-            if let queryString = params["queryString"] as? [String: AnyObject] {
+            if let queryString = params {
                 return queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
-        case .getItem(_, _, let queryString):
-            
-            if queryString != nil {
-                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+        case .getItem(_, _, let params):
+            if let queryString = params {
+                return queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
-        case .getSubItems(_, _, _, let queryString):
-            if queryString != nil {
-                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+        case .getSubItems(_, _, _, let params):
+            if let queryString = params {
+                return queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
-        case .deleteItems(_, _, let queryString, _):
-            if queryString != nil {
-                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+        case .deleteItems(_, _, let params, _):
+            if let queryString = params {
+                return queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
@@ -186,28 +185,22 @@ public enum Routers: URLRequestDelegate {
         dictHeader["Content-Type"] = "application/json"
         
         switch self {
-        case .initSessionByUserToken(let params):
+        case .initSessionByUserToken(let userToken, let appToken) :
             
-            if let userToken = params["userToken"] {
-                dictHeader["Authorization"] = "user_token \(userToken)"
-            }
+            dictHeader["Authorization"] = "user_token \(userToken)"
             
-            if let appToken = params["appToken"] {
-                dictHeader["App-Token"] = appToken as? String ?? ""
+            if !appToken.isEmpty {
+                dictHeader["App-Token"] = appToken
             }
             return dictHeader
-        case .initSessionByCredentials(let params):
+        case .initSessionByCredentials(let user, let password, let appToken):
+            let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+            let base64Credentials = credentialData.base64EncodedString()
             
-            if let user = params["user"], let password = params["password"] {
-                
-                let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
-                let base64Credentials = credentialData.base64EncodedString()
-                
-                dictHeader["Authorization"] = "Basic \(base64Credentials)"
-            }
+            dictHeader["Authorization"] = "Basic \(base64Credentials)"
             
-            if let appToken = params["appToken"] {
-                dictHeader["App-Token"] = appToken as? String ?? ""
+            if !appToken.isEmpty {
+                dictHeader["App-Token"] = appToken
             }
             return dictHeader
         default:
@@ -240,7 +233,7 @@ public enum Routers: URLRequestDelegate {
         }
         
         switch self {
-        case .changeActiveProfile(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters), .deleteItems(_, _, _, let parameters):
+        case .changeActiveProfile(let parameters), .getMyEntities(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters), .deleteItems(_, _, _, let parameters):
 
             if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
                 if let jsonString = String(data: jsonData, encoding: .utf8) {

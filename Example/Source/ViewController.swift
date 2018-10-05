@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     }
     
     func requestInitSession() {
-        GlpiRequest.initSessionByUserToken(userToken: "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC") { data, _, _ in
+        GlpiRequest.initSessionByUserToken(["userToken": "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC" as AnyObject]) { data, _, _ in
             self.responseAPI = [AnyObject]()
             self.loadResponse(endpoint: "initSession", result: self.objectToString(data as Any))
         }
@@ -141,7 +141,7 @@ class ViewController: UIViewController {
             self.loadResponse(endpoint: "getFullSession", result: self.objectToString(data as Any))
         }
 
-        GlpiRequest.getAllItems(itemType: .Computer, queryString: nil) { data, _, _ in
+        GlpiRequest.getAllItems(itemType: .Computer) { data, _, _ in
             self.loadResponse(endpoint: "getAllItems", result: self.objectToString(data as Any))
         }
 

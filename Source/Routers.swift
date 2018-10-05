@@ -30,9 +30,9 @@ import Foundation
 public enum Routers: URLRequestDelegate {
     
     /// GET /initSession
-    case initSessionByUserToken(String, String)
+    case initSessionByUserToken([String: AnyObject])
     /// GET /initSession
-    case initSessionByCredentials(String, String, String)
+    case initSessionByCredentials([String: AnyObject])
     /// GET /killSession
     case killSession
     /// GET /getMyProfiles
@@ -52,7 +52,7 @@ public enum Routers: URLRequestDelegate {
     /// GET /getGlpiConfig
     case getGlpiConfig
     /// GET /:itemtype
-    case getAllItems(ItemType, QueryString.GetAllItems?)
+    case getAllItems(ItemType, [String: AnyObject])
     /// GET /:itemtype/:id
     case getItem(ItemType, Int, QueryString.GetAnItem?)
     /// GET /:itemtype/:id/:sub_itemtype
@@ -151,9 +151,9 @@ public enum Routers: URLRequestDelegate {
              .changeActiveProfile, .getMyEntities, .getActiveEntities, .changeActiveEntities,
              .getFullSession, .getGlpiConfig, .getMultipleItems, .addItems, .updateItems, .lostPassword, .listSearchOptions, .searchItems:
             return  nil
-        case .getAllItems(_, let queryString):
-            if queryString != nil {
-                return queryString?.queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+        case .getAllItems(_, let params):
+            if let queryString = params["queryString"] as? [String: AnyObject] {
+                return queryString.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
             } else {
                 return nil
             }
@@ -186,22 +186,28 @@ public enum Routers: URLRequestDelegate {
         dictHeader["Content-Type"] = "application/json"
         
         switch self {
-        case .initSessionByUserToken(let userToken, let appToken) :
+        case .initSessionByUserToken(let params):
             
-            dictHeader["Authorization"] = "user_token \(userToken)"
+            if let userToken = params["userToken"] {
+                dictHeader["Authorization"] = "user_token \(userToken)"
+            }
             
-            if !appToken.isEmpty {
-                dictHeader["App-Token"] = appToken
+            if let appToken = params["appToken"] {
+                dictHeader["App-Token"] = appToken as? String ?? ""
             }
             return dictHeader
-        case .initSessionByCredentials(let user, let password, let appToken):
-            let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
-            let base64Credentials = credentialData.base64EncodedString()
+        case .initSessionByCredentials(let params):
             
-            dictHeader["Authorization"] = "Basic \(base64Credentials)"
+            if let user = params["user"], let password = params["password"] {
+                
+                let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+                let base64Credentials = credentialData.base64EncodedString()
+                
+                dictHeader["Authorization"] = "Basic \(base64Credentials)"
+            }
             
-            if !appToken.isEmpty {
-                dictHeader["App-Token"] = appToken
+            if let appToken = params["appToken"] {
+                dictHeader["App-Token"] = appToken as? String ?? ""
             }
             return dictHeader
         default:

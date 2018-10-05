@@ -35,7 +35,6 @@
 		0A06BB251F913C2C001D53B5 /* GlpiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiTests.swift; sourceTree = "<group>"; };
 		0A06BB271F913C2C001D53B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A06BB361F91401D001D53B5 /* Glpi.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Glpi.podspec; sourceTree = "<group>"; };
-		0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiRequest.swift; sourceTree = "<group>"; };
 		0A452E0B1F9F703200CD531A /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		0A452E0F1F9FBF7100CD531A /* QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryString.swift; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 		0A1CF5AA1F97ADF90048E866 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A1CF5AB1F97ADF90048E866 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

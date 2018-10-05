@@ -34,12 +34,12 @@ public class GlpiRequest {
 
     /**
      Request a session token to uses other api endpoints.
-     - parameter: user token
-     - parameter: app token (optional)
+     - parameter: userToken
+     - parameter: appToken (optional)
      */
-    class public func initSessionByUserToken(userToken: String, appToken: String = "", completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func initSessionByUserToken(_ params: [String: AnyObject], completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.initSessionByUserToken(userToken, appToken)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.initSessionByUserToken(params)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -48,11 +48,11 @@ public class GlpiRequest {
      Request a session token to uses other api endpoints.
      - parameter: user
      - parameter: password
-     - parameter: app token (optional)
+     - parameter: appToken (optional)
      */
-    class public func initSessionByCredentials(user: String, password: String, appToken: String = "", completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func initSessionByCredentials(_ params: [String: AnyObject], completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.initSessionByCredentials(user, password, appToken)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.initSessionByCredentials(params)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -156,10 +156,12 @@ public class GlpiRequest {
     
     /**
      Request get all items
+     - parameter: ItemType
+     - parameter: queryString (optional)
      */
-    class public func getAllItems(itemType: ItemType, queryString: QueryString.GetAllItems?, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
-        
-        GlpiRequest.httpRequest(Routers.getAllItems(itemType, queryString)) { data, response, error in
+    class public func getAllItems(itemType: ItemType, params: [String: AnyObject] = [String: AnyObject](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+
+        GlpiRequest.httpRequest(Routers.getAllItems(itemType, params)) { data, response, error in
             completion(data, response, error)
         }
     }

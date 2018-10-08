@@ -233,9 +233,9 @@ public enum Routers: URLRequestDelegate {
         }
         
         switch self {
-        case .changeActiveProfile(let parameters), .getMyEntities(let parameters), .changeActiveEntities(let parameters), .addItems(_, let parameters), .updateItems(_, _, let parameters), .lostPassword(let parameters), .deleteItems(_, _, _, let parameters):
+        case .changeActiveProfile(let payload), .getMyEntities(let payload), .changeActiveEntities(let payload), .addItems(_, let payload), .updateItems(_, _, let payload), .lostPassword(let payload), .deleteItems(_, _, _, let payload):
 
-            if let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
+            if let jsonData = try? JSONSerialization.data(withJSONObject: payload, options: []) {
                 if let jsonString = String(data: jsonData, encoding: .utf8) {
                     print(jsonString)
                     urlRequest.httpBody = jsonString.data(using: .utf8)

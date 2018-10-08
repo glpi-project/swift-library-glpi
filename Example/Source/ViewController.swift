@@ -57,6 +57,9 @@ class ViewController: UIViewController {
         super.loadView()
         setupViews()
         addConstraints()
+        
+        GlpiConfig.URL = NSURL(string: "https://dev.flyve.org/glpi/apirest.php")!
+        
     }
     
     /// Set up the views of the controller

@@ -27,9 +27,6 @@
 
 import Foundation
 
-/// Session Token
-public var SESSION_TOKEN = String()
-
 public class GlpiRequest {
 
     /**
@@ -298,7 +295,7 @@ public class GlpiRequest {
                                 switch router {
                                 case .initSessionByUserToken, .initSessionByCredentials:
                                     if let session_token = dataJSON["session_token"] {
-                                        SESSION_TOKEN = session_token as? String ?? ""
+                                        GlpiConfig.SESSION_TOKEN = session_token as? String ?? ""
                                     }
                                 default:
                                     break

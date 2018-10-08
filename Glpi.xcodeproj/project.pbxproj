@@ -10,6 +10,7 @@
 		0A06BB211F913C2C001D53B5 /* Glpi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06BB171F913C2C001D53B5 /* Glpi.framework */; };
 		0A06BB261F913C2C001D53B5 /* GlpiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06BB251F913C2C001D53B5 /* GlpiTests.swift */; };
 		0A06BB281F913C2C001D53B5 /* Glpi.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A06BB1A1F913C2C001D53B5 /* Glpi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A11AF17216C06DD000584CB /* GlpiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11AF16216C06DD000584CB /* GlpiConfig.swift */; };
 		0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */; };
 		0A452E0C1F9F703200CD531A /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A452E0B1F9F703200CD531A /* ItemType.swift */; };
 		0A9387631FA26806000EB823 /* ConstantsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9387611FA26688000EB823 /* ConstantsTest.swift */; };
@@ -34,6 +35,7 @@
 		0A06BB251F913C2C001D53B5 /* GlpiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiTests.swift; sourceTree = "<group>"; };
 		0A06BB271F913C2C001D53B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A06BB361F91401D001D53B5 /* Glpi.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Glpi.podspec; sourceTree = "<group>"; };
+		0A11AF16216C06DD000584CB /* GlpiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiConfig.swift; sourceTree = "<group>"; };
 		0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlpiRequest.swift; sourceTree = "<group>"; };
 		0A452E0B1F9F703200CD531A /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		0A9387611FA26688000EB823 /* ConstantsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTest.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		0A87A3151F916A000080622B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A11AF16216C06DD000584CB /* GlpiConfig.swift */,
 				0A1CF5B51F97BBF60048E866 /* GlpiRequest.swift */,
 				0A452E0B1F9F703200CD531A /* ItemType.swift */,
 				0AA116911FA8A96E0012A9F8 /* Routers.swift */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA116921FA8A96E0012A9F8 /* Routers.swift in Sources */,
+				0A11AF17216C06DD000584CB /* GlpiConfig.swift in Sources */,
 				0A1CF5B61F97BBF60048E866 /* GlpiRequest.swift in Sources */,
 				0A452E0C1F9F703200CD531A /* ItemType.swift in Sources */,
 			);

@@ -92,8 +92,8 @@ public class GlpiRequest {
      */
     class public func changeActiveProfile(profileID: String, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
 
-        var paylaod = [String: AnyObject]()
-        paylaod["profiles_id"] = profileID as AnyObject
+        var paylaod = [String: Any]()
+        paylaod["profiles_id"] = profileID
         
         GlpiRequest.httpRequest(Routers.changeActiveProfile(paylaod)) { data, response, error in
             completion(data, response, error)
@@ -105,8 +105,8 @@ public class GlpiRequest {
      */
     class public func getMyEntities(isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        var queryString = [String: AnyObject]()
-        queryString["is_recursive"] = isRecursive as AnyObject
+        var queryString = [String: Any]()
+        queryString["is_recursive"] = isRecursive
         
         GlpiRequest.httpRequest(Routers.getMyEntities(queryString)) { data, response, error in
             completion(data, response, error)
@@ -128,9 +128,9 @@ public class GlpiRequest {
      */
     class public func changeActiveEntities(entitiesID: String = "all", isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        var queryString = [String: AnyObject]()
-        queryString["is_recursive"] = isRecursive as AnyObject
-        queryString["entities_id"] = entitiesID as AnyObject
+        var queryString = [String: Any]()
+        queryString["is_recursive"] = isRecursive
+        queryString["entities_id"] = entitiesID
         
         GlpiRequest.httpRequest(Routers.changeActiveProfile(queryString)) { data, response, error in
             completion(data, response, error)
@@ -162,7 +162,7 @@ public class GlpiRequest {
      - parameter: ItemType
      - parameter: queryString (optional)
      */
-    class public func getAllItems(itemType: ItemType, params: [String: String] = [String: String](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func getAllItems(itemType: ItemType, params: [String: Any] = [String: Any](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
 
         GlpiRequest.httpRequest(Routers.getAllItems(itemType, params)) { data, response, error in
             completion(data, response, error)
@@ -175,7 +175,7 @@ public class GlpiRequest {
      - parameter: itemID
      - parameter: queryString (optional)
      */
-    class public func getItem(itemType: ItemType, itemID: Int, params: [String: String] = [String: String](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func getItem(itemType: ItemType, itemID: Int, params: [String: Any] = [String: Any](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         GlpiRequest.httpRequest(Routers.getItem(itemType, itemID, params)) { data, response, error in
             completion(data, response, error)
@@ -195,7 +195,7 @@ public class GlpiRequest {
     /**
      Request Add Items
      */
-    class public func addItems(itemType: ItemType, payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func addItems(itemType: ItemType, payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         GlpiRequest.httpRequest(Routers.addItems(itemType, payload)) { data, response, error in
             completion(data, response, error)
@@ -205,7 +205,7 @@ public class GlpiRequest {
     /**
      Request Update Items
      */
-    class public func updateItems(itemType: ItemType, itemID: Int?, payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func updateItems(itemType: ItemType, itemID: Int?, payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         GlpiRequest.httpRequest(Routers.updateItems(itemType, itemID, payload)) { data, response, error in
             completion(data, response, error)
@@ -215,7 +215,7 @@ public class GlpiRequest {
     /**
      Request Delete Items
      */
-    class public func deleteItems(itemType: ItemType, itemID: Int?, params: [String: String]?, payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func deleteItems(itemType: ItemType, itemID: Int?, params: [String: Any]?, payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         GlpiRequest.httpRequest(Routers.deleteItems(itemType, itemID, params, payload)) { data, response, error in
             completion(data, response, error)
@@ -227,10 +227,10 @@ public class GlpiRequest {
      */
     class public func recoveryPassword(email: String, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        var dictionary = [String: AnyObject]()
-        dictionary["email"] = email as AnyObject
+        var payload = [String: Any]()
+        payload["email"] = email
         
-        GlpiRequest.httpRequest(Routers.lostPassword(dictionary)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.lostPassword(payload)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -238,7 +238,7 @@ public class GlpiRequest {
     /**
      Request reset password
      */
-    class public func resetPassword(payload: [String: AnyObject], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func resetPassword(payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         GlpiRequest.httpRequest(Routers.lostPassword(payload)) { data, response, error in
             completion(data, response, error)
@@ -248,9 +248,9 @@ public class GlpiRequest {
     /**
      Request get multiple items
      */
-    class public func getMultipleItems(completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func getMultipleItems(params: [String: Any] = [String: Any](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.getMultipleItems) { data, response, error in
+        GlpiRequest.httpRequest(Routers.getMultipleItems(params)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -258,9 +258,9 @@ public class GlpiRequest {
     /**
      Request list search option
      */
-    class public func listSearchOptions(itemType: ItemType, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func listSearchOptions(itemType: ItemType, params: [String: Any] = [String: Any](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.listSearchOptions(itemType)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.listSearchOptions(itemType, params)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -268,9 +268,9 @@ public class GlpiRequest {
     /**
      Request list search option
      */
-    class public func searchItems(itemType: ItemType, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func searchItems(itemType: ItemType, params: [String: Any] = [String: Any](), completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.searchItems(itemType)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.searchItems(itemType, params)) { data, response, error in
             completion(data, response, error)
         }
     }

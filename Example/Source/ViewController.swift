@@ -85,12 +85,10 @@ class ViewController: UIViewController {
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 return jsonString
             } else {
-                print(object)
                 return ""
             }
             
         } else {
-            print(object)
             return ""
         }
     }
@@ -113,6 +111,7 @@ class ViewController: UIViewController {
     }
     
     func requestAllAPIs() {
+        
         GlpiRequest.getMyProfiles { data, _, _ in
             self.loadResponse(endpoint: "getMyProfiles", result: self.objectToString(data as Any))
         }
@@ -152,12 +151,17 @@ class ViewController: UIViewController {
         GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel) { data, _, _ in
             self.loadResponse(endpoint: "getSubItems", result: self.objectToString(data as Any))
         }
-        
+
         GlpiRequest.listSearchOptions(itemType: .Computer) { data, _, _ in
             self.loadResponse(endpoint: "listSearchOptions", result: self.objectToString(data as Any))
         }
+
+        var queryString = [String: Any]()
+        queryString["sort"] = 1
+        queryString["order"] = "DESC"
         
-        GlpiRequest.searchItems(itemType: .Computer) { data, _, _ in
+        GlpiRequest.searchItems(itemType: .Computer, params: queryString) { data, _, _ in
+            NSLog(self.objectToString(data as Any))
             self.loadResponse(endpoint: "searchItems", result: self.objectToString(data as Any))
         }
         

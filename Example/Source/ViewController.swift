@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     }
     
     func requestInitSession() {
-        GlpiRequest.initSessionByUserToken(["userToken": "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC" as AnyObject]) { data, _, _ in
+        GlpiRequest.initSessionByUserToken(userToken: "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC") { data, _, _ in
             self.responseAPI = [AnyObject]()
             self.loadResponse(endpoint: "initSession", result: self.objectToString(data as Any))
         }
@@ -145,11 +145,11 @@ class ViewController: UIViewController {
             self.loadResponse(endpoint: "getAllItems", result: self.objectToString(data as Any))
         }
 
-        GlpiRequest.getItem(itemType: .Computer, itemID: 3, queryString: nil) { data, _, _ in
+        GlpiRequest.getItem(itemType: .Computer, itemID: 3) { data, _, _ in
             self.loadResponse(endpoint: "getAnItem", result: self.objectToString(data as Any))
         }
 
-        GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel, queryString: nil) { data, _, _ in
+        GlpiRequest.getSubItems(itemType: .Computer, itemID: 3, subItemType: .ComputerModel) { data, _, _ in
             self.loadResponse(endpoint: "getSubItems", result: self.objectToString(data as Any))
         }
         
@@ -158,7 +158,7 @@ class ViewController: UIViewController {
         }
         
         GlpiRequest.searchItems(itemType: .Computer) { data, _, _ in
-            self.loadResponse(endpoint: "search", result: self.objectToString(data as Any))
+            self.loadResponse(endpoint: "searchItems", result: self.objectToString(data as Any))
         }
         
     }

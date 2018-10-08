@@ -105,10 +105,10 @@ public class GlpiRequest {
      */
     class public func getMyEntities(isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        var paylaod = [String: AnyObject]()
-        paylaod["is_recursive"] = isRecursive as AnyObject
+        var queryString = [String: AnyObject]()
+        queryString["is_recursive"] = isRecursive as AnyObject
         
-        GlpiRequest.httpRequest(Routers.getMyEntities(paylaod)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.getMyEntities(queryString)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -126,13 +126,13 @@ public class GlpiRequest {
     /**
      Request change active entities
      */
-    class public func changeActiveEntities(entitiesID: String, isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func changeActiveEntities(entitiesID: String = "all", isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        var dictionary = [String: AnyObject]()
-        dictionary["is_recursive"] = isRecursive as AnyObject
-        dictionary["entities_id"] = entitiesID as AnyObject
+        var queryString = [String: AnyObject]()
+        queryString["is_recursive"] = isRecursive as AnyObject
+        queryString["entities_id"] = entitiesID as AnyObject
         
-        GlpiRequest.httpRequest(Routers.changeActiveProfile(dictionary)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.changeActiveProfile(queryString)) { data, response, error in
             completion(data, response, error)
         }
     }

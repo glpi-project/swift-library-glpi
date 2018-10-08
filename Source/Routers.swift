@@ -189,7 +189,7 @@ public enum Routers: URLRequestDelegate {
             return dictHeader
         default:
             
-            dictHeader["Session-Token"] = SESSION_TOKEN
+            dictHeader["Session-Token"] = GlpiConfig.SESSION_TOKEN
             return dictHeader
         }
     }
@@ -203,13 +203,13 @@ public enum Routers: URLRequestDelegate {
     public func request() -> URLRequest {
         
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "dev.flyve.org"
-        urlComponents.path = "/glpi/apirest.php" + path
-        urlComponents.queryItems = query
-
-        var urlRequest = URLRequest(url: urlComponents.url!)
         
+        urlComponents.scheme = GlpiConfig.URL.scheme
+        urlComponents.host = GlpiConfig.URL.host
+        urlComponents.path = "\(GlpiConfig.URL.path ?? "")\(path)"
+        urlComponents.queryItems = query
+        
+        var urlRequest = URLRequest(url: urlComponents.url!)
         urlRequest.httpMethod = method.rawValue
         
         for (key, value) in header {

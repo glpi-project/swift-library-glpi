@@ -32,11 +32,10 @@ public class GlpiRequest {
     /**
      Request a session token to uses other api endpoints.
      - parameter: userToken
-     - parameter: appToken (optional)
      */
-    class public func initSessionByUserToken(userToken: String, appToken: String = "", completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func initSessionByUserToken(userToken: String, completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.initSessionByUserToken(userToken, appToken)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.initSessionByUserToken(userToken)) { data, response, error in
             completion(data, response, error)
         }
     }
@@ -45,11 +44,10 @@ public class GlpiRequest {
      Request a session token to uses other api endpoints.
      - parameter: user
      - parameter: password
-     - parameter: appToken (optional)
      */
-    class public func initSessionByCredentials(user: String, password: String, appToken: String = "", completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func initSessionByCredentials(user: String, password: String, completion: @escaping (_ data: AnyObject?,  _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.initSessionByCredentials(user, password, appToken)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.initSessionByCredentials(user, password)) { data, response, error in
             completion(data, response, error)
         }
     }

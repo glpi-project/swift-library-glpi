@@ -58,8 +58,9 @@ class ViewController: UIViewController {
         setupViews()
         addConstraints()
         
+        /// Set Glpi config
+        /// GlpiConfig.APP_TOKEN = ""
         GlpiConfig.URL = NSURL(string: "https://dev.flyve.org/glpi/apirest.php")!
-        
     }
     
     /// Set up the views of the controller

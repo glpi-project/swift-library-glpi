@@ -30,9 +30,9 @@ import Foundation
 public enum Routers: URLRequestDelegate {
     
     /// GET /initSession
-    case initSessionByUserToken(String, String)
+    case initSessionByUserToken(String)
     /// GET /initSession
-    case initSessionByCredentials(String, String, String)
+    case initSessionByCredentials(String, String)
     /// GET /killSession
     case killSession
     /// GET /getMyProfiles
@@ -167,25 +167,22 @@ public enum Routers: URLRequestDelegate {
         
         var dictHeader = [String: String]()
         dictHeader["Content-Type"] = "application/json"
+        if !GlpiConfig.APP_TOKEN.isEmpty {
+            dictHeader["App-Token"] = GlpiConfig.APP_TOKEN
+        }
         
         switch self {
-        case .initSessionByUserToken(let userToken, let appToken) :
+        case .initSessionByUserToken(let userToken) :
             
             dictHeader["Authorization"] = "user_token \(userToken)"
             
-            if !appToken.isEmpty {
-                dictHeader["App-Token"] = appToken
-            }
             return dictHeader
-        case .initSessionByCredentials(let user, let password, let appToken):
+        case .initSessionByCredentials(let user, let password):
             let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
             let base64Credentials = credentialData.base64EncodedString()
             
             dictHeader["Authorization"] = "Basic \(base64Credentials)"
             
-            if !appToken.isEmpty {
-                dictHeader["App-Token"] = appToken
-            }
             return dictHeader
         default:
             

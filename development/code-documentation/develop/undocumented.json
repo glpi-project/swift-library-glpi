@@ -1,17 +1,17 @@
 {
   "warnings": [
     {
-      "file": "/Users/distiller/project/Source/GlpiRequest.swift",
-      "line": 33,
-      "symbol": "GlpiRequest",
+      "file": "/Users/distiller/project/Source/GlpiConfig.swift",
+      "line": 30,
+      "symbol": "GlpiConfig",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/GlpiRequest.swift",
-      "line": 270,
-      "symbol": "GlpiRequest.httpRequest(_:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "line": 30,
+      "symbol": "GlpiRequest",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
@@ -2304,349 +2304,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 30,
-      "symbol": "QueryString",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 32,
-      "symbol": "QueryString.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 34,
-      "symbol": "QueryString.orderType",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 35,
-      "symbol": "QueryString.orderType.ASC",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 36,
-      "symbol": "QueryString.orderType.DESC",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 39,
-      "symbol": "QueryString.GetAllItems",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 40,
-      "symbol": "QueryString.GetAllItems.expandDropdowns",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 41,
-      "symbol": "QueryString.GetAllItems.getHateoas",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 42,
-      "symbol": "QueryString.GetAllItems.onlyId",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 43,
-      "symbol": "QueryString.GetAllItems.range",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 44,
-      "symbol": "QueryString.GetAllItems.sort",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 45,
-      "symbol": "QueryString.GetAllItems.order",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 46,
-      "symbol": "QueryString.GetAllItems.searchText",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 47,
-      "symbol": "QueryString.GetAllItems.isDeleted",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 49,
-      "symbol": "QueryString.GetAllItems.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 51,
-      "symbol": "QueryString.GetAllItems.queryString",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 83,
-      "symbol": "QueryString.GetAnItem",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 84,
-      "symbol": "QueryString.GetAnItem.expandDropdowns",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 85,
-      "symbol": "QueryString.GetAnItem.getHateoas",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 86,
-      "symbol": "QueryString.GetAnItem.getSha1",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 87,
-      "symbol": "QueryString.GetAnItem.withDevices",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 88,
-      "symbol": "QueryString.GetAnItem.withDisks",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 89,
-      "symbol": "QueryString.GetAnItem.withSoftwares",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 90,
-      "symbol": "QueryString.GetAnItem.withConnections",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 91,
-      "symbol": "QueryString.GetAnItem.withNetworkports",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 92,
-      "symbol": "QueryString.GetAnItem.withInfocoms",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 93,
-      "symbol": "QueryString.GetAnItem.withContracts",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 94,
-      "symbol": "QueryString.GetAnItem.withDocuments",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 95,
-      "symbol": "QueryString.GetAnItem.withTickets",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 96,
-      "symbol": "QueryString.GetAnItem.withProblems",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 97,
-      "symbol": "QueryString.GetAnItem.withChanges",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 98,
-      "symbol": "QueryString.GetAnItem.withNotes",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 99,
-      "symbol": "QueryString.GetAnItem.withLogs",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 101,
-      "symbol": "QueryString.GetAnItem.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 103,
-      "symbol": "QueryString.GetAnItem.queryString",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 159,
-      "symbol": "QueryString.GetSubItems",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 160,
-      "symbol": "QueryString.GetSubItems.expandDropdowns",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 161,
-      "symbol": "QueryString.GetSubItems.getHateoas",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 162,
-      "symbol": "QueryString.GetSubItems.onlyId",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 163,
-      "symbol": "QueryString.GetSubItems.range",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 164,
-      "symbol": "QueryString.GetSubItems.sort",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 165,
-      "symbol": "QueryString.GetSubItems.order",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 167,
-      "symbol": "QueryString.GetSubItems.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 169,
-      "symbol": "QueryString.GetSubItems.queryString",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 195,
-      "symbol": "QueryString.DeleteItems",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 196,
-      "symbol": "QueryString.DeleteItems.forcePurge",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 197,
-      "symbol": "QueryString.DeleteItems.history",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 199,
-      "symbol": "QueryString.DeleteItems.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/Source/QueryString.swift",
-      "line": 201,
-      "symbol": "QueryString.DeleteItems.queryString",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/distiller/project/Source/Routers.swift",
       "line": 30,
       "symbol": "Routers",
@@ -2655,70 +2312,70 @@
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 261,
+      "line": 244,
       "symbol": "HTTPMethod",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 263,
+      "line": 246,
       "symbol": "HTTPMethod.options",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 265,
+      "line": 248,
       "symbol": "HTTPMethod.get",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 267,
+      "line": 250,
       "symbol": "HTTPMethod.head",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 269,
+      "line": 252,
       "symbol": "HTTPMethod.post",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 271,
+      "line": 254,
       "symbol": "HTTPMethod.put",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 273,
+      "line": 256,
       "symbol": "HTTPMethod.patch",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 275,
+      "line": 258,
       "symbol": "HTTPMethod.delete",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 277,
+      "line": 260,
       "symbol": "HTTPMethod.trace",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/Source/Routers.swift",
-      "line": 279,
+      "line": 262,
       "symbol": "HTTPMethod.connect",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"

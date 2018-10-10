@@ -33,7 +33,7 @@ class GlpiTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        GlpiConfig.URL = NSURL(string: "https://dev.flyve.org/glpi/apirest.php")!
+        GlpiConfig.URL = NSURL(string: "https://demo-api.flyve.org/apirest.php")!
     }
     
     override func tearDown() {

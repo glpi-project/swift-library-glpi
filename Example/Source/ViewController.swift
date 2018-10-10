@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         
         /// Set Glpi config
         /// GlpiConfig.APP_TOKEN = ""
-        GlpiConfig.URL = NSURL(string: "https://dev.flyve.org/glpi/apirest.php")!
+        GlpiConfig.URL = NSURL(string: "https://demo-api.flyve.org/apirest.php")!
     }
     
     /// Set up the views of the controller
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     }
     
     func requestInitSession() {
-        GlpiRequest.initSessionByUserToken(userToken: "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC") { data, _, _ in
+        GlpiRequest.initSessionByUserToken(userToken: "Zpel0XYzHP1GwTibOEDAY5VJvz8rfnPCE1FlYusu") { data, _, _ in
             self.responseAPI = [AnyObject]()
             self.loadResponse(endpoint: "initSession", result: self.objectToString(data as Any))
         }

@@ -28,8 +28,10 @@
 import Foundation
 
 public class GlpiConfig {
-    
+    /// Glpi Api URL
     public static var URL = NSURL(string: "")
+    /// Glpi session token
     public static var SESSION_TOKEN = String()
+    /// Glpi session token
     public static var APP_TOKEN = String()
 }

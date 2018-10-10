@@ -33,6 +33,7 @@ class GlpiTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        GlpiConfig.URL = NSURL(string: "https://dev.flyve.org/glpi/apirest.php")!
     }
     
     override func tearDown() {
@@ -47,8 +48,9 @@ class GlpiTests: XCTestCase {
 
         let expectedUserToken = Constants.initSessionTesting["userToken"] ?? ""
         let expectedAppToken = Constants.initSessionTesting["appToken"] ?? ""
+        GlpiConfig.APP_TOKEN = expectedAppToken
         
-        GlpiRequest.initSessionByUserToken(userToken: expectedUserToken, appToken: expectedAppToken, completion: { _, response, _ in
+        GlpiRequest.initSessionByUserToken(userToken: expectedUserToken, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -184,7 +186,7 @@ class GlpiTests: XCTestCase {
 
         let expectationResult = expectation(description: "getAllItems")
         
-        GlpiRequest.getAllItems(itemType: ItemType.Computer, queryString: nil, completion: { _, response, _ in
+        GlpiRequest.getAllItems(itemType: ItemType.Computer, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -199,7 +201,7 @@ class GlpiTests: XCTestCase {
 
         let expectationResult = expectation(description: "getAnItems")
 
-        GlpiRequest.getItem(itemType: ItemType.Computer, itemID: 119, queryString: nil, completion: { _, response, _ in
+        GlpiRequest.getItem(itemType: ItemType.Computer, itemID: 119, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -214,7 +216,7 @@ class GlpiTests: XCTestCase {
 
         let expectationResult = expectation(description: "getsubItems")
         
-        GlpiRequest.getSubItems(itemType: ItemType.User, itemID: 24, subItemType: ItemType.UserEmail, queryString: nil, completion: { _, response, _ in
+        GlpiRequest.getSubItems(itemType: ItemType.User, itemID: 24, subItemType: ItemType.UserEmail, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -229,12 +231,12 @@ class GlpiTests: XCTestCase {
 
         let expectationResult = expectation(description: "addItems")
 
-        var dictionary = [String: AnyObject]()
-        var dictionaryData = [String: String]()
-        dictionaryData["name"] = "Hector Rondon"
-        dictionary["input"] = dictionaryData as AnyObject
+        var payload = [String: Any]()
+        var payloadData = [String: String]()
+        payloadData["name"] = "Hector Rondon"
+        payload["input"] = payloadData
         
-        GlpiRequest.addItems(itemType: ItemType.User, payload: dictionary, completion: { _, response, _ in
+        GlpiRequest.addItems(itemType: ItemType.User, payload: payload, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -249,12 +251,12 @@ class GlpiTests: XCTestCase {
 
         let expectationResult = expectation(description: "updateItems")
 
-        var dictionary = [String: AnyObject]()
-        var dictionaryData = [String: String]()
-        dictionaryData["name"] = "Hector Rondon Update"
-        dictionary["input"] = dictionaryData as AnyObject
+        var payload = [String: Any]()
+        var payloadData = [String: String]()
+        payloadData["name"] = "Hector Rondon Update"
+        payload["input"] = payloadData
         
-        GlpiRequest.updateItems(itemType: ItemType.User, itemID: 24, payload: dictionary, completion: { _, response, _ in
+        GlpiRequest.updateItems(itemType: ItemType.User, itemID: 24, payload: payload, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -270,12 +272,12 @@ class GlpiTests: XCTestCase {
 
         let expectationResult = expectation(description: "deleteItems")
 
-        var dictionary = [String: AnyObject]()
-        var dictionaryData = [String: Int]()
-        dictionaryData["id"] = 24
-        dictionary["input"] = dictionaryData as AnyObject
+        var payload = [String: Any]()
+        var payloadData = [String: Int]()
+        payloadData["id"] = 24
+        payload["input"] = payloadData
         
-        GlpiRequest.deleteItems(itemType: ItemType.User, itemID: 24, queryString: nil, payload: dictionary, completion: { _, response, _ in
+        GlpiRequest.deleteItems(itemType: ItemType.User, itemID: 24, payload: payload, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")
@@ -306,12 +308,12 @@ class GlpiTests: XCTestCase {
     func testResetPassword() {
         let expectationResult = expectation(description: "resetPassword")
 
-        var dictionary = [String: AnyObject]()
-        dictionary["email"] = "flyve@hi2.in" as AnyObject
-        dictionary["password_forget_token"] = "941891fcf47581084d43d2dec49b1c43a58380f4" as AnyObject
-        dictionary["password"] = "12345678" as AnyObject
+        var payload = [String: Any]()
+        payload["email"] = "flyve@hi2.in"
+        payload["password_forget_token"] = "941891fcf47581084d43d2dec49b1c43a58380f4"
+        payload["password"] = "12345678"
         
-        GlpiRequest.resetPassword(payload: dictionary, completion: { _, response, _ in
+        GlpiRequest.resetPassword(payload: payload, completion: { _, response, _ in
             
             if let urlResponse: HTTPURLResponse = response {
                 XCTAssertEqual(urlResponse.allHeaderFields["Content-Type"] as? String ?? "", "application/json; charset=UTF-8")

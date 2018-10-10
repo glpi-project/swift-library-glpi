@@ -205,9 +205,9 @@ public enum Routers: URLRequestDelegate {
         
         var urlComponents = URLComponents()
         
-        urlComponents.scheme = GlpiConfig.URL.scheme
-        urlComponents.host = GlpiConfig.URL.host
-        urlComponents.path = "\(GlpiConfig.URL.path ?? "")\(path)"
+        urlComponents.scheme = GlpiConfig.URL?.scheme ?? ""
+        urlComponents.host = GlpiConfig.URL?.host ?? ""
+        urlComponents.path = "\(GlpiConfig.URL?.path ?? "")\(path)"
         urlComponents.queryItems = query
         
         var urlRequest = URLRequest(url: urlComponents.url!)

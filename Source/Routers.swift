@@ -60,7 +60,7 @@ public enum Routers: URLRequestDelegate {
     /// GET /getMultipleItems
     case getMultipleItems([String: Any]?)
     /// POST /:itemtype
-    case addItems(ItemType, [String: Any]?)
+    case addItems(ItemType, String, [String: Any]?)
     /// PUT /:itemtype/:id
     case updateItems(ItemType, Int?, [String: Any]?)
     /// DELETE /:itemtype/:id
@@ -120,7 +120,7 @@ public enum Routers: URLRequestDelegate {
             return "/\(itemType)/\(itemID)/\(subItemType)"
         case .getMultipleItems:
             return "/getMultipleItems"
-        case .addItems(let itemType, _):
+        case .addItems(let itemType, _, _):
             return "/\(itemType)"
         case .updateItems(let itemType, let itemID, _):
             if let id = itemID {
@@ -184,6 +184,10 @@ public enum Routers: URLRequestDelegate {
             dictHeader["Authorization"] = "Basic \(base64Credentials)"
             
             return dictHeader
+        case .addItems(_, let contentType, _):
+            dictHeader["Content-Type"] = contentType
+            
+            return dictHeader
         default:
             
             dictHeader["Session-Token"] = GlpiConfig.SESSION_TOKEN
@@ -214,7 +218,7 @@ public enum Routers: URLRequestDelegate {
         }
         
         switch self {
-        case .changeActiveProfile(let payload), .changeActiveEntities(let payload), .addItems(_, let payload), .updateItems(_, _, let payload), .lostPassword(let payload), .deleteItems(_, _, _, let payload):
+        case .changeActiveProfile(let payload), .changeActiveEntities(let payload), .addItems(_, _, let payload), .updateItems(_, _, let payload), .lostPassword(let payload), .deleteItems(_, _, _, let payload):
 
             if let jsonData = try? JSONSerialization.data(withJSONObject: payload ?? [String : Any](), options: []) {
                 if let jsonString = String(data: jsonData, encoding: .utf8) {

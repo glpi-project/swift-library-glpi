@@ -190,9 +190,9 @@ public class GlpiRequest {
     /**
      Request Add Items
      */
-    class public func addItems(itemType: ItemType, payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
+    class public func addItems(itemType: ItemType, contentType: String = "application/json", payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
-        GlpiRequest.httpRequest(Routers.addItems(itemType, payload)) { data, response, error in
+        GlpiRequest.httpRequest(Routers.addItems(itemType, contentType, payload)) { data, response, error in
             completion(data, response, error)
         }
     }

@@ -32,7 +32,7 @@ class Constants {
     
     static var initSessionTesting: [String: String] {
         var dictionary = [String: String]()
-        dictionary["userToken"] = "HcA74wARMoEF8IXVfasNsX2FDufzaS7JMFT84FoC"
+        dictionary["userToken"] = "Zpel0XYzHP1GwTibOEDAY5VJvz8rfnPCE1FlYusu"
         dictionary["appToken"] = ""
         dictionary["method"] = "GET"
         return dictionary

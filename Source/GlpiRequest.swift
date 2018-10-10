@@ -84,6 +84,7 @@ public class GlpiRequest {
     
     /**
      Request change active profile
+     - parameter: profileID
      */
     class public func changeActiveProfile(profileID: String, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
 
@@ -97,6 +98,7 @@ public class GlpiRequest {
     
     /**
      Request get my entities
+     - parameter: isRecursive (optional)
      */
     class public func getMyEntities(isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -120,6 +122,8 @@ public class GlpiRequest {
     
     /**
      Request change active entities
+     - parameter: entitiesID (optional)
+     - parameter: isRecursive (optional)
      */
     class public func changeActiveEntities(entitiesID: String = "all", isRecursive: Bool = false, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -154,8 +158,8 @@ public class GlpiRequest {
     
     /**
      Request get all items
-     - parameter: ItemType
-     - parameter: queryString (optional)
+     - parameter: itemType
+     - parameter: params (optional)
      */
     class public func getAllItems(itemType: ItemType, params: [String: Any]? = nil, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
 
@@ -166,9 +170,9 @@ public class GlpiRequest {
     
     /**
      Request get an item
-     - parameter: ItemType
+     - parameter: itemType
      - parameter: itemID
-     - parameter: queryString (optional)
+     - parameter: params (optional)
      */
     class public func getItem(itemType: ItemType, itemID: Int, params: [String: Any]? = nil, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -179,6 +183,10 @@ public class GlpiRequest {
     
     /**
      Request get an item
+     - parameter: itemType
+     - parameter: itemID
+     - parameter: subItemTypes
+     - parameter: params (optional)
      */
     class public func getSubItems(itemType: ItemType, itemID: Int, subItemType: ItemType, params: [String: Any]? = nil, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -189,6 +197,9 @@ public class GlpiRequest {
     
     /**
      Request Add Items
+     - parameter: itemType
+     - parameter: contentType (optional)
+     - parameter: payload
      */
     class public func addItems(itemType: ItemType, contentType: String = "application/json", payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -199,6 +210,9 @@ public class GlpiRequest {
     
     /**
      Request Update Items
+     - parameter: itemType
+     - parameter: itemID (optional)
+     - parameter: payload
      */
     class public func updateItems(itemType: ItemType, itemID: Int? = nil, payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -209,6 +223,10 @@ public class GlpiRequest {
     
     /**
      Request Delete Items
+     - parameter: itemType
+     - parameter: itemID (optional)
+     - parameter: params (optional)
+     - parameter: payload (optional)
      */
     class public func deleteItems(itemType: ItemType, itemID: Int? = nil, params: [String: Any]? = nil, payload: [String: Any]? = nil, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -219,6 +237,7 @@ public class GlpiRequest {
     
     /**
      Request Lost password
+     - parameter: email
      */
     class public func recoveryPassword(email: String, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -232,6 +251,7 @@ public class GlpiRequest {
     
     /**
      Request reset password
+     - parameter: payload
      */
     class public func resetPassword(payload: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -242,6 +262,7 @@ public class GlpiRequest {
     
     /**
      Request get multiple items
+     - parameter: params
      */
     class public func getMultipleItems(params: [String: Any], completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -252,6 +273,8 @@ public class GlpiRequest {
     
     /**
      Request list search option
+     - parameter: itemType
+     - parameter: params (optional)
      */
     class public func listSearchOptions(itemType: ItemType, params: [String: Any]? = nil, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -262,6 +285,8 @@ public class GlpiRequest {
     
     /**
      Request list search option
+     - parameter: itemType
+     - parameter: params (optional)
      */
     class public func searchItems(itemType: ItemType, params: [String: Any]? = nil, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
@@ -270,6 +295,10 @@ public class GlpiRequest {
         }
     }
     
+    /**
+     Handler http request
+     - parameter: router
+     */
     class func httpRequest(_ router: Routers, completion: @escaping (_ data: AnyObject?, _ response: HTTPURLResponse?, _ error: Error?) -> Void) {
         
         let task:URLSessionDataTask = URLSession.shared.dataTask(with: router.request()) { (data, response, error) in

@@ -29,7 +29,7 @@ import Foundation
 
 public class GlpiConfig {
     
-    public static var URL = NSURL()
+    public static var URL = NSURL(string: "")
     public static var SESSION_TOKEN = String()
     public static var APP_TOKEN = String()
 }

@@ -165,7 +165,6 @@ class ViewController: UIViewController {
         queryString["order"] = "DESC"
         
         GlpiRequest.searchItems(itemType: .Computer, params: queryString) { data, _, _ in
-            NSLog(self.objectToString(data as Any))
             self.loadResponse(endpoint: "searchItems", result: self.objectToString(data as Any))
         }
         

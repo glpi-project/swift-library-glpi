@@ -72,7 +72,7 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
   # Update CFBundleVersion
   /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Source/Info.plist
   # Increment podspec version
-  bundle exec fastlane bump_podspec -i ${GIT_TAG} -w
+  bundle exec fastlane bump_podspec
   # Add modified and delete files
   git add -u
   # Create commit
@@ -111,13 +111,6 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
   --tag ${GIT_TAG} \
   --name "${XCODE_SCHEME_DEMO}.ipa" \
   --file "${XCODE_SCHEME_DEMO}.ipa"
-
-    # Update master branch
-    git fetch origin master
-    git checkout master
-    git clean -d -x -f
-    git merge $CIRCLE_BRANCH
-    git push origin master
 
     bundle exec fastlane demo
 fi

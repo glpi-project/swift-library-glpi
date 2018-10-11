@@ -1,6 +1,6 @@
 {
   "name": "@teclib/ios-library-glpi",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "GLPI APIs Client Library for Swift for REST",
   "homepage": "https://github.com/glpi-project/swift-library-glpi#readme",
   "main": "index.js",

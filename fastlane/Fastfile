@@ -58,7 +58,7 @@ platform :ios do
     gym(
       scheme: ENV["XCODE_SCHEME_DEMO"],
       configuration: "Release",
-      sdk: "iphoneos11.2",
+      sdk: "iphoneos12.0",
       clean: true,
       include_bitcode: true,
       include_symbols: true,
@@ -81,7 +81,7 @@ platform :ios do
       workspace: ENV["XCODE_WORKSPACE"],
       scheme: ENV["XCODE_SCHEME_DEMO"],
       configuration: "Release",
-      sdk: "iphoneos11.2",
+      sdk: "iphoneos12.0",
       clean: true,
       include_bitcode: true,
       include_symbols: true,

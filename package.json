@@ -52,9 +52,8 @@
   "private": true,
   "devDependencies": {
     "conventional-github-releaser": "^3.1.2",
-    "gh-pages": "^2.0.0",
+    "gh-pages": "^2.0.1",
     "node-github-release": "^0.2.1",
-    "podspec-bump": "^0.4.1",
     "standard-version": "^4.4.0"
   }
 }

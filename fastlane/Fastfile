@@ -96,6 +96,11 @@ platform :ios do
     )
   end
 
+  desc "Increment podspec version"
+  lane :bump_podspec do
+    fastlane action version_bump_podspec(path: "", version_number: ENV["GIT_TAG"])
+  end
+
   after_all do |lane|
     telegram(
         url_horn: ENV["TELEGRAM_WEBHOOKS"],

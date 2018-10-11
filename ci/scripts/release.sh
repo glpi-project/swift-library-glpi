@@ -46,6 +46,7 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
 
   # Get version number from package.json
   export GIT_TAG=$(jq -r ".version" package.json)
+  echo GIT_TAG=$GIT_TAG >> .env
 
   echo "Update CHANGELOG.md on gh-pages"
   # Create header content to CHANGELOG.md
@@ -71,7 +72,7 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
   # Update CFBundleVersion
   /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Source/Info.plist
   # Increment podspec version
-  yarn podspec-bump -i ${GIT_TAG} -w
+  bundle exec fastlane bump_podspec -i ${GIT_TAG} -w
   # Add modified and delete files
   git add -u
   # Create commit

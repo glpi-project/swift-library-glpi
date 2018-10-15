@@ -1,4 +1,5 @@
 Pod::Spec.new do |s|
+
   s.name                  = 'swift-library-glpi'
   s.version               = '1.0.0'
   s.license               = { :type => "Apache License, Version 2.0", :file => "LICENSE.md" }
@@ -10,4 +11,5 @@ Pod::Spec.new do |s|
   s.source_files          = 'Source/*.{swift,h,m}'
   s.platforms             = { :ios => "10.3" }
   s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '4.2' }
+  s.requires_arc          = true
 end

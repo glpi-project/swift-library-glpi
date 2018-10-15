@@ -5,3 +5,4 @@ github_url: $CIRCLE_REPOSITORY_URL
 output: docs
 theme: ./jazzy/themeFlyve
 min_acl: private
+module: Glpi

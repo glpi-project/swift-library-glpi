@@ -98,7 +98,7 @@ platform :ios do
 
   desc "Increment podspec version"
   lane :bump_podspec do
-    fastlane action version_bump_podspec(path: ENV["PODSPEC_FILE"], version_number: ENV["GIT_TAG"])
+    version_bump_podspec(path: ENV["PODSPEC_FILE"], version_number: ENV["GIT_TAG"])
   end
 
   after_all do |lane|

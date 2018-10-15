@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name                  = 'Glpi'
+  s.name                  = 'swift-library-glpi'
   s.version               = '0.0.1'
   s.license               = { :type => "Apache License, Version 2.0", :file => "LICENSE.md" }
   s.summary               = 'GLPI APIs Client Library for Swift for REST'

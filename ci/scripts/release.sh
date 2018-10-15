@@ -71,6 +71,10 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
   /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${GIT_TAG}" ${PWD}/Source/Info.plist
   # Update CFBundleVersion
   /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Source/Info.plist
+  # Update CFBundleShortVersionString example
+  /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${GIT_TAG}" ${PWD}/Example/Source/Info.plist
+  # Update CFBundleVersion example
+  /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $CIRCLE_BUILD_NUM" ${PWD}/Example/Source/Info.plist
   # Increment podspec version
   bundle exec fastlane bump_podspec
   # Add modified and delete files

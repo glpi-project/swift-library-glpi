@@ -32,8 +32,6 @@ brew install ruby
 gem update --system
 # Clean Gem
 gem cleanup
-# Install jazzy for generate documentation
-gem install jazzy
 # Install jq for json parse
 brew install jq
 # Install libs from package.json

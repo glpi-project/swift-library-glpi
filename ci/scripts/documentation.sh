@@ -60,7 +60,7 @@ if [[ $GITHUB_COMMIT_MESSAGE != *"ci(release): generate CHANGELOG.md for version
 
   echo "Generate documentation with jazzy"
   # Generate documentation with jazzy
-  jazzy
+  bundle exec jazzy
   mv docs/ code-documentation/  
   # Add docs folder
   git add code-documentation -f
